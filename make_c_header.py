@@ -23,8 +23,8 @@ all_types = {}
 all_enums = {}
 all_commands = {}
 
-constants = []
-commands = []
+constants = set()
+commands = set()
 
 def add_requires(node):
     for require in node:
@@ -32,12 +32,9 @@ def add_requires(node):
             continue
         for child in require:
             if child.tag == "enum":
-                constants.append({
-                    "name": child.attrib["name"],
-                    "value": all_enums[child.attrib["name"]],
-                })
+                constants.add(child.attrib["name"])
             if child.tag == "command":
-                commands.append(all_commands[child.attrib["name"]])
+                commands.add(child.attrib["name"])
 
 for node in root:
     if node.tag == "types":
@@ -93,10 +90,11 @@ for typename in ["GLbitfield", "GLboolean", "GLbyte", "GLchar", "GLdouble", "GLe
     "GLuint", "GLushort"]:
     print(all_types[typename])
 
-for constant in constants:
-    print("#define {} {}".format(constant["name"], constant["value"]))
+for name in constants:
+    print("#define {} {}".format(name, all_enums[name]))
 
-for command in commands:
+for name in commands:
+    command = all_commands[name]
     print("extern {}(".format(
         command["decl"].replace(command["name"], "(*{})".format(command["name"]))
     ), end="")
