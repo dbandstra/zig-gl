@@ -17,14 +17,20 @@ echo ""
     if (m/^pub const (khronos.+)$/) {
         print "const $1\n";
     }
-'
+' | sort
 echo ""
 echo "pub const namespace = struct {"
 < "$THIS_DIR/gl_post.zig" perl -n -e '
-    if (m/^pub const GL/) {
+    if (m/^pub const GL[^_]/) {
         print "    $_";
     }
-'
+' | sort
+echo ""
+< "$THIS_DIR/gl_post.zig" perl -n -e '
+    if (m/^pub const GL_/) {
+        print "    $_";
+    }
+' | sort
 echo ""
 < "$THIS_DIR/gl_post.zig" perl -n -e '
     if (m/^pub extern var (gl[a-zA-Z0-9_]+): \?fn \((.+)\) (.+);$/) {
@@ -32,7 +38,7 @@ echo ""
         s/callconv\(\.C\)/callconv(cc)/;
         print "$_\n";
     }
-'
+' | sort
 echo "};"
 echo ""
 echo "pub const Command = struct {"
@@ -45,5 +51,5 @@ echo "pub const commands = [_]Command{"
     if (m/^pub extern var (gl[a-zA-Z0-9_]+): \?fn/) {
         print "    Command{ .name = \"$1\", .ptr = \@ptrCast(**const c_void, &namespace.$1) },\n";
     }
-'
+' | sort
 echo "};"
