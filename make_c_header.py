@@ -1,21 +1,60 @@
 from __future__ import print_function
 import os
+import sys
 import xml.etree.ElementTree as ET
 
-required_versions = (
-    "GL_VERSION_1_0",
-    "GL_VERSION_1_1",
-    "GL_VERSION_1_2",
-    "GL_VERSION_1_3",
-    "GL_VERSION_1_4",
-    "GL_VERSION_1_5",
-    "GL_VERSION_2_0",
-    "GL_VERSION_2_1",
-)
+profiles = {
+    "2.1+fbo": {
+        "required_versions": set([
+            "GL_VERSION_1_0",
+            "GL_VERSION_1_1",
+            "GL_VERSION_1_2",
+            "GL_VERSION_1_3",
+            "GL_VERSION_1_4",
+            "GL_VERSION_1_5",
+            "GL_VERSION_2_0",
+            "GL_VERSION_2_1",
+        ]),
+        "required_extensions": set([
+            "GL_ARB_framebuffer_object",
+        ]),
+        "extra_khronos_types": set(),
+        "extra_types": set(),
+    },
+    "3.2": {
+        "required_versions": set([
+            "GL_VERSION_1_0",
+            "GL_VERSION_1_1",
+            "GL_VERSION_1_2",
+            "GL_VERSION_1_3",
+            "GL_VERSION_1_4",
+            "GL_VERSION_1_5",
+            "GL_VERSION_2_0",
+            "GL_VERSION_2_1",
+            "GL_VERSION_3_0",
+            "GL_VERSION_3_1",
+            "GL_VERSION_3_2",
+        ]),
+        "required_extensions": set(),
+        "extra_khronos_types": set(["khronos_int64_t", "khronos_uint64_t"]),
+        "extra_types": set(["GLsync", "GLint64", "GLuint64"]),
+    },
+}
 
-required_extensions = (
-    "GL_ARB_framebuffer_object",
-)
+if len(sys.argv) != 2:
+    if len(sys.argv) > 2:
+        sys.stderr.write("too many arguments\n".format(sys.argv[0]))
+    else:
+        profiles = sorted(profiles.keys())
+        sys.stderr.write("usage: {} <PROFILE>\n".format(sys.argv[0]))
+        sys.stderr.write("supported profiles: {}\n".format(", ".join(profiles)))
+    sys.exit(1)
+
+try:
+    profile = profiles[sys.argv[1]]
+except:
+    sys.stderr.write("unrecognized profile: '{}'\n".format(sys.argv[1]))
+    sys.exit(1)
 
 root = ET.parse(os.path.join(os.path.dirname(__file__), "gl.xml")).getroot()
 
@@ -23,18 +62,44 @@ all_types = {}
 all_enums = {}
 all_commands = {}
 
+all_khronos_types = {
+    "khronos_float_t": "float",
+    "khronos_int16_t": "signed short int",
+    "khronos_int64_t": "int64_t",
+    "khronos_int8_t": "signed char",
+    "khronos_int8_t": "signed char",
+    "khronos_intptr_t": "signed long int",
+    "khronos_ssize_t": "signed long int",
+    "khronos_uint16_t": "unsigned short int",
+    "khronos_uint64_t": "uint64_t",
+    "khronos_uint8_t": "unsigned char",
+}
+
+default_khronos_types = set(["khronos_float_t", "khronos_int16_t", "khronos_int8_t",
+    "khronos_int8_t", "khronos_intptr_t", "khronos_ssize_t", "khronos_uint16_t",
+    "khronos_uint8_t"])
+
+default_types = set(["GLbitfield", "GLboolean", "GLbyte", "GLchar", "GLdouble",
+    "GLenum", "GLfloat", "GLint", "GLintptr", "GLshort", "GLsizei", "GLsizeiptr",
+    "GLubyte", "GLuint", "GLushort"])
+
 constants = set()
 commands = set()
 
 def add_requires(node):
-    for require in node:
-        if require.tag != "require":
-            continue
-        for child in require:
-            if child.tag == "enum":
-                constants.add(child.attrib["name"])
-            if child.tag == "command":
-                commands.add(child.attrib["name"])
+    for n in node:
+        if n.tag == "require":
+            for child in n:
+                if child.tag == "enum":
+                    constants.add(child.attrib["name"])
+                if child.tag == "command":
+                    commands.add(child.attrib["name"])
+        if n.tag == "remove":
+            for child in n:
+                if child.tag == "enum":
+                    constants.remove(child.attrib["name"])
+                if child.tag == "command":
+                    commands.remove(child.attrib["name"])
 
 for node in root:
     if node.tag == "types":
@@ -69,26 +134,22 @@ for node in root:
                 "decl": "".join(proto.itertext()),
                 "params": params,
             }
-    if node.tag == "feature" and node.attrib["name"] in required_versions:
+    if node.tag == "feature" and \
+       node.attrib["name"] in profile["required_versions"]:
         add_requires(node)
     if node.tag == "extensions":
         for child in node:
-            if child.tag == "extension" and child.attrib["name"] in required_extensions:
+            if child.tag == "extension" and \
+               child.attrib["name"] in profile["required_extensions"]:
                 add_requires(child)
 
-print("typedef signed char khronos_int8_t;")
-print("typedef float khronos_float_t;")
-print("typedef signed short int khronos_int16_t;")
-print("typedef signed char khronos_int8_t;")
-print("typedef signed long int khronos_intptr_t;")
-print("typedef signed long int khronos_ssize_t;")
-print("typedef unsigned short int khronos_uint16_t;")
-print("typedef unsigned char khronos_uint8_t;")
+print("#include <inttypes.h>")
 
-for typename in ["GLbitfield", "GLboolean", "GLbyte", "GLchar", "GLdouble", "GLenum",
-    "GLfloat", "GLint", "GLintptr", "GLshort", "GLsizei", "GLsizeiptr", "GLubyte",
-    "GLuint", "GLushort"]:
-    print(all_types[typename])
+for name in default_khronos_types | profile["extra_khronos_types"]:
+    print("typedef {} {};".format(all_khronos_types[name], name))
+
+for name in default_types | profile["extra_types"]:
+    print(all_types[name])
 
 for name in constants:
     print("#define {} {}".format(name, all_enums[name]))
