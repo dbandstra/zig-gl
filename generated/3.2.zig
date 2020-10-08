@@ -2,7 +2,10 @@
 
 const builtin = @import("builtin");
 
-const cc: builtin.CallingConvention = if (builtin.os.tag == .windows) .StdCall else .C;
+const cc: builtin.CallingConvention = if (builtin.os.tag == .windows and builtin.arch == .i386)
+    .StdCall
+else
+    .C;
 
 const khronos_float_t = f32;
 const khronos_int16_t = c_short;
