@@ -21,7 +21,8 @@ const gl = @import("generated/2.1+fbo.zig");
 
 pub fn main() u8 {
     // note: for 3.2, you would pass SDL_GL_CONTEXT_PROFILE_CORE here
-    _ = SDL_GL_SetAttribute(@intToEnum(SDL_GLattr, SDL_GL_CONTEXT_PROFILE_MASK), SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
+    _ = SDL_GL_SetAttribute(@intToEnum(SDL_GLattr, SDL_GL_CONTEXT_PROFILE_MASK),
+                                                   SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
     _ = SDL_GL_SetAttribute(@intToEnum(SDL_GLattr, SDL_GL_CONTEXT_MAJOR_VERSION), 2);
     _ = SDL_GL_SetAttribute(@intToEnum(SDL_GLattr, SDL_GL_CONTEXT_MINOR_VERSION), 1);
 
@@ -29,14 +30,16 @@ pub fn main() u8 {
     // SDL_GL_CreateContext()...
     // SDL_GL_MakeCurrent()...
 
-    if (@enumToInt(SDL_GL_ExtensionSupported("GL_ARB_framebuffer_object")) == 0) {
-        return 1; // not supported
+    for (gl.extensions) |extension| {
+        if (@enumToInt(SDL_GL_ExtensionSupported(extension)) == 0) {
+            std.debug.warn("Extension {} not supported.\n", .{extension});
+            return 1;
+        }
     }
-
-    // initialize all the gl function pointers
     for (gl.commands) |command| {
         command.ptr.* = SDL_GL_GetProcAddress(command.name) orelse {
-            return 1; // failed to load function
+            std.debug.warn("Failed to load proc {}.\n", .{command.name});
+            return 1;
         };
     }
 

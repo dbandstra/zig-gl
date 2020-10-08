@@ -1161,6 +1161,8 @@ pub const namespace = struct {
     pub var glWaitSync: fn (GLsync, GLbitfield, GLuint64) callconv(cc) void = undefined;
 };
 
+pub const extensions = [_][:0]const u8{};
+
 pub const Command = struct {
     name: [:0]const u8,
     ptr: **const c_void,

@@ -58,6 +58,16 @@ echo ""
 ' | sort
 echo "};"
 echo ""
+if [ -z "$@" ]; then
+    echo "pub const extensions = [_][:0]const u8{};"
+else
+    echo "pub const extensions = [_][:0]const u8{"
+    for GL_EXTENSION in "$@"; do
+        echo "    \"$GL_EXTENSION\","
+    done
+    echo "};"
+fi
+echo ""
 echo "pub const Command = struct {"
 echo "    name: [:0]const u8,"
 echo "    ptr: **const c_void,"

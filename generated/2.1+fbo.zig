@@ -1553,6 +1553,10 @@ pub const namespace = struct {
     pub var glWindowPos3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
 };
 
+pub const extensions = [_][:0]const u8{
+    "GL_ARB_framebuffer_object",
+};
+
 pub const Command = struct {
     name: [:0]const u8,
     ptr: **const c_void,
