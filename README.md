@@ -1,16 +1,16 @@
 # zig-gl
 Script to generate a Zig file from the Khronos OpenGL Registry. The generated file includes types, function pointers, and a table to help you load the function pointers.
 
-For now, there are only two supported profiles: "2.1+fbo" (OpenGL 2.1 + GL_ARB_framebuffer_boject) and "3.2" (OpenGL 3.2).
-
-The generated files for those profiles are included in this repository for convenience.
-
 `gl.xml` is from https://github.com/KhronosGroup/OpenGL-Registry
 
+To generate a file, call `generate.sh`. The first argument is the OpenGL version (currently only 2.1 and 3.2 are supported). Any subsequent arguments are extension names.
+
 ```bash
-bash generate.sh 2.1+fbo > generated/2.1+fbo.zig
+bash generate.sh 2.1 GL_ARB_framebuffer_object > generated/2.1+fbo.zig
 bash generate.sh 3.2 > generated/3.2.zig
 ```
+
+The generated files for the above profiles are included in this repository for convenience.
 
 ## SDL example
 ```zig

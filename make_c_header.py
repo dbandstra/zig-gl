@@ -4,7 +4,7 @@ import sys
 import xml.etree.ElementTree as ET
 
 profiles = {
-    "2.1+fbo": {
+    "2.1": {
         "required_versions": set([
             "GL_VERSION_1_0",
             "GL_VERSION_1_1",
@@ -14,9 +14,6 @@ profiles = {
             "GL_VERSION_1_5",
             "GL_VERSION_2_0",
             "GL_VERSION_2_1",
-        ]),
-        "required_extensions": set([
-            "GL_ARB_framebuffer_object",
         ]),
         "extra_khronos_types": set(),
         "extra_types": set(),
@@ -35,20 +32,18 @@ profiles = {
             "GL_VERSION_3_1",
             "GL_VERSION_3_2",
         ]),
-        "required_extensions": set(),
         "extra_khronos_types": set(["khronos_int64_t", "khronos_uint64_t"]),
         "extra_types": set(["GLsync", "GLint64", "GLuint64"]),
     },
 }
 
-if len(sys.argv) != 2:
-    if len(sys.argv) > 2:
-        sys.stderr.write("too many arguments\n".format(sys.argv[0]))
-    else:
-        profiles = sorted(profiles.keys())
-        sys.stderr.write("usage: {} <PROFILE>\n".format(sys.argv[0]))
-        sys.stderr.write("supported profiles: {}\n".format(", ".join(profiles)))
+if len(sys.argv) < 2:
+    profiles = sorted(profiles.keys())
+    sys.stderr.write("usage: {} VERSION [EXTENSIONS...]\n".format(sys.argv[0]))
+    sys.stderr.write("supported versions: {}\n".format(", ".join(profiles)))
     sys.exit(1)
+
+required_extensions = set(sys.argv[2:])
 
 try:
     profile = profiles[sys.argv[1]]
@@ -85,6 +80,8 @@ default_types = set(["GLbitfield", "GLboolean", "GLbyte", "GLchar", "GLdouble",
 
 constants = set()
 commands = set()
+
+all_extensions = set()
 
 def add_requires(node):
     for n in node:
@@ -139,9 +136,16 @@ for node in root:
         add_requires(node)
     if node.tag == "extensions":
         for child in node:
-            if child.tag == "extension" and \
-               child.attrib["name"] in profile["required_extensions"]:
-                add_requires(child)
+            if child.tag == "extension":
+                all_extensions.add(child.attrib["name"])
+                if child.attrib["name"] in required_extensions:
+                    add_requires(child)
+
+bad_extensions = required_extensions - all_extensions
+if bad_extensions:
+    desc = ", ".join(sorted(bad_extensions))
+    sys.stderr.write("unrecognized extension(s): {}\n".format(desc))
+    sys.exit(1)
 
 print("#include <inttypes.h>")
 
