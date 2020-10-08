@@ -12,7 +12,7 @@ bash generate.sh 3.2 > generated/3.2.zig
 
 The generated files for the above profiles are included in this repository for convenience.
 
-## SDL example
+## SDL usage example
 ```zig
 usingnamespace @cImport({
     @cInclude("SDL2/SDL.h");
