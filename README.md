@@ -5,9 +5,9 @@ Script to generate a Zig file from the Khronos OpenGL Registry. The generated fi
 
 To generate a file, call `generate.sh`. The first argument is the OpenGL version (currently only 2.1 and 3.2 are supported). Any subsequent arguments are extension names.
 
-```bash
-bash generate.sh 2.1 GL_ARB_framebuffer_object > generated/2.1+fbo.zig
-bash generate.sh 3.2 > generated/3.2.zig
+```sh
+sh generate.sh 2.1 GL_ARB_framebuffer_object > generated/2.1+fbo.zig
+sh generate.sh 3.2 > generated/3.2.zig
 ```
 
 The generated files for the above profiles are included in this repository for convenience.
