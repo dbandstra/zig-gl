@@ -980,577 +980,2291 @@ pub const namespace = struct {
     pub const GL_ZOOM_X = 0x0D16;
     pub const GL_ZOOM_Y = 0x0D17;
 
-    pub var glAccum: fn (GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glActiveTexture: fn (GLenum) callconv(cc) void = undefined;
-    pub var glAlphaFunc: fn (GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glAreTexturesResident: fn (GLsizei, [*c]const GLuint, [*c]GLboolean) callconv(cc) GLboolean = undefined;
-    pub var glArrayElement: fn (GLint) callconv(cc) void = undefined;
-    pub var glAttachShader: fn (GLuint, GLuint) callconv(cc) void = undefined;
-    pub var glBegin: fn (GLenum) callconv(cc) void = undefined;
-    pub var glBeginQuery: fn (GLenum, GLuint) callconv(cc) void = undefined;
-    pub var glBindAttribLocation: fn (GLuint, GLuint, [*c]const GLchar) callconv(cc) void = undefined;
-    pub var glBindBuffer: fn (GLenum, GLuint) callconv(cc) void = undefined;
-    pub var glBindFramebuffer: fn (GLenum, GLuint) callconv(cc) void = undefined;
-    pub var glBindRenderbuffer: fn (GLenum, GLuint) callconv(cc) void = undefined;
-    pub var glBindTexture: fn (GLenum, GLuint) callconv(cc) void = undefined;
-    pub var glBitmap: fn (GLsizei, GLsizei, GLfloat, GLfloat, GLfloat, GLfloat, [*c]const GLubyte) callconv(cc) void = undefined;
-    pub var glBlendColor: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glBlendEquation: fn (GLenum) callconv(cc) void = undefined;
-    pub var glBlendEquationSeparate: fn (GLenum, GLenum) callconv(cc) void = undefined;
-    pub var glBlendFunc: fn (GLenum, GLenum) callconv(cc) void = undefined;
-    pub var glBlendFuncSeparate: fn (GLenum, GLenum, GLenum, GLenum) callconv(cc) void = undefined;
-    pub var glBlitFramebuffer: fn (GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLbitfield, GLenum) callconv(cc) void = undefined;
-    pub var glBufferData: fn (GLenum, GLsizeiptr, ?*const c_void, GLenum) callconv(cc) void = undefined;
-    pub var glBufferSubData: fn (GLenum, GLintptr, GLsizeiptr, ?*const c_void) callconv(cc) void = undefined;
-    pub var glCallList: fn (GLuint) callconv(cc) void = undefined;
-    pub var glCallLists: fn (GLsizei, GLenum, ?*const c_void) callconv(cc) void = undefined;
-    pub var glCheckFramebufferStatus: fn (GLenum) callconv(cc) GLenum = undefined;
-    pub var glClear: fn (GLbitfield) callconv(cc) void = undefined;
-    pub var glClearAccum: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glClearColor: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glClearDepth: fn (GLdouble) callconv(cc) void = undefined;
-    pub var glClearIndex: fn (GLfloat) callconv(cc) void = undefined;
-    pub var glClearStencil: fn (GLint) callconv(cc) void = undefined;
-    pub var glClientActiveTexture: fn (GLenum) callconv(cc) void = undefined;
-    pub var glClipPlane: fn (GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glColor3b: fn (GLbyte, GLbyte, GLbyte) callconv(cc) void = undefined;
-    pub var glColor3bv: fn ([*c]const GLbyte) callconv(cc) void = undefined;
-    pub var glColor3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glColor3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glColor3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glColor3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glColor3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glColor3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glColor3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glColor3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glColor3ub: fn (GLubyte, GLubyte, GLubyte) callconv(cc) void = undefined;
-    pub var glColor3ubv: fn ([*c]const GLubyte) callconv(cc) void = undefined;
-    pub var glColor3ui: fn (GLuint, GLuint, GLuint) callconv(cc) void = undefined;
-    pub var glColor3uiv: fn ([*c]const GLuint) callconv(cc) void = undefined;
-    pub var glColor3us: fn (GLushort, GLushort, GLushort) callconv(cc) void = undefined;
-    pub var glColor3usv: fn ([*c]const GLushort) callconv(cc) void = undefined;
-    pub var glColor4b: fn (GLbyte, GLbyte, GLbyte, GLbyte) callconv(cc) void = undefined;
-    pub var glColor4bv: fn ([*c]const GLbyte) callconv(cc) void = undefined;
-    pub var glColor4d: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glColor4dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glColor4f: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glColor4fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glColor4i: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glColor4iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glColor4s: fn (GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glColor4sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glColor4ub: fn (GLubyte, GLubyte, GLubyte, GLubyte) callconv(cc) void = undefined;
-    pub var glColor4ubv: fn ([*c]const GLubyte) callconv(cc) void = undefined;
-    pub var glColor4ui: fn (GLuint, GLuint, GLuint, GLuint) callconv(cc) void = undefined;
-    pub var glColor4uiv: fn ([*c]const GLuint) callconv(cc) void = undefined;
-    pub var glColor4us: fn (GLushort, GLushort, GLushort, GLushort) callconv(cc) void = undefined;
-    pub var glColor4usv: fn ([*c]const GLushort) callconv(cc) void = undefined;
-    pub var glColorMask: fn (GLboolean, GLboolean, GLboolean, GLboolean) callconv(cc) void = undefined;
-    pub var glColorMaterial: fn (GLenum, GLenum) callconv(cc) void = undefined;
-    pub var glColorPointer: fn (GLint, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glCompileShader: fn (GLuint) callconv(cc) void = undefined;
-    pub var glCompressedTexImage1D: fn (GLenum, GLint, GLenum, GLsizei, GLint, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glCompressedTexImage2D: fn (GLenum, GLint, GLenum, GLsizei, GLsizei, GLint, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glCompressedTexImage3D: fn (GLenum, GLint, GLenum, GLsizei, GLsizei, GLsizei, GLint, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glCompressedTexSubImage1D: fn (GLenum, GLint, GLint, GLsizei, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glCompressedTexSubImage2D: fn (GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glCompressedTexSubImage3D: fn (GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glCopyPixels: fn (GLint, GLint, GLsizei, GLsizei, GLenum) callconv(cc) void = undefined;
-    pub var glCopyTexImage1D: fn (GLenum, GLint, GLenum, GLint, GLint, GLsizei, GLint) callconv(cc) void = undefined;
-    pub var glCopyTexImage2D: fn (GLenum, GLint, GLenum, GLint, GLint, GLsizei, GLsizei, GLint) callconv(cc) void = undefined;
-    pub var glCopyTexSubImage1D: fn (GLenum, GLint, GLint, GLint, GLint, GLsizei) callconv(cc) void = undefined;
-    pub var glCopyTexSubImage2D: fn (GLenum, GLint, GLint, GLint, GLint, GLint, GLsizei, GLsizei) callconv(cc) void = undefined;
-    pub var glCopyTexSubImage3D: fn (GLenum, GLint, GLint, GLint, GLint, GLint, GLint, GLsizei, GLsizei) callconv(cc) void = undefined;
-    pub var glCreateProgram: fn () callconv(cc) GLuint = undefined;
-    pub var glCreateShader: fn (GLenum) callconv(cc) GLuint = undefined;
-    pub var glCullFace: fn (GLenum) callconv(cc) void = undefined;
-    pub var glDeleteBuffers: fn (GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
-    pub var glDeleteFramebuffers: fn (GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
-    pub var glDeleteLists: fn (GLuint, GLsizei) callconv(cc) void = undefined;
-    pub var glDeleteProgram: fn (GLuint) callconv(cc) void = undefined;
-    pub var glDeleteQueries: fn (GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
-    pub var glDeleteRenderbuffers: fn (GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
-    pub var glDeleteShader: fn (GLuint) callconv(cc) void = undefined;
-    pub var glDeleteTextures: fn (GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
-    pub var glDepthFunc: fn (GLenum) callconv(cc) void = undefined;
-    pub var glDepthMask: fn (GLboolean) callconv(cc) void = undefined;
-    pub var glDepthRange: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glDetachShader: fn (GLuint, GLuint) callconv(cc) void = undefined;
-    pub var glDisable: fn (GLenum) callconv(cc) void = undefined;
-    pub var glDisableClientState: fn (GLenum) callconv(cc) void = undefined;
-    pub var glDisableVertexAttribArray: fn (GLuint) callconv(cc) void = undefined;
-    pub var glDrawArrays: fn (GLenum, GLint, GLsizei) callconv(cc) void = undefined;
-    pub var glDrawBuffer: fn (GLenum) callconv(cc) void = undefined;
-    pub var glDrawBuffers: fn (GLsizei, [*c]const GLenum) callconv(cc) void = undefined;
-    pub var glDrawElements: fn (GLenum, GLsizei, GLenum, ?*const c_void) callconv(cc) void = undefined;
-    pub var glDrawPixels: fn (GLsizei, GLsizei, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
-    pub var glDrawRangeElements: fn (GLenum, GLuint, GLuint, GLsizei, GLenum, ?*const c_void) callconv(cc) void = undefined;
-    pub var glEdgeFlag: fn (GLboolean) callconv(cc) void = undefined;
-    pub var glEdgeFlagPointer: fn (GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glEdgeFlagv: fn ([*c]const GLboolean) callconv(cc) void = undefined;
-    pub var glEnable: fn (GLenum) callconv(cc) void = undefined;
-    pub var glEnableClientState: fn (GLenum) callconv(cc) void = undefined;
-    pub var glEnableVertexAttribArray: fn (GLuint) callconv(cc) void = undefined;
-    pub var glEnd: fn () callconv(cc) void = undefined;
-    pub var glEndList: fn () callconv(cc) void = undefined;
-    pub var glEndQuery: fn (GLenum) callconv(cc) void = undefined;
-    pub var glEvalCoord1d: fn (GLdouble) callconv(cc) void = undefined;
-    pub var glEvalCoord1dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glEvalCoord1f: fn (GLfloat) callconv(cc) void = undefined;
-    pub var glEvalCoord1fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glEvalCoord2d: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glEvalCoord2dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glEvalCoord2f: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glEvalCoord2fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glEvalMesh1: fn (GLenum, GLint, GLint) callconv(cc) void = undefined;
-    pub var glEvalMesh2: fn (GLenum, GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glEvalPoint1: fn (GLint) callconv(cc) void = undefined;
-    pub var glEvalPoint2: fn (GLint, GLint) callconv(cc) void = undefined;
-    pub var glFeedbackBuffer: fn (GLsizei, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glFinish: fn () callconv(cc) void = undefined;
-    pub var glFlush: fn () callconv(cc) void = undefined;
-    pub var glFogCoordPointer: fn (GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glFogCoordd: fn (GLdouble) callconv(cc) void = undefined;
-    pub var glFogCoorddv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glFogCoordf: fn (GLfloat) callconv(cc) void = undefined;
-    pub var glFogCoordfv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glFogf: fn (GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glFogfv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glFogi: fn (GLenum, GLint) callconv(cc) void = undefined;
-    pub var glFogiv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glFramebufferRenderbuffer: fn (GLenum, GLenum, GLenum, GLuint) callconv(cc) void = undefined;
-    pub var glFramebufferTexture1D: fn (GLenum, GLenum, GLenum, GLuint, GLint) callconv(cc) void = undefined;
-    pub var glFramebufferTexture2D: fn (GLenum, GLenum, GLenum, GLuint, GLint) callconv(cc) void = undefined;
-    pub var glFramebufferTexture3D: fn (GLenum, GLenum, GLenum, GLuint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glFramebufferTextureLayer: fn (GLenum, GLenum, GLuint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glFrontFace: fn (GLenum) callconv(cc) void = undefined;
-    pub var glFrustum: fn (GLdouble, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glGenBuffers: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
-    pub var glGenFramebuffers: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
-    pub var glGenLists: fn (GLsizei) callconv(cc) GLuint = undefined;
-    pub var glGenQueries: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
-    pub var glGenRenderbuffers: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
-    pub var glGenTextures: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
-    pub var glGenerateMipmap: fn (GLenum) callconv(cc) void = undefined;
-    pub var glGetActiveAttrib: fn (GLuint, GLuint, GLsizei, [*c]GLsizei, [*c]GLint, [*c]GLenum, [*c]GLchar) callconv(cc) void = undefined;
-    pub var glGetActiveUniform: fn (GLuint, GLuint, GLsizei, [*c]GLsizei, [*c]GLint, [*c]GLenum, [*c]GLchar) callconv(cc) void = undefined;
-    pub var glGetAttachedShaders: fn (GLuint, GLsizei, [*c]GLsizei, [*c]GLuint) callconv(cc) void = undefined;
-    pub var glGetAttribLocation: fn (GLuint, [*c]const GLchar) callconv(cc) GLint = undefined;
-    pub var glGetBooleanv: fn (GLenum, [*c]GLboolean) callconv(cc) void = undefined;
-    pub var glGetBufferParameteriv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetBufferPointerv: fn (GLenum, GLenum, [*c]?*c_void) callconv(cc) void = undefined;
-    pub var glGetBufferSubData: fn (GLenum, GLintptr, GLsizeiptr, ?*c_void) callconv(cc) void = undefined;
-    pub var glGetClipPlane: fn (GLenum, [*c]GLdouble) callconv(cc) void = undefined;
-    pub var glGetCompressedTexImage: fn (GLenum, GLint, ?*c_void) callconv(cc) void = undefined;
-    pub var glGetDoublev: fn (GLenum, [*c]GLdouble) callconv(cc) void = undefined;
-    pub var glGetError: fn () callconv(cc) GLenum = undefined;
-    pub var glGetFloatv: fn (GLenum, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glGetFramebufferAttachmentParameteriv: fn (GLenum, GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetIntegerv: fn (GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetLightfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glGetLightiv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetMapdv: fn (GLenum, GLenum, [*c]GLdouble) callconv(cc) void = undefined;
-    pub var glGetMapfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glGetMapiv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetMaterialfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glGetMaterialiv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetPixelMapfv: fn (GLenum, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glGetPixelMapuiv: fn (GLenum, [*c]GLuint) callconv(cc) void = undefined;
-    pub var glGetPixelMapusv: fn (GLenum, [*c]GLushort) callconv(cc) void = undefined;
-    pub var glGetPointerv: fn (GLenum, [*c]?*c_void) callconv(cc) void = undefined;
-    pub var glGetPolygonStipple: fn ([*c]GLubyte) callconv(cc) void = undefined;
-    pub var glGetProgramInfoLog: fn (GLuint, GLsizei, [*c]GLsizei, [*c]GLchar) callconv(cc) void = undefined;
-    pub var glGetProgramiv: fn (GLuint, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetQueryObjectiv: fn (GLuint, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetQueryObjectuiv: fn (GLuint, GLenum, [*c]GLuint) callconv(cc) void = undefined;
-    pub var glGetQueryiv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetRenderbufferParameteriv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetShaderInfoLog: fn (GLuint, GLsizei, [*c]GLsizei, [*c]GLchar) callconv(cc) void = undefined;
-    pub var glGetShaderSource: fn (GLuint, GLsizei, [*c]GLsizei, [*c]GLchar) callconv(cc) void = undefined;
-    pub var glGetShaderiv: fn (GLuint, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetString: fn (GLenum) callconv(cc) [*c]const GLubyte = undefined;
-    pub var glGetTexEnvfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glGetTexEnviv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetTexGendv: fn (GLenum, GLenum, [*c]GLdouble) callconv(cc) void = undefined;
-    pub var glGetTexGenfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glGetTexGeniv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetTexImage: fn (GLenum, GLint, GLenum, GLenum, ?*c_void) callconv(cc) void = undefined;
-    pub var glGetTexLevelParameterfv: fn (GLenum, GLint, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glGetTexLevelParameteriv: fn (GLenum, GLint, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetTexParameterfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glGetTexParameteriv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetUniformLocation: fn (GLuint, [*c]const GLchar) callconv(cc) GLint = undefined;
-    pub var glGetUniformfv: fn (GLuint, GLint, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glGetUniformiv: fn (GLuint, GLint, [*c]GLint) callconv(cc) void = undefined;
-    pub var glGetVertexAttribPointerv: fn (GLuint, GLenum, [*c]?*c_void) callconv(cc) void = undefined;
-    pub var glGetVertexAttribdv: fn (GLuint, GLenum, [*c]GLdouble) callconv(cc) void = undefined;
-    pub var glGetVertexAttribfv: fn (GLuint, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
-    pub var glGetVertexAttribiv: fn (GLuint, GLenum, [*c]GLint) callconv(cc) void = undefined;
-    pub var glHint: fn (GLenum, GLenum) callconv(cc) void = undefined;
-    pub var glIndexMask: fn (GLuint) callconv(cc) void = undefined;
-    pub var glIndexPointer: fn (GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glIndexd: fn (GLdouble) callconv(cc) void = undefined;
-    pub var glIndexdv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glIndexf: fn (GLfloat) callconv(cc) void = undefined;
-    pub var glIndexfv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glIndexi: fn (GLint) callconv(cc) void = undefined;
-    pub var glIndexiv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glIndexs: fn (GLshort) callconv(cc) void = undefined;
-    pub var glIndexsv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glIndexub: fn (GLubyte) callconv(cc) void = undefined;
-    pub var glIndexubv: fn ([*c]const GLubyte) callconv(cc) void = undefined;
-    pub var glInitNames: fn () callconv(cc) void = undefined;
-    pub var glInterleavedArrays: fn (GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glIsBuffer: fn (GLuint) callconv(cc) GLboolean = undefined;
-    pub var glIsEnabled: fn (GLenum) callconv(cc) GLboolean = undefined;
-    pub var glIsFramebuffer: fn (GLuint) callconv(cc) GLboolean = undefined;
-    pub var glIsList: fn (GLuint) callconv(cc) GLboolean = undefined;
-    pub var glIsProgram: fn (GLuint) callconv(cc) GLboolean = undefined;
-    pub var glIsQuery: fn (GLuint) callconv(cc) GLboolean = undefined;
-    pub var glIsRenderbuffer: fn (GLuint) callconv(cc) GLboolean = undefined;
-    pub var glIsShader: fn (GLuint) callconv(cc) GLboolean = undefined;
-    pub var glIsTexture: fn (GLuint) callconv(cc) GLboolean = undefined;
-    pub var glLightModelf: fn (GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glLightModelfv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glLightModeli: fn (GLenum, GLint) callconv(cc) void = undefined;
-    pub var glLightModeliv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glLightf: fn (GLenum, GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glLightfv: fn (GLenum, GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glLighti: fn (GLenum, GLenum, GLint) callconv(cc) void = undefined;
-    pub var glLightiv: fn (GLenum, GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glLineStipple: fn (GLint, GLushort) callconv(cc) void = undefined;
-    pub var glLineWidth: fn (GLfloat) callconv(cc) void = undefined;
-    pub var glLinkProgram: fn (GLuint) callconv(cc) void = undefined;
-    pub var glListBase: fn (GLuint) callconv(cc) void = undefined;
-    pub var glLoadIdentity: fn () callconv(cc) void = undefined;
-    pub var glLoadMatrixd: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glLoadMatrixf: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glLoadName: fn (GLuint) callconv(cc) void = undefined;
-    pub var glLoadTransposeMatrixd: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glLoadTransposeMatrixf: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glLogicOp: fn (GLenum) callconv(cc) void = undefined;
-    pub var glMap1d: fn (GLenum, GLdouble, GLdouble, GLint, GLint, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glMap1f: fn (GLenum, GLfloat, GLfloat, GLint, GLint, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glMap2d: fn (GLenum, GLdouble, GLdouble, GLint, GLint, GLdouble, GLdouble, GLint, GLint, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glMap2f: fn (GLenum, GLfloat, GLfloat, GLint, GLint, GLfloat, GLfloat, GLint, GLint, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glMapBuffer: fn (GLenum, GLenum) callconv(cc) ?*c_void = undefined;
-    pub var glMapGrid1d: fn (GLint, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glMapGrid1f: fn (GLint, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glMapGrid2d: fn (GLint, GLdouble, GLdouble, GLint, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glMapGrid2f: fn (GLint, GLfloat, GLfloat, GLint, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glMaterialf: fn (GLenum, GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glMaterialfv: fn (GLenum, GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glMateriali: fn (GLenum, GLenum, GLint) callconv(cc) void = undefined;
-    pub var glMaterialiv: fn (GLenum, GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glMatrixMode: fn (GLenum) callconv(cc) void = undefined;
-    pub var glMultMatrixd: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glMultMatrixf: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glMultTransposeMatrixd: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glMultTransposeMatrixf: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glMultiDrawArrays: fn (GLenum, [*c]const GLint, [*c]const GLsizei, GLsizei) callconv(cc) void = undefined;
-    pub var glMultiDrawElements: fn (GLenum, [*c]const GLsizei, GLenum, [*c]const ?*const c_void, GLsizei) callconv(cc) void = undefined;
-    pub var glMultiTexCoord1d: fn (GLenum, GLdouble) callconv(cc) void = undefined;
-    pub var glMultiTexCoord1dv: fn (GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glMultiTexCoord1f: fn (GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glMultiTexCoord1fv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glMultiTexCoord1i: fn (GLenum, GLint) callconv(cc) void = undefined;
-    pub var glMultiTexCoord1iv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glMultiTexCoord1s: fn (GLenum, GLshort) callconv(cc) void = undefined;
-    pub var glMultiTexCoord1sv: fn (GLenum, [*c]const GLshort) callconv(cc) void = undefined;
-    pub var glMultiTexCoord2d: fn (GLenum, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glMultiTexCoord2dv: fn (GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glMultiTexCoord2f: fn (GLenum, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glMultiTexCoord2fv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glMultiTexCoord2i: fn (GLenum, GLint, GLint) callconv(cc) void = undefined;
-    pub var glMultiTexCoord2iv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glMultiTexCoord2s: fn (GLenum, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glMultiTexCoord2sv: fn (GLenum, [*c]const GLshort) callconv(cc) void = undefined;
-    pub var glMultiTexCoord3d: fn (GLenum, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glMultiTexCoord3dv: fn (GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glMultiTexCoord3f: fn (GLenum, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glMultiTexCoord3fv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glMultiTexCoord3i: fn (GLenum, GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glMultiTexCoord3iv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glMultiTexCoord3s: fn (GLenum, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glMultiTexCoord3sv: fn (GLenum, [*c]const GLshort) callconv(cc) void = undefined;
-    pub var glMultiTexCoord4d: fn (GLenum, GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glMultiTexCoord4dv: fn (GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glMultiTexCoord4f: fn (GLenum, GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glMultiTexCoord4fv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glMultiTexCoord4i: fn (GLenum, GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glMultiTexCoord4iv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glMultiTexCoord4s: fn (GLenum, GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glMultiTexCoord4sv: fn (GLenum, [*c]const GLshort) callconv(cc) void = undefined;
-    pub var glNewList: fn (GLuint, GLenum) callconv(cc) void = undefined;
-    pub var glNormal3b: fn (GLbyte, GLbyte, GLbyte) callconv(cc) void = undefined;
-    pub var glNormal3bv: fn ([*c]const GLbyte) callconv(cc) void = undefined;
-    pub var glNormal3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glNormal3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glNormal3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glNormal3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glNormal3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glNormal3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glNormal3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glNormal3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glNormalPointer: fn (GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glOrtho: fn (GLdouble, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glPassThrough: fn (GLfloat) callconv(cc) void = undefined;
-    pub var glPixelMapfv: fn (GLenum, GLsizei, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glPixelMapuiv: fn (GLenum, GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
-    pub var glPixelMapusv: fn (GLenum, GLsizei, [*c]const GLushort) callconv(cc) void = undefined;
-    pub var glPixelStoref: fn (GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glPixelStorei: fn (GLenum, GLint) callconv(cc) void = undefined;
-    pub var glPixelTransferf: fn (GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glPixelTransferi: fn (GLenum, GLint) callconv(cc) void = undefined;
-    pub var glPixelZoom: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glPointParameterf: fn (GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glPointParameterfv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glPointParameteri: fn (GLenum, GLint) callconv(cc) void = undefined;
-    pub var glPointParameteriv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glPointSize: fn (GLfloat) callconv(cc) void = undefined;
-    pub var glPolygonMode: fn (GLenum, GLenum) callconv(cc) void = undefined;
-    pub var glPolygonOffset: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glPolygonStipple: fn ([*c]const GLubyte) callconv(cc) void = undefined;
-    pub var glPopAttrib: fn () callconv(cc) void = undefined;
-    pub var glPopClientAttrib: fn () callconv(cc) void = undefined;
-    pub var glPopMatrix: fn () callconv(cc) void = undefined;
-    pub var glPopName: fn () callconv(cc) void = undefined;
-    pub var glPrioritizeTextures: fn (GLsizei, [*c]const GLuint, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glPushAttrib: fn (GLbitfield) callconv(cc) void = undefined;
-    pub var glPushClientAttrib: fn (GLbitfield) callconv(cc) void = undefined;
-    pub var glPushMatrix: fn () callconv(cc) void = undefined;
-    pub var glPushName: fn (GLuint) callconv(cc) void = undefined;
-    pub var glRasterPos2d: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glRasterPos2dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glRasterPos2f: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glRasterPos2fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glRasterPos2i: fn (GLint, GLint) callconv(cc) void = undefined;
-    pub var glRasterPos2iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glRasterPos2s: fn (GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glRasterPos2sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glRasterPos3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glRasterPos3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glRasterPos3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glRasterPos3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glRasterPos3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glRasterPos3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glRasterPos3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glRasterPos3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glRasterPos4d: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glRasterPos4dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glRasterPos4f: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glRasterPos4fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glRasterPos4i: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glRasterPos4iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glRasterPos4s: fn (GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glRasterPos4sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glReadBuffer: fn (GLenum) callconv(cc) void = undefined;
-    pub var glReadPixels: fn (GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, ?*c_void) callconv(cc) void = undefined;
-    pub var glRectd: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glRectdv: fn ([*c]const GLdouble, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glRectf: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glRectfv: fn ([*c]const GLfloat, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glRecti: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glRectiv: fn ([*c]const GLint, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glRects: fn (GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glRectsv: fn ([*c]const GLshort, [*c]const GLshort) callconv(cc) void = undefined;
-    pub var glRenderMode: fn (GLenum) callconv(cc) GLint = undefined;
-    pub var glRenderbufferStorage: fn (GLenum, GLenum, GLsizei, GLsizei) callconv(cc) void = undefined;
-    pub var glRenderbufferStorageMultisample: fn (GLenum, GLsizei, GLenum, GLsizei, GLsizei) callconv(cc) void = undefined;
-    pub var glRotated: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glRotatef: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glSampleCoverage: fn (GLfloat, GLboolean) callconv(cc) void = undefined;
-    pub var glScaled: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glScalef: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glScissor: fn (GLint, GLint, GLsizei, GLsizei) callconv(cc) void = undefined;
-    pub var glSecondaryColor3b: fn (GLbyte, GLbyte, GLbyte) callconv(cc) void = undefined;
-    pub var glSecondaryColor3bv: fn ([*c]const GLbyte) callconv(cc) void = undefined;
-    pub var glSecondaryColor3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glSecondaryColor3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glSecondaryColor3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glSecondaryColor3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glSecondaryColor3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glSecondaryColor3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glSecondaryColor3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glSecondaryColor3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glSecondaryColor3ub: fn (GLubyte, GLubyte, GLubyte) callconv(cc) void = undefined;
-    pub var glSecondaryColor3ubv: fn ([*c]const GLubyte) callconv(cc) void = undefined;
-    pub var glSecondaryColor3ui: fn (GLuint, GLuint, GLuint) callconv(cc) void = undefined;
-    pub var glSecondaryColor3uiv: fn ([*c]const GLuint) callconv(cc) void = undefined;
-    pub var glSecondaryColor3us: fn (GLushort, GLushort, GLushort) callconv(cc) void = undefined;
-    pub var glSecondaryColor3usv: fn ([*c]const GLushort) callconv(cc) void = undefined;
-    pub var glSecondaryColorPointer: fn (GLint, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glSelectBuffer: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
-    pub var glShadeModel: fn (GLenum) callconv(cc) void = undefined;
-    pub var glShaderSource: fn (GLuint, GLsizei, [*c]const [*c]const GLchar, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glStencilFunc: fn (GLenum, GLint, GLuint) callconv(cc) void = undefined;
-    pub var glStencilFuncSeparate: fn (GLenum, GLenum, GLint, GLuint) callconv(cc) void = undefined;
-    pub var glStencilMask: fn (GLuint) callconv(cc) void = undefined;
-    pub var glStencilMaskSeparate: fn (GLenum, GLuint) callconv(cc) void = undefined;
-    pub var glStencilOp: fn (GLenum, GLenum, GLenum) callconv(cc) void = undefined;
-    pub var glStencilOpSeparate: fn (GLenum, GLenum, GLenum, GLenum) callconv(cc) void = undefined;
-    pub var glTexCoord1d: fn (GLdouble) callconv(cc) void = undefined;
-    pub var glTexCoord1dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glTexCoord1f: fn (GLfloat) callconv(cc) void = undefined;
-    pub var glTexCoord1fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glTexCoord1i: fn (GLint) callconv(cc) void = undefined;
-    pub var glTexCoord1iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glTexCoord1s: fn (GLshort) callconv(cc) void = undefined;
-    pub var glTexCoord1sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glTexCoord2d: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glTexCoord2dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glTexCoord2f: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glTexCoord2fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glTexCoord2i: fn (GLint, GLint) callconv(cc) void = undefined;
-    pub var glTexCoord2iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glTexCoord2s: fn (GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glTexCoord2sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glTexCoord3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glTexCoord3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glTexCoord3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glTexCoord3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glTexCoord3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glTexCoord3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glTexCoord3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glTexCoord3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glTexCoord4d: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glTexCoord4dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glTexCoord4f: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glTexCoord4fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glTexCoord4i: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glTexCoord4iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glTexCoord4s: fn (GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glTexCoord4sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glTexCoordPointer: fn (GLint, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glTexEnvf: fn (GLenum, GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glTexEnvfv: fn (GLenum, GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glTexEnvi: fn (GLenum, GLenum, GLint) callconv(cc) void = undefined;
-    pub var glTexEnviv: fn (GLenum, GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glTexGend: fn (GLenum, GLenum, GLdouble) callconv(cc) void = undefined;
-    pub var glTexGendv: fn (GLenum, GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glTexGenf: fn (GLenum, GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glTexGenfv: fn (GLenum, GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glTexGeni: fn (GLenum, GLenum, GLint) callconv(cc) void = undefined;
-    pub var glTexGeniv: fn (GLenum, GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glTexImage1D: fn (GLenum, GLint, GLint, GLsizei, GLint, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
-    pub var glTexImage2D: fn (GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
-    pub var glTexImage3D: fn (GLenum, GLint, GLint, GLsizei, GLsizei, GLsizei, GLint, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
-    pub var glTexParameterf: fn (GLenum, GLenum, GLfloat) callconv(cc) void = undefined;
-    pub var glTexParameterfv: fn (GLenum, GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glTexParameteri: fn (GLenum, GLenum, GLint) callconv(cc) void = undefined;
-    pub var glTexParameteriv: fn (GLenum, GLenum, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glTexSubImage1D: fn (GLenum, GLint, GLint, GLsizei, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
-    pub var glTexSubImage2D: fn (GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
-    pub var glTexSubImage3D: fn (GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
-    pub var glTranslated: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glTranslatef: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glUniform1f: fn (GLint, GLfloat) callconv(cc) void = undefined;
-    pub var glUniform1fv: fn (GLint, GLsizei, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniform1i: fn (GLint, GLint) callconv(cc) void = undefined;
-    pub var glUniform1iv: fn (GLint, GLsizei, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glUniform2f: fn (GLint, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glUniform2fv: fn (GLint, GLsizei, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniform2i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glUniform2iv: fn (GLint, GLsizei, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glUniform3f: fn (GLint, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glUniform3fv: fn (GLint, GLsizei, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniform3i: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glUniform3iv: fn (GLint, GLsizei, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glUniform4f: fn (GLint, GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glUniform4fv: fn (GLint, GLsizei, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniform4i: fn (GLint, GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glUniform4iv: fn (GLint, GLsizei, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glUniformMatrix2fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniformMatrix2x3fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniformMatrix2x4fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniformMatrix3fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniformMatrix3x2fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniformMatrix3x4fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniformMatrix4fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniformMatrix4x2fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUniformMatrix4x3fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glUnmapBuffer: fn (GLenum) callconv(cc) GLboolean = undefined;
-    pub var glUseProgram: fn (GLuint) callconv(cc) void = undefined;
-    pub var glValidateProgram: fn (GLuint) callconv(cc) void = undefined;
-    pub var glVertex2d: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glVertex2dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glVertex2f: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glVertex2fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glVertex2i: fn (GLint, GLint) callconv(cc) void = undefined;
-    pub var glVertex2iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glVertex2s: fn (GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glVertex2sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glVertex3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glVertex3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glVertex3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glVertex3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glVertex3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glVertex3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glVertex3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glVertex3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glVertex4d: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glVertex4dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glVertex4f: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glVertex4fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glVertex4i: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glVertex4iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glVertex4s: fn (GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glVertex4sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glVertexAttrib1d: fn (GLuint, GLdouble) callconv(cc) void = undefined;
-    pub var glVertexAttrib1dv: fn (GLuint, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glVertexAttrib1f: fn (GLuint, GLfloat) callconv(cc) void = undefined;
-    pub var glVertexAttrib1fv: fn (GLuint, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glVertexAttrib1s: fn (GLuint, GLshort) callconv(cc) void = undefined;
-    pub var glVertexAttrib1sv: fn (GLuint, [*c]const GLshort) callconv(cc) void = undefined;
-    pub var glVertexAttrib2d: fn (GLuint, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glVertexAttrib2dv: fn (GLuint, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glVertexAttrib2f: fn (GLuint, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glVertexAttrib2fv: fn (GLuint, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glVertexAttrib2s: fn (GLuint, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glVertexAttrib2sv: fn (GLuint, [*c]const GLshort) callconv(cc) void = undefined;
-    pub var glVertexAttrib3d: fn (GLuint, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glVertexAttrib3dv: fn (GLuint, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glVertexAttrib3f: fn (GLuint, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glVertexAttrib3fv: fn (GLuint, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glVertexAttrib3s: fn (GLuint, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glVertexAttrib3sv: fn (GLuint, [*c]const GLshort) callconv(cc) void = undefined;
-    pub var glVertexAttrib4Nbv: fn (GLuint, [*c]const GLbyte) callconv(cc) void = undefined;
-    pub var glVertexAttrib4Niv: fn (GLuint, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glVertexAttrib4Nsv: fn (GLuint, [*c]const GLshort) callconv(cc) void = undefined;
-    pub var glVertexAttrib4Nub: fn (GLuint, GLubyte, GLubyte, GLubyte, GLubyte) callconv(cc) void = undefined;
-    pub var glVertexAttrib4Nubv: fn (GLuint, [*c]const GLubyte) callconv(cc) void = undefined;
-    pub var glVertexAttrib4Nuiv: fn (GLuint, [*c]const GLuint) callconv(cc) void = undefined;
-    pub var glVertexAttrib4Nusv: fn (GLuint, [*c]const GLushort) callconv(cc) void = undefined;
-    pub var glVertexAttrib4bv: fn (GLuint, [*c]const GLbyte) callconv(cc) void = undefined;
-    pub var glVertexAttrib4d: fn (GLuint, GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glVertexAttrib4dv: fn (GLuint, [*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glVertexAttrib4f: fn (GLuint, GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glVertexAttrib4fv: fn (GLuint, [*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glVertexAttrib4iv: fn (GLuint, [*c]const GLint) callconv(cc) void = undefined;
-    pub var glVertexAttrib4s: fn (GLuint, GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glVertexAttrib4sv: fn (GLuint, [*c]const GLshort) callconv(cc) void = undefined;
-    pub var glVertexAttrib4ubv: fn (GLuint, [*c]const GLubyte) callconv(cc) void = undefined;
-    pub var glVertexAttrib4uiv: fn (GLuint, [*c]const GLuint) callconv(cc) void = undefined;
-    pub var glVertexAttrib4usv: fn (GLuint, [*c]const GLushort) callconv(cc) void = undefined;
-    pub var glVertexAttribPointer: fn (GLuint, GLint, GLenum, GLboolean, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glVertexPointer: fn (GLint, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
-    pub var glViewport: fn (GLint, GLint, GLsizei, GLsizei) callconv(cc) void = undefined;
-    pub var glWindowPos2d: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glWindowPos2dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glWindowPos2f: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glWindowPos2fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glWindowPos2i: fn (GLint, GLint) callconv(cc) void = undefined;
-    pub var glWindowPos2iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glWindowPos2s: fn (GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glWindowPos2sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
-    pub var glWindowPos3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
-    pub var glWindowPos3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
-    pub var glWindowPos3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
-    pub var glWindowPos3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
-    pub var glWindowPos3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
-    pub var glWindowPos3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
-    pub var glWindowPos3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
-    pub var glWindowPos3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glAccum: fn (GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glActiveTexture: fn (GLenum) callconv(cc) void = undefined;
+    var _glAlphaFunc: fn (GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glAreTexturesResident: fn (GLsizei, [*c]const GLuint, [*c]GLboolean) callconv(cc) GLboolean = undefined;
+    var _glArrayElement: fn (GLint) callconv(cc) void = undefined;
+    var _glAttachShader: fn (GLuint, GLuint) callconv(cc) void = undefined;
+    var _glBegin: fn (GLenum) callconv(cc) void = undefined;
+    var _glBeginQuery: fn (GLenum, GLuint) callconv(cc) void = undefined;
+    var _glBindAttribLocation: fn (GLuint, GLuint, [*c]const GLchar) callconv(cc) void = undefined;
+    var _glBindBuffer: fn (GLenum, GLuint) callconv(cc) void = undefined;
+    var _glBindFramebuffer: fn (GLenum, GLuint) callconv(cc) void = undefined;
+    var _glBindRenderbuffer: fn (GLenum, GLuint) callconv(cc) void = undefined;
+    var _glBindTexture: fn (GLenum, GLuint) callconv(cc) void = undefined;
+    var _glBitmap: fn (GLsizei, GLsizei, GLfloat, GLfloat, GLfloat, GLfloat, [*c]const GLubyte) callconv(cc) void = undefined;
+    var _glBlendColor: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glBlendEquation: fn (GLenum) callconv(cc) void = undefined;
+    var _glBlendEquationSeparate: fn (GLenum, GLenum) callconv(cc) void = undefined;
+    var _glBlendFunc: fn (GLenum, GLenum) callconv(cc) void = undefined;
+    var _glBlendFuncSeparate: fn (GLenum, GLenum, GLenum, GLenum) callconv(cc) void = undefined;
+    var _glBlitFramebuffer: fn (GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLbitfield, GLenum) callconv(cc) void = undefined;
+    var _glBufferData: fn (GLenum, GLsizeiptr, ?*const c_void, GLenum) callconv(cc) void = undefined;
+    var _glBufferSubData: fn (GLenum, GLintptr, GLsizeiptr, ?*const c_void) callconv(cc) void = undefined;
+    var _glCallList: fn (GLuint) callconv(cc) void = undefined;
+    var _glCallLists: fn (GLsizei, GLenum, ?*const c_void) callconv(cc) void = undefined;
+    var _glCheckFramebufferStatus: fn (GLenum) callconv(cc) GLenum = undefined;
+    var _glClear: fn (GLbitfield) callconv(cc) void = undefined;
+    var _glClearAccum: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glClearColor: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glClearDepth: fn (GLdouble) callconv(cc) void = undefined;
+    var _glClearIndex: fn (GLfloat) callconv(cc) void = undefined;
+    var _glClearStencil: fn (GLint) callconv(cc) void = undefined;
+    var _glClientActiveTexture: fn (GLenum) callconv(cc) void = undefined;
+    var _glClipPlane: fn (GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glColor3b: fn (GLbyte, GLbyte, GLbyte) callconv(cc) void = undefined;
+    var _glColor3bv: fn ([*c]const GLbyte) callconv(cc) void = undefined;
+    var _glColor3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glColor3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glColor3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glColor3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glColor3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glColor3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glColor3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glColor3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glColor3ub: fn (GLubyte, GLubyte, GLubyte) callconv(cc) void = undefined;
+    var _glColor3ubv: fn ([*c]const GLubyte) callconv(cc) void = undefined;
+    var _glColor3ui: fn (GLuint, GLuint, GLuint) callconv(cc) void = undefined;
+    var _glColor3uiv: fn ([*c]const GLuint) callconv(cc) void = undefined;
+    var _glColor3us: fn (GLushort, GLushort, GLushort) callconv(cc) void = undefined;
+    var _glColor3usv: fn ([*c]const GLushort) callconv(cc) void = undefined;
+    var _glColor4b: fn (GLbyte, GLbyte, GLbyte, GLbyte) callconv(cc) void = undefined;
+    var _glColor4bv: fn ([*c]const GLbyte) callconv(cc) void = undefined;
+    var _glColor4d: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glColor4dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glColor4f: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glColor4fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glColor4i: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glColor4iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glColor4s: fn (GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glColor4sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glColor4ub: fn (GLubyte, GLubyte, GLubyte, GLubyte) callconv(cc) void = undefined;
+    var _glColor4ubv: fn ([*c]const GLubyte) callconv(cc) void = undefined;
+    var _glColor4ui: fn (GLuint, GLuint, GLuint, GLuint) callconv(cc) void = undefined;
+    var _glColor4uiv: fn ([*c]const GLuint) callconv(cc) void = undefined;
+    var _glColor4us: fn (GLushort, GLushort, GLushort, GLushort) callconv(cc) void = undefined;
+    var _glColor4usv: fn ([*c]const GLushort) callconv(cc) void = undefined;
+    var _glColorMask: fn (GLboolean, GLboolean, GLboolean, GLboolean) callconv(cc) void = undefined;
+    var _glColorMaterial: fn (GLenum, GLenum) callconv(cc) void = undefined;
+    var _glColorPointer: fn (GLint, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glCompileShader: fn (GLuint) callconv(cc) void = undefined;
+    var _glCompressedTexImage1D: fn (GLenum, GLint, GLenum, GLsizei, GLint, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glCompressedTexImage2D: fn (GLenum, GLint, GLenum, GLsizei, GLsizei, GLint, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glCompressedTexImage3D: fn (GLenum, GLint, GLenum, GLsizei, GLsizei, GLsizei, GLint, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glCompressedTexSubImage1D: fn (GLenum, GLint, GLint, GLsizei, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glCompressedTexSubImage2D: fn (GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glCompressedTexSubImage3D: fn (GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glCopyPixels: fn (GLint, GLint, GLsizei, GLsizei, GLenum) callconv(cc) void = undefined;
+    var _glCopyTexImage1D: fn (GLenum, GLint, GLenum, GLint, GLint, GLsizei, GLint) callconv(cc) void = undefined;
+    var _glCopyTexImage2D: fn (GLenum, GLint, GLenum, GLint, GLint, GLsizei, GLsizei, GLint) callconv(cc) void = undefined;
+    var _glCopyTexSubImage1D: fn (GLenum, GLint, GLint, GLint, GLint, GLsizei) callconv(cc) void = undefined;
+    var _glCopyTexSubImage2D: fn (GLenum, GLint, GLint, GLint, GLint, GLint, GLsizei, GLsizei) callconv(cc) void = undefined;
+    var _glCopyTexSubImage3D: fn (GLenum, GLint, GLint, GLint, GLint, GLint, GLint, GLsizei, GLsizei) callconv(cc) void = undefined;
+    var _glCreateProgram: fn () callconv(cc) GLuint = undefined;
+    var _glCreateShader: fn (GLenum) callconv(cc) GLuint = undefined;
+    var _glCullFace: fn (GLenum) callconv(cc) void = undefined;
+    var _glDeleteBuffers: fn (GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
+    var _glDeleteFramebuffers: fn (GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
+    var _glDeleteLists: fn (GLuint, GLsizei) callconv(cc) void = undefined;
+    var _glDeleteProgram: fn (GLuint) callconv(cc) void = undefined;
+    var _glDeleteQueries: fn (GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
+    var _glDeleteRenderbuffers: fn (GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
+    var _glDeleteShader: fn (GLuint) callconv(cc) void = undefined;
+    var _glDeleteTextures: fn (GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
+    var _glDepthFunc: fn (GLenum) callconv(cc) void = undefined;
+    var _glDepthMask: fn (GLboolean) callconv(cc) void = undefined;
+    var _glDepthRange: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glDetachShader: fn (GLuint, GLuint) callconv(cc) void = undefined;
+    var _glDisable: fn (GLenum) callconv(cc) void = undefined;
+    var _glDisableClientState: fn (GLenum) callconv(cc) void = undefined;
+    var _glDisableVertexAttribArray: fn (GLuint) callconv(cc) void = undefined;
+    var _glDrawArrays: fn (GLenum, GLint, GLsizei) callconv(cc) void = undefined;
+    var _glDrawBuffer: fn (GLenum) callconv(cc) void = undefined;
+    var _glDrawBuffers: fn (GLsizei, [*c]const GLenum) callconv(cc) void = undefined;
+    var _glDrawElements: fn (GLenum, GLsizei, GLenum, ?*const c_void) callconv(cc) void = undefined;
+    var _glDrawPixels: fn (GLsizei, GLsizei, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
+    var _glDrawRangeElements: fn (GLenum, GLuint, GLuint, GLsizei, GLenum, ?*const c_void) callconv(cc) void = undefined;
+    var _glEdgeFlag: fn (GLboolean) callconv(cc) void = undefined;
+    var _glEdgeFlagPointer: fn (GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glEdgeFlagv: fn ([*c]const GLboolean) callconv(cc) void = undefined;
+    var _glEnable: fn (GLenum) callconv(cc) void = undefined;
+    var _glEnableClientState: fn (GLenum) callconv(cc) void = undefined;
+    var _glEnableVertexAttribArray: fn (GLuint) callconv(cc) void = undefined;
+    var _glEnd: fn () callconv(cc) void = undefined;
+    var _glEndList: fn () callconv(cc) void = undefined;
+    var _glEndQuery: fn (GLenum) callconv(cc) void = undefined;
+    var _glEvalCoord1d: fn (GLdouble) callconv(cc) void = undefined;
+    var _glEvalCoord1dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glEvalCoord1f: fn (GLfloat) callconv(cc) void = undefined;
+    var _glEvalCoord1fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glEvalCoord2d: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glEvalCoord2dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glEvalCoord2f: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glEvalCoord2fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glEvalMesh1: fn (GLenum, GLint, GLint) callconv(cc) void = undefined;
+    var _glEvalMesh2: fn (GLenum, GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glEvalPoint1: fn (GLint) callconv(cc) void = undefined;
+    var _glEvalPoint2: fn (GLint, GLint) callconv(cc) void = undefined;
+    var _glFeedbackBuffer: fn (GLsizei, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glFinish: fn () callconv(cc) void = undefined;
+    var _glFlush: fn () callconv(cc) void = undefined;
+    var _glFogCoordPointer: fn (GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glFogCoordd: fn (GLdouble) callconv(cc) void = undefined;
+    var _glFogCoorddv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glFogCoordf: fn (GLfloat) callconv(cc) void = undefined;
+    var _glFogCoordfv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glFogf: fn (GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glFogfv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glFogi: fn (GLenum, GLint) callconv(cc) void = undefined;
+    var _glFogiv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glFramebufferRenderbuffer: fn (GLenum, GLenum, GLenum, GLuint) callconv(cc) void = undefined;
+    var _glFramebufferTexture1D: fn (GLenum, GLenum, GLenum, GLuint, GLint) callconv(cc) void = undefined;
+    var _glFramebufferTexture2D: fn (GLenum, GLenum, GLenum, GLuint, GLint) callconv(cc) void = undefined;
+    var _glFramebufferTexture3D: fn (GLenum, GLenum, GLenum, GLuint, GLint, GLint) callconv(cc) void = undefined;
+    var _glFramebufferTextureLayer: fn (GLenum, GLenum, GLuint, GLint, GLint) callconv(cc) void = undefined;
+    var _glFrontFace: fn (GLenum) callconv(cc) void = undefined;
+    var _glFrustum: fn (GLdouble, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glGenBuffers: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
+    var _glGenFramebuffers: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
+    var _glGenLists: fn (GLsizei) callconv(cc) GLuint = undefined;
+    var _glGenQueries: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
+    var _glGenRenderbuffers: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
+    var _glGenTextures: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
+    var _glGenerateMipmap: fn (GLenum) callconv(cc) void = undefined;
+    var _glGetActiveAttrib: fn (GLuint, GLuint, GLsizei, [*c]GLsizei, [*c]GLint, [*c]GLenum, [*c]GLchar) callconv(cc) void = undefined;
+    var _glGetActiveUniform: fn (GLuint, GLuint, GLsizei, [*c]GLsizei, [*c]GLint, [*c]GLenum, [*c]GLchar) callconv(cc) void = undefined;
+    var _glGetAttachedShaders: fn (GLuint, GLsizei, [*c]GLsizei, [*c]GLuint) callconv(cc) void = undefined;
+    var _glGetAttribLocation: fn (GLuint, [*c]const GLchar) callconv(cc) GLint = undefined;
+    var _glGetBooleanv: fn (GLenum, [*c]GLboolean) callconv(cc) void = undefined;
+    var _glGetBufferParameteriv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetBufferPointerv: fn (GLenum, GLenum, [*c]?*c_void) callconv(cc) void = undefined;
+    var _glGetBufferSubData: fn (GLenum, GLintptr, GLsizeiptr, ?*c_void) callconv(cc) void = undefined;
+    var _glGetClipPlane: fn (GLenum, [*c]GLdouble) callconv(cc) void = undefined;
+    var _glGetCompressedTexImage: fn (GLenum, GLint, ?*c_void) callconv(cc) void = undefined;
+    var _glGetDoublev: fn (GLenum, [*c]GLdouble) callconv(cc) void = undefined;
+    var _glGetError: fn () callconv(cc) GLenum = undefined;
+    var _glGetFloatv: fn (GLenum, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glGetFramebufferAttachmentParameteriv: fn (GLenum, GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetIntegerv: fn (GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetLightfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glGetLightiv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetMapdv: fn (GLenum, GLenum, [*c]GLdouble) callconv(cc) void = undefined;
+    var _glGetMapfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glGetMapiv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetMaterialfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glGetMaterialiv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetPixelMapfv: fn (GLenum, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glGetPixelMapuiv: fn (GLenum, [*c]GLuint) callconv(cc) void = undefined;
+    var _glGetPixelMapusv: fn (GLenum, [*c]GLushort) callconv(cc) void = undefined;
+    var _glGetPointerv: fn (GLenum, [*c]?*c_void) callconv(cc) void = undefined;
+    var _glGetPolygonStipple: fn ([*c]GLubyte) callconv(cc) void = undefined;
+    var _glGetProgramInfoLog: fn (GLuint, GLsizei, [*c]GLsizei, [*c]GLchar) callconv(cc) void = undefined;
+    var _glGetProgramiv: fn (GLuint, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetQueryObjectiv: fn (GLuint, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetQueryObjectuiv: fn (GLuint, GLenum, [*c]GLuint) callconv(cc) void = undefined;
+    var _glGetQueryiv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetRenderbufferParameteriv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetShaderInfoLog: fn (GLuint, GLsizei, [*c]GLsizei, [*c]GLchar) callconv(cc) void = undefined;
+    var _glGetShaderSource: fn (GLuint, GLsizei, [*c]GLsizei, [*c]GLchar) callconv(cc) void = undefined;
+    var _glGetShaderiv: fn (GLuint, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetString: fn (GLenum) callconv(cc) [*c]const GLubyte = undefined;
+    var _glGetTexEnvfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glGetTexEnviv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetTexGendv: fn (GLenum, GLenum, [*c]GLdouble) callconv(cc) void = undefined;
+    var _glGetTexGenfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glGetTexGeniv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetTexImage: fn (GLenum, GLint, GLenum, GLenum, ?*c_void) callconv(cc) void = undefined;
+    var _glGetTexLevelParameterfv: fn (GLenum, GLint, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glGetTexLevelParameteriv: fn (GLenum, GLint, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetTexParameterfv: fn (GLenum, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glGetTexParameteriv: fn (GLenum, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetUniformLocation: fn (GLuint, [*c]const GLchar) callconv(cc) GLint = undefined;
+    var _glGetUniformfv: fn (GLuint, GLint, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glGetUniformiv: fn (GLuint, GLint, [*c]GLint) callconv(cc) void = undefined;
+    var _glGetVertexAttribPointerv: fn (GLuint, GLenum, [*c]?*c_void) callconv(cc) void = undefined;
+    var _glGetVertexAttribdv: fn (GLuint, GLenum, [*c]GLdouble) callconv(cc) void = undefined;
+    var _glGetVertexAttribfv: fn (GLuint, GLenum, [*c]GLfloat) callconv(cc) void = undefined;
+    var _glGetVertexAttribiv: fn (GLuint, GLenum, [*c]GLint) callconv(cc) void = undefined;
+    var _glHint: fn (GLenum, GLenum) callconv(cc) void = undefined;
+    var _glIndexMask: fn (GLuint) callconv(cc) void = undefined;
+    var _glIndexPointer: fn (GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glIndexd: fn (GLdouble) callconv(cc) void = undefined;
+    var _glIndexdv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glIndexf: fn (GLfloat) callconv(cc) void = undefined;
+    var _glIndexfv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glIndexi: fn (GLint) callconv(cc) void = undefined;
+    var _glIndexiv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glIndexs: fn (GLshort) callconv(cc) void = undefined;
+    var _glIndexsv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glIndexub: fn (GLubyte) callconv(cc) void = undefined;
+    var _glIndexubv: fn ([*c]const GLubyte) callconv(cc) void = undefined;
+    var _glInitNames: fn () callconv(cc) void = undefined;
+    var _glInterleavedArrays: fn (GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glIsBuffer: fn (GLuint) callconv(cc) GLboolean = undefined;
+    var _glIsEnabled: fn (GLenum) callconv(cc) GLboolean = undefined;
+    var _glIsFramebuffer: fn (GLuint) callconv(cc) GLboolean = undefined;
+    var _glIsList: fn (GLuint) callconv(cc) GLboolean = undefined;
+    var _glIsProgram: fn (GLuint) callconv(cc) GLboolean = undefined;
+    var _glIsQuery: fn (GLuint) callconv(cc) GLboolean = undefined;
+    var _glIsRenderbuffer: fn (GLuint) callconv(cc) GLboolean = undefined;
+    var _glIsShader: fn (GLuint) callconv(cc) GLboolean = undefined;
+    var _glIsTexture: fn (GLuint) callconv(cc) GLboolean = undefined;
+    var _glLightModelf: fn (GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glLightModelfv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glLightModeli: fn (GLenum, GLint) callconv(cc) void = undefined;
+    var _glLightModeliv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glLightf: fn (GLenum, GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glLightfv: fn (GLenum, GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glLighti: fn (GLenum, GLenum, GLint) callconv(cc) void = undefined;
+    var _glLightiv: fn (GLenum, GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glLineStipple: fn (GLint, GLushort) callconv(cc) void = undefined;
+    var _glLineWidth: fn (GLfloat) callconv(cc) void = undefined;
+    var _glLinkProgram: fn (GLuint) callconv(cc) void = undefined;
+    var _glListBase: fn (GLuint) callconv(cc) void = undefined;
+    var _glLoadIdentity: fn () callconv(cc) void = undefined;
+    var _glLoadMatrixd: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glLoadMatrixf: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glLoadName: fn (GLuint) callconv(cc) void = undefined;
+    var _glLoadTransposeMatrixd: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glLoadTransposeMatrixf: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glLogicOp: fn (GLenum) callconv(cc) void = undefined;
+    var _glMap1d: fn (GLenum, GLdouble, GLdouble, GLint, GLint, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glMap1f: fn (GLenum, GLfloat, GLfloat, GLint, GLint, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glMap2d: fn (GLenum, GLdouble, GLdouble, GLint, GLint, GLdouble, GLdouble, GLint, GLint, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glMap2f: fn (GLenum, GLfloat, GLfloat, GLint, GLint, GLfloat, GLfloat, GLint, GLint, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glMapBuffer: fn (GLenum, GLenum) callconv(cc) ?*c_void = undefined;
+    var _glMapGrid1d: fn (GLint, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glMapGrid1f: fn (GLint, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glMapGrid2d: fn (GLint, GLdouble, GLdouble, GLint, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glMapGrid2f: fn (GLint, GLfloat, GLfloat, GLint, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glMaterialf: fn (GLenum, GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glMaterialfv: fn (GLenum, GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glMateriali: fn (GLenum, GLenum, GLint) callconv(cc) void = undefined;
+    var _glMaterialiv: fn (GLenum, GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glMatrixMode: fn (GLenum) callconv(cc) void = undefined;
+    var _glMultMatrixd: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glMultMatrixf: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glMultTransposeMatrixd: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glMultTransposeMatrixf: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glMultiDrawArrays: fn (GLenum, [*c]const GLint, [*c]const GLsizei, GLsizei) callconv(cc) void = undefined;
+    var _glMultiDrawElements: fn (GLenum, [*c]const GLsizei, GLenum, [*c]const ?*const c_void, GLsizei) callconv(cc) void = undefined;
+    var _glMultiTexCoord1d: fn (GLenum, GLdouble) callconv(cc) void = undefined;
+    var _glMultiTexCoord1dv: fn (GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glMultiTexCoord1f: fn (GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glMultiTexCoord1fv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glMultiTexCoord1i: fn (GLenum, GLint) callconv(cc) void = undefined;
+    var _glMultiTexCoord1iv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glMultiTexCoord1s: fn (GLenum, GLshort) callconv(cc) void = undefined;
+    var _glMultiTexCoord1sv: fn (GLenum, [*c]const GLshort) callconv(cc) void = undefined;
+    var _glMultiTexCoord2d: fn (GLenum, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glMultiTexCoord2dv: fn (GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glMultiTexCoord2f: fn (GLenum, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glMultiTexCoord2fv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glMultiTexCoord2i: fn (GLenum, GLint, GLint) callconv(cc) void = undefined;
+    var _glMultiTexCoord2iv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glMultiTexCoord2s: fn (GLenum, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glMultiTexCoord2sv: fn (GLenum, [*c]const GLshort) callconv(cc) void = undefined;
+    var _glMultiTexCoord3d: fn (GLenum, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glMultiTexCoord3dv: fn (GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glMultiTexCoord3f: fn (GLenum, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glMultiTexCoord3fv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glMultiTexCoord3i: fn (GLenum, GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glMultiTexCoord3iv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glMultiTexCoord3s: fn (GLenum, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glMultiTexCoord3sv: fn (GLenum, [*c]const GLshort) callconv(cc) void = undefined;
+    var _glMultiTexCoord4d: fn (GLenum, GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glMultiTexCoord4dv: fn (GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glMultiTexCoord4f: fn (GLenum, GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glMultiTexCoord4fv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glMultiTexCoord4i: fn (GLenum, GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glMultiTexCoord4iv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glMultiTexCoord4s: fn (GLenum, GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glMultiTexCoord4sv: fn (GLenum, [*c]const GLshort) callconv(cc) void = undefined;
+    var _glNewList: fn (GLuint, GLenum) callconv(cc) void = undefined;
+    var _glNormal3b: fn (GLbyte, GLbyte, GLbyte) callconv(cc) void = undefined;
+    var _glNormal3bv: fn ([*c]const GLbyte) callconv(cc) void = undefined;
+    var _glNormal3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glNormal3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glNormal3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glNormal3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glNormal3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glNormal3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glNormal3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glNormal3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glNormalPointer: fn (GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glOrtho: fn (GLdouble, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glPassThrough: fn (GLfloat) callconv(cc) void = undefined;
+    var _glPixelMapfv: fn (GLenum, GLsizei, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glPixelMapuiv: fn (GLenum, GLsizei, [*c]const GLuint) callconv(cc) void = undefined;
+    var _glPixelMapusv: fn (GLenum, GLsizei, [*c]const GLushort) callconv(cc) void = undefined;
+    var _glPixelStoref: fn (GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glPixelStorei: fn (GLenum, GLint) callconv(cc) void = undefined;
+    var _glPixelTransferf: fn (GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glPixelTransferi: fn (GLenum, GLint) callconv(cc) void = undefined;
+    var _glPixelZoom: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glPointParameterf: fn (GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glPointParameterfv: fn (GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glPointParameteri: fn (GLenum, GLint) callconv(cc) void = undefined;
+    var _glPointParameteriv: fn (GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glPointSize: fn (GLfloat) callconv(cc) void = undefined;
+    var _glPolygonMode: fn (GLenum, GLenum) callconv(cc) void = undefined;
+    var _glPolygonOffset: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glPolygonStipple: fn ([*c]const GLubyte) callconv(cc) void = undefined;
+    var _glPopAttrib: fn () callconv(cc) void = undefined;
+    var _glPopClientAttrib: fn () callconv(cc) void = undefined;
+    var _glPopMatrix: fn () callconv(cc) void = undefined;
+    var _glPopName: fn () callconv(cc) void = undefined;
+    var _glPrioritizeTextures: fn (GLsizei, [*c]const GLuint, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glPushAttrib: fn (GLbitfield) callconv(cc) void = undefined;
+    var _glPushClientAttrib: fn (GLbitfield) callconv(cc) void = undefined;
+    var _glPushMatrix: fn () callconv(cc) void = undefined;
+    var _glPushName: fn (GLuint) callconv(cc) void = undefined;
+    var _glRasterPos2d: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glRasterPos2dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glRasterPos2f: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glRasterPos2fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glRasterPos2i: fn (GLint, GLint) callconv(cc) void = undefined;
+    var _glRasterPos2iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glRasterPos2s: fn (GLshort, GLshort) callconv(cc) void = undefined;
+    var _glRasterPos2sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glRasterPos3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glRasterPos3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glRasterPos3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glRasterPos3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glRasterPos3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glRasterPos3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glRasterPos3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glRasterPos3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glRasterPos4d: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glRasterPos4dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glRasterPos4f: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glRasterPos4fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glRasterPos4i: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glRasterPos4iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glRasterPos4s: fn (GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glRasterPos4sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glReadBuffer: fn (GLenum) callconv(cc) void = undefined;
+    var _glReadPixels: fn (GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, ?*c_void) callconv(cc) void = undefined;
+    var _glRectd: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glRectdv: fn ([*c]const GLdouble, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glRectf: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glRectfv: fn ([*c]const GLfloat, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glRecti: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glRectiv: fn ([*c]const GLint, [*c]const GLint) callconv(cc) void = undefined;
+    var _glRects: fn (GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glRectsv: fn ([*c]const GLshort, [*c]const GLshort) callconv(cc) void = undefined;
+    var _glRenderMode: fn (GLenum) callconv(cc) GLint = undefined;
+    var _glRenderbufferStorage: fn (GLenum, GLenum, GLsizei, GLsizei) callconv(cc) void = undefined;
+    var _glRenderbufferStorageMultisample: fn (GLenum, GLsizei, GLenum, GLsizei, GLsizei) callconv(cc) void = undefined;
+    var _glRotated: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glRotatef: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glSampleCoverage: fn (GLfloat, GLboolean) callconv(cc) void = undefined;
+    var _glScaled: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glScalef: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glScissor: fn (GLint, GLint, GLsizei, GLsizei) callconv(cc) void = undefined;
+    var _glSecondaryColor3b: fn (GLbyte, GLbyte, GLbyte) callconv(cc) void = undefined;
+    var _glSecondaryColor3bv: fn ([*c]const GLbyte) callconv(cc) void = undefined;
+    var _glSecondaryColor3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glSecondaryColor3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glSecondaryColor3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glSecondaryColor3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glSecondaryColor3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glSecondaryColor3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glSecondaryColor3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glSecondaryColor3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glSecondaryColor3ub: fn (GLubyte, GLubyte, GLubyte) callconv(cc) void = undefined;
+    var _glSecondaryColor3ubv: fn ([*c]const GLubyte) callconv(cc) void = undefined;
+    var _glSecondaryColor3ui: fn (GLuint, GLuint, GLuint) callconv(cc) void = undefined;
+    var _glSecondaryColor3uiv: fn ([*c]const GLuint) callconv(cc) void = undefined;
+    var _glSecondaryColor3us: fn (GLushort, GLushort, GLushort) callconv(cc) void = undefined;
+    var _glSecondaryColor3usv: fn ([*c]const GLushort) callconv(cc) void = undefined;
+    var _glSecondaryColorPointer: fn (GLint, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glSelectBuffer: fn (GLsizei, [*c]GLuint) callconv(cc) void = undefined;
+    var _glShadeModel: fn (GLenum) callconv(cc) void = undefined;
+    var _glShaderSource: fn (GLuint, GLsizei, [*c]const [*c]const GLchar, [*c]const GLint) callconv(cc) void = undefined;
+    var _glStencilFunc: fn (GLenum, GLint, GLuint) callconv(cc) void = undefined;
+    var _glStencilFuncSeparate: fn (GLenum, GLenum, GLint, GLuint) callconv(cc) void = undefined;
+    var _glStencilMask: fn (GLuint) callconv(cc) void = undefined;
+    var _glStencilMaskSeparate: fn (GLenum, GLuint) callconv(cc) void = undefined;
+    var _glStencilOp: fn (GLenum, GLenum, GLenum) callconv(cc) void = undefined;
+    var _glStencilOpSeparate: fn (GLenum, GLenum, GLenum, GLenum) callconv(cc) void = undefined;
+    var _glTexCoord1d: fn (GLdouble) callconv(cc) void = undefined;
+    var _glTexCoord1dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glTexCoord1f: fn (GLfloat) callconv(cc) void = undefined;
+    var _glTexCoord1fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glTexCoord1i: fn (GLint) callconv(cc) void = undefined;
+    var _glTexCoord1iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glTexCoord1s: fn (GLshort) callconv(cc) void = undefined;
+    var _glTexCoord1sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glTexCoord2d: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glTexCoord2dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glTexCoord2f: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glTexCoord2fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glTexCoord2i: fn (GLint, GLint) callconv(cc) void = undefined;
+    var _glTexCoord2iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glTexCoord2s: fn (GLshort, GLshort) callconv(cc) void = undefined;
+    var _glTexCoord2sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glTexCoord3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glTexCoord3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glTexCoord3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glTexCoord3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glTexCoord3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glTexCoord3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glTexCoord3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glTexCoord3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glTexCoord4d: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glTexCoord4dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glTexCoord4f: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glTexCoord4fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glTexCoord4i: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glTexCoord4iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glTexCoord4s: fn (GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glTexCoord4sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glTexCoordPointer: fn (GLint, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glTexEnvf: fn (GLenum, GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glTexEnvfv: fn (GLenum, GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glTexEnvi: fn (GLenum, GLenum, GLint) callconv(cc) void = undefined;
+    var _glTexEnviv: fn (GLenum, GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glTexGend: fn (GLenum, GLenum, GLdouble) callconv(cc) void = undefined;
+    var _glTexGendv: fn (GLenum, GLenum, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glTexGenf: fn (GLenum, GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glTexGenfv: fn (GLenum, GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glTexGeni: fn (GLenum, GLenum, GLint) callconv(cc) void = undefined;
+    var _glTexGeniv: fn (GLenum, GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glTexImage1D: fn (GLenum, GLint, GLint, GLsizei, GLint, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
+    var _glTexImage2D: fn (GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
+    var _glTexImage3D: fn (GLenum, GLint, GLint, GLsizei, GLsizei, GLsizei, GLint, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
+    var _glTexParameterf: fn (GLenum, GLenum, GLfloat) callconv(cc) void = undefined;
+    var _glTexParameterfv: fn (GLenum, GLenum, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glTexParameteri: fn (GLenum, GLenum, GLint) callconv(cc) void = undefined;
+    var _glTexParameteriv: fn (GLenum, GLenum, [*c]const GLint) callconv(cc) void = undefined;
+    var _glTexSubImage1D: fn (GLenum, GLint, GLint, GLsizei, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
+    var _glTexSubImage2D: fn (GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
+    var _glTexSubImage3D: fn (GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, ?*const c_void) callconv(cc) void = undefined;
+    var _glTranslated: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glTranslatef: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glUniform1f: fn (GLint, GLfloat) callconv(cc) void = undefined;
+    var _glUniform1fv: fn (GLint, GLsizei, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniform1i: fn (GLint, GLint) callconv(cc) void = undefined;
+    var _glUniform1iv: fn (GLint, GLsizei, [*c]const GLint) callconv(cc) void = undefined;
+    var _glUniform2f: fn (GLint, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glUniform2fv: fn (GLint, GLsizei, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniform2i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glUniform2iv: fn (GLint, GLsizei, [*c]const GLint) callconv(cc) void = undefined;
+    var _glUniform3f: fn (GLint, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glUniform3fv: fn (GLint, GLsizei, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniform3i: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glUniform3iv: fn (GLint, GLsizei, [*c]const GLint) callconv(cc) void = undefined;
+    var _glUniform4f: fn (GLint, GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glUniform4fv: fn (GLint, GLsizei, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniform4i: fn (GLint, GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glUniform4iv: fn (GLint, GLsizei, [*c]const GLint) callconv(cc) void = undefined;
+    var _glUniformMatrix2fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniformMatrix2x3fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniformMatrix2x4fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniformMatrix3fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniformMatrix3x2fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniformMatrix3x4fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniformMatrix4fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniformMatrix4x2fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUniformMatrix4x3fv: fn (GLint, GLsizei, GLboolean, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glUnmapBuffer: fn (GLenum) callconv(cc) GLboolean = undefined;
+    var _glUseProgram: fn (GLuint) callconv(cc) void = undefined;
+    var _glValidateProgram: fn (GLuint) callconv(cc) void = undefined;
+    var _glVertex2d: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glVertex2dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glVertex2f: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glVertex2fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glVertex2i: fn (GLint, GLint) callconv(cc) void = undefined;
+    var _glVertex2iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glVertex2s: fn (GLshort, GLshort) callconv(cc) void = undefined;
+    var _glVertex2sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glVertex3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glVertex3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glVertex3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glVertex3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glVertex3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glVertex3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glVertex3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glVertex3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glVertex4d: fn (GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glVertex4dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glVertex4f: fn (GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glVertex4fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glVertex4i: fn (GLint, GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glVertex4iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glVertex4s: fn (GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glVertex4sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glVertexAttrib1d: fn (GLuint, GLdouble) callconv(cc) void = undefined;
+    var _glVertexAttrib1dv: fn (GLuint, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glVertexAttrib1f: fn (GLuint, GLfloat) callconv(cc) void = undefined;
+    var _glVertexAttrib1fv: fn (GLuint, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glVertexAttrib1s: fn (GLuint, GLshort) callconv(cc) void = undefined;
+    var _glVertexAttrib1sv: fn (GLuint, [*c]const GLshort) callconv(cc) void = undefined;
+    var _glVertexAttrib2d: fn (GLuint, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glVertexAttrib2dv: fn (GLuint, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glVertexAttrib2f: fn (GLuint, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glVertexAttrib2fv: fn (GLuint, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glVertexAttrib2s: fn (GLuint, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glVertexAttrib2sv: fn (GLuint, [*c]const GLshort) callconv(cc) void = undefined;
+    var _glVertexAttrib3d: fn (GLuint, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glVertexAttrib3dv: fn (GLuint, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glVertexAttrib3f: fn (GLuint, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glVertexAttrib3fv: fn (GLuint, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glVertexAttrib3s: fn (GLuint, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glVertexAttrib3sv: fn (GLuint, [*c]const GLshort) callconv(cc) void = undefined;
+    var _glVertexAttrib4Nbv: fn (GLuint, [*c]const GLbyte) callconv(cc) void = undefined;
+    var _glVertexAttrib4Niv: fn (GLuint, [*c]const GLint) callconv(cc) void = undefined;
+    var _glVertexAttrib4Nsv: fn (GLuint, [*c]const GLshort) callconv(cc) void = undefined;
+    var _glVertexAttrib4Nub: fn (GLuint, GLubyte, GLubyte, GLubyte, GLubyte) callconv(cc) void = undefined;
+    var _glVertexAttrib4Nubv: fn (GLuint, [*c]const GLubyte) callconv(cc) void = undefined;
+    var _glVertexAttrib4Nuiv: fn (GLuint, [*c]const GLuint) callconv(cc) void = undefined;
+    var _glVertexAttrib4Nusv: fn (GLuint, [*c]const GLushort) callconv(cc) void = undefined;
+    var _glVertexAttrib4bv: fn (GLuint, [*c]const GLbyte) callconv(cc) void = undefined;
+    var _glVertexAttrib4d: fn (GLuint, GLdouble, GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glVertexAttrib4dv: fn (GLuint, [*c]const GLdouble) callconv(cc) void = undefined;
+    var _glVertexAttrib4f: fn (GLuint, GLfloat, GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glVertexAttrib4fv: fn (GLuint, [*c]const GLfloat) callconv(cc) void = undefined;
+    var _glVertexAttrib4iv: fn (GLuint, [*c]const GLint) callconv(cc) void = undefined;
+    var _glVertexAttrib4s: fn (GLuint, GLshort, GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glVertexAttrib4sv: fn (GLuint, [*c]const GLshort) callconv(cc) void = undefined;
+    var _glVertexAttrib4ubv: fn (GLuint, [*c]const GLubyte) callconv(cc) void = undefined;
+    var _glVertexAttrib4uiv: fn (GLuint, [*c]const GLuint) callconv(cc) void = undefined;
+    var _glVertexAttrib4usv: fn (GLuint, [*c]const GLushort) callconv(cc) void = undefined;
+    var _glVertexAttribPointer: fn (GLuint, GLint, GLenum, GLboolean, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glVertexPointer: fn (GLint, GLenum, GLsizei, ?*const c_void) callconv(cc) void = undefined;
+    var _glViewport: fn (GLint, GLint, GLsizei, GLsizei) callconv(cc) void = undefined;
+    var _glWindowPos2d: fn (GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glWindowPos2dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glWindowPos2f: fn (GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glWindowPos2fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glWindowPos2i: fn (GLint, GLint) callconv(cc) void = undefined;
+    var _glWindowPos2iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glWindowPos2s: fn (GLshort, GLshort) callconv(cc) void = undefined;
+    var _glWindowPos2sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+    var _glWindowPos3d: fn (GLdouble, GLdouble, GLdouble) callconv(cc) void = undefined;
+    var _glWindowPos3dv: fn ([*c]const GLdouble) callconv(cc) void = undefined;
+    var _glWindowPos3f: fn (GLfloat, GLfloat, GLfloat) callconv(cc) void = undefined;
+    var _glWindowPos3fv: fn ([*c]const GLfloat) callconv(cc) void = undefined;
+    var _glWindowPos3i: fn (GLint, GLint, GLint) callconv(cc) void = undefined;
+    var _glWindowPos3iv: fn ([*c]const GLint) callconv(cc) void = undefined;
+    var _glWindowPos3s: fn (GLshort, GLshort, GLshort) callconv(cc) void = undefined;
+    var _glWindowPos3sv: fn ([*c]const GLshort) callconv(cc) void = undefined;
+
+    pub inline fn glAccum(arg0: GLenum, arg1: GLfloat) void {
+        _glAccum(arg0, arg1);
+    }
+    pub inline fn glActiveTexture(arg0: GLenum) void {
+        _glActiveTexture(arg0);
+    }
+    pub inline fn glAlphaFunc(arg0: GLenum, arg1: GLfloat) void {
+        _glAlphaFunc(arg0, arg1);
+    }
+    pub inline fn glAreTexturesResident(arg0: GLsizei, arg1: [*c]const GLuint, arg2: [*c]GLboolean) GLboolean {
+        return _glAreTexturesResident(arg0, arg1, arg2);
+    }
+    pub inline fn glArrayElement(arg0: GLint) void {
+        _glArrayElement(arg0);
+    }
+    pub inline fn glAttachShader(arg0: GLuint, arg1: GLuint) void {
+        _glAttachShader(arg0, arg1);
+    }
+    pub inline fn glBegin(arg0: GLenum) void {
+        _glBegin(arg0);
+    }
+    pub inline fn glBeginQuery(arg0: GLenum, arg1: GLuint) void {
+        _glBeginQuery(arg0, arg1);
+    }
+    pub inline fn glBindAttribLocation(arg0: GLuint, arg1: GLuint, arg2: [*c]const GLchar) void {
+        _glBindAttribLocation(arg0, arg1, arg2);
+    }
+    pub inline fn glBindBuffer(arg0: GLenum, arg1: GLuint) void {
+        _glBindBuffer(arg0, arg1);
+    }
+    pub inline fn glBindFramebuffer(arg0: GLenum, arg1: GLuint) void {
+        _glBindFramebuffer(arg0, arg1);
+    }
+    pub inline fn glBindRenderbuffer(arg0: GLenum, arg1: GLuint) void {
+        _glBindRenderbuffer(arg0, arg1);
+    }
+    pub inline fn glBindTexture(arg0: GLenum, arg1: GLuint) void {
+        _glBindTexture(arg0, arg1);
+    }
+    pub inline fn glBitmap(arg0: GLsizei, arg1: GLsizei, arg2: GLfloat, arg3: GLfloat, arg4: GLfloat, arg5: GLfloat, arg6: [*c]const GLubyte) void {
+        _glBitmap(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+    }
+    pub inline fn glBlendColor(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glBlendColor(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glBlendEquation(arg0: GLenum) void {
+        _glBlendEquation(arg0);
+    }
+    pub inline fn glBlendEquationSeparate(arg0: GLenum, arg1: GLenum) void {
+        _glBlendEquationSeparate(arg0, arg1);
+    }
+    pub inline fn glBlendFunc(arg0: GLenum, arg1: GLenum) void {
+        _glBlendFunc(arg0, arg1);
+    }
+    pub inline fn glBlendFuncSeparate(arg0: GLenum, arg1: GLenum, arg2: GLenum, arg3: GLenum) void {
+        _glBlendFuncSeparate(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glBlitFramebuffer(arg0: GLint, arg1: GLint, arg2: GLint, arg3: GLint, arg4: GLint, arg5: GLint, arg6: GLint, arg7: GLint, arg8: GLbitfield, arg9: GLenum) void {
+        _glBlitFramebuffer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
+    }
+    pub inline fn glBufferData(arg0: GLenum, arg1: GLsizeiptr, arg2: ?*const c_void, arg3: GLenum) void {
+        _glBufferData(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glBufferSubData(arg0: GLenum, arg1: GLintptr, arg2: GLsizeiptr, arg3: ?*const c_void) void {
+        _glBufferSubData(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glCallList(arg0: GLuint) void {
+        _glCallList(arg0);
+    }
+    pub inline fn glCallLists(arg0: GLsizei, arg1: GLenum, arg2: ?*const c_void) void {
+        _glCallLists(arg0, arg1, arg2);
+    }
+    pub inline fn glCheckFramebufferStatus(arg0: GLenum) GLenum {
+        return _glCheckFramebufferStatus(arg0);
+    }
+    pub inline fn glClear(arg0: GLbitfield) void {
+        _glClear(arg0);
+    }
+    pub inline fn glClearAccum(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glClearAccum(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glClearColor(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glClearColor(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glClearDepth(arg0: GLdouble) void {
+        _glClearDepth(arg0);
+    }
+    pub inline fn glClearIndex(arg0: GLfloat) void {
+        _glClearIndex(arg0);
+    }
+    pub inline fn glClearStencil(arg0: GLint) void {
+        _glClearStencil(arg0);
+    }
+    pub inline fn glClientActiveTexture(arg0: GLenum) void {
+        _glClientActiveTexture(arg0);
+    }
+    pub inline fn glClipPlane(arg0: GLenum, arg1: [*c]const GLdouble) void {
+        _glClipPlane(arg0, arg1);
+    }
+    pub inline fn glColor3b(arg0: GLbyte, arg1: GLbyte, arg2: GLbyte) void {
+        _glColor3b(arg0, arg1, arg2);
+    }
+    pub inline fn glColor3bv(arg0: [*c]const GLbyte) void {
+        _glColor3bv(arg0);
+    }
+    pub inline fn glColor3d(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble) void {
+        _glColor3d(arg0, arg1, arg2);
+    }
+    pub inline fn glColor3dv(arg0: [*c]const GLdouble) void {
+        _glColor3dv(arg0);
+    }
+    pub inline fn glColor3f(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat) void {
+        _glColor3f(arg0, arg1, arg2);
+    }
+    pub inline fn glColor3fv(arg0: [*c]const GLfloat) void {
+        _glColor3fv(arg0);
+    }
+    pub inline fn glColor3i(arg0: GLint, arg1: GLint, arg2: GLint) void {
+        _glColor3i(arg0, arg1, arg2);
+    }
+    pub inline fn glColor3iv(arg0: [*c]const GLint) void {
+        _glColor3iv(arg0);
+    }
+    pub inline fn glColor3s(arg0: GLshort, arg1: GLshort, arg2: GLshort) void {
+        _glColor3s(arg0, arg1, arg2);
+    }
+    pub inline fn glColor3sv(arg0: [*c]const GLshort) void {
+        _glColor3sv(arg0);
+    }
+    pub inline fn glColor3ub(arg0: GLubyte, arg1: GLubyte, arg2: GLubyte) void {
+        _glColor3ub(arg0, arg1, arg2);
+    }
+    pub inline fn glColor3ubv(arg0: [*c]const GLubyte) void {
+        _glColor3ubv(arg0);
+    }
+    pub inline fn glColor3ui(arg0: GLuint, arg1: GLuint, arg2: GLuint) void {
+        _glColor3ui(arg0, arg1, arg2);
+    }
+    pub inline fn glColor3uiv(arg0: [*c]const GLuint) void {
+        _glColor3uiv(arg0);
+    }
+    pub inline fn glColor3us(arg0: GLushort, arg1: GLushort, arg2: GLushort) void {
+        _glColor3us(arg0, arg1, arg2);
+    }
+    pub inline fn glColor3usv(arg0: [*c]const GLushort) void {
+        _glColor3usv(arg0);
+    }
+    pub inline fn glColor4b(arg0: GLbyte, arg1: GLbyte, arg2: GLbyte, arg3: GLbyte) void {
+        _glColor4b(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glColor4bv(arg0: [*c]const GLbyte) void {
+        _glColor4bv(arg0);
+    }
+    pub inline fn glColor4d(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble) void {
+        _glColor4d(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glColor4dv(arg0: [*c]const GLdouble) void {
+        _glColor4dv(arg0);
+    }
+    pub inline fn glColor4f(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glColor4f(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glColor4fv(arg0: [*c]const GLfloat) void {
+        _glColor4fv(arg0);
+    }
+    pub inline fn glColor4i(arg0: GLint, arg1: GLint, arg2: GLint, arg3: GLint) void {
+        _glColor4i(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glColor4iv(arg0: [*c]const GLint) void {
+        _glColor4iv(arg0);
+    }
+    pub inline fn glColor4s(arg0: GLshort, arg1: GLshort, arg2: GLshort, arg3: GLshort) void {
+        _glColor4s(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glColor4sv(arg0: [*c]const GLshort) void {
+        _glColor4sv(arg0);
+    }
+    pub inline fn glColor4ub(arg0: GLubyte, arg1: GLubyte, arg2: GLubyte, arg3: GLubyte) void {
+        _glColor4ub(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glColor4ubv(arg0: [*c]const GLubyte) void {
+        _glColor4ubv(arg0);
+    }
+    pub inline fn glColor4ui(arg0: GLuint, arg1: GLuint, arg2: GLuint, arg3: GLuint) void {
+        _glColor4ui(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glColor4uiv(arg0: [*c]const GLuint) void {
+        _glColor4uiv(arg0);
+    }
+    pub inline fn glColor4us(arg0: GLushort, arg1: GLushort, arg2: GLushort, arg3: GLushort) void {
+        _glColor4us(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glColor4usv(arg0: [*c]const GLushort) void {
+        _glColor4usv(arg0);
+    }
+    pub inline fn glColorMask(arg0: GLboolean, arg1: GLboolean, arg2: GLboolean, arg3: GLboolean) void {
+        _glColorMask(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glColorMaterial(arg0: GLenum, arg1: GLenum) void {
+        _glColorMaterial(arg0, arg1);
+    }
+    pub inline fn glColorPointer(arg0: GLint, arg1: GLenum, arg2: GLsizei, arg3: ?*const c_void) void {
+        _glColorPointer(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glCompileShader(arg0: GLuint) void {
+        _glCompileShader(arg0);
+    }
+    pub inline fn glCompressedTexImage1D(arg0: GLenum, arg1: GLint, arg2: GLenum, arg3: GLsizei, arg4: GLint, arg5: GLsizei, arg6: ?*const c_void) void {
+        _glCompressedTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+    }
+    pub inline fn glCompressedTexImage2D(arg0: GLenum, arg1: GLint, arg2: GLenum, arg3: GLsizei, arg4: GLsizei, arg5: GLint, arg6: GLsizei, arg7: ?*const c_void) void {
+        _glCompressedTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+    }
+    pub inline fn glCompressedTexImage3D(arg0: GLenum, arg1: GLint, arg2: GLenum, arg3: GLsizei, arg4: GLsizei, arg5: GLsizei, arg6: GLint, arg7: GLsizei, arg8: ?*const c_void) void {
+        _glCompressedTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+    }
+    pub inline fn glCompressedTexSubImage1D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLsizei, arg4: GLenum, arg5: GLsizei, arg6: ?*const c_void) void {
+        _glCompressedTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+    }
+    pub inline fn glCompressedTexSubImage2D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLint, arg4: GLsizei, arg5: GLsizei, arg6: GLenum, arg7: GLsizei, arg8: ?*const c_void) void {
+        _glCompressedTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+    }
+    pub inline fn glCompressedTexSubImage3D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLint, arg4: GLint, arg5: GLsizei, arg6: GLsizei, arg7: GLsizei, arg8: GLenum, arg9: GLsizei, arg10: ?*const c_void) void {
+        _glCompressedTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+    }
+    pub inline fn glCopyPixels(arg0: GLint, arg1: GLint, arg2: GLsizei, arg3: GLsizei, arg4: GLenum) void {
+        _glCopyPixels(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glCopyTexImage1D(arg0: GLenum, arg1: GLint, arg2: GLenum, arg3: GLint, arg4: GLint, arg5: GLsizei, arg6: GLint) void {
+        _glCopyTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+    }
+    pub inline fn glCopyTexImage2D(arg0: GLenum, arg1: GLint, arg2: GLenum, arg3: GLint, arg4: GLint, arg5: GLsizei, arg6: GLsizei, arg7: GLint) void {
+        _glCopyTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+    }
+    pub inline fn glCopyTexSubImage1D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLint, arg4: GLint, arg5: GLsizei) void {
+        _glCopyTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+    pub inline fn glCopyTexSubImage2D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLint, arg4: GLint, arg5: GLint, arg6: GLsizei, arg7: GLsizei) void {
+        _glCopyTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+    }
+    pub inline fn glCopyTexSubImage3D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLint, arg4: GLint, arg5: GLint, arg6: GLint, arg7: GLsizei, arg8: GLsizei) void {
+        _glCopyTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+    }
+    pub inline fn glCreateProgram() GLuint {
+        return _glCreateProgram();
+    }
+    pub inline fn glCreateShader(arg0: GLenum) GLuint {
+        return _glCreateShader(arg0);
+    }
+    pub inline fn glCullFace(arg0: GLenum) void {
+        _glCullFace(arg0);
+    }
+    pub inline fn glDeleteBuffers(arg0: GLsizei, arg1: [*c]const GLuint) void {
+        _glDeleteBuffers(arg0, arg1);
+    }
+    pub inline fn glDeleteFramebuffers(arg0: GLsizei, arg1: [*c]const GLuint) void {
+        _glDeleteFramebuffers(arg0, arg1);
+    }
+    pub inline fn glDeleteLists(arg0: GLuint, arg1: GLsizei) void {
+        _glDeleteLists(arg0, arg1);
+    }
+    pub inline fn glDeleteProgram(arg0: GLuint) void {
+        _glDeleteProgram(arg0);
+    }
+    pub inline fn glDeleteQueries(arg0: GLsizei, arg1: [*c]const GLuint) void {
+        _glDeleteQueries(arg0, arg1);
+    }
+    pub inline fn glDeleteRenderbuffers(arg0: GLsizei, arg1: [*c]const GLuint) void {
+        _glDeleteRenderbuffers(arg0, arg1);
+    }
+    pub inline fn glDeleteShader(arg0: GLuint) void {
+        _glDeleteShader(arg0);
+    }
+    pub inline fn glDeleteTextures(arg0: GLsizei, arg1: [*c]const GLuint) void {
+        _glDeleteTextures(arg0, arg1);
+    }
+    pub inline fn glDepthFunc(arg0: GLenum) void {
+        _glDepthFunc(arg0);
+    }
+    pub inline fn glDepthMask(arg0: GLboolean) void {
+        _glDepthMask(arg0);
+    }
+    pub inline fn glDepthRange(arg0: GLdouble, arg1: GLdouble) void {
+        _glDepthRange(arg0, arg1);
+    }
+    pub inline fn glDetachShader(arg0: GLuint, arg1: GLuint) void {
+        _glDetachShader(arg0, arg1);
+    }
+    pub inline fn glDisable(arg0: GLenum) void {
+        _glDisable(arg0);
+    }
+    pub inline fn glDisableClientState(arg0: GLenum) void {
+        _glDisableClientState(arg0);
+    }
+    pub inline fn glDisableVertexAttribArray(arg0: GLuint) void {
+        _glDisableVertexAttribArray(arg0);
+    }
+    pub inline fn glDrawArrays(arg0: GLenum, arg1: GLint, arg2: GLsizei) void {
+        _glDrawArrays(arg0, arg1, arg2);
+    }
+    pub inline fn glDrawBuffer(arg0: GLenum) void {
+        _glDrawBuffer(arg0);
+    }
+    pub inline fn glDrawBuffers(arg0: GLsizei, arg1: [*c]const GLenum) void {
+        _glDrawBuffers(arg0, arg1);
+    }
+    pub inline fn glDrawElements(arg0: GLenum, arg1: GLsizei, arg2: GLenum, arg3: ?*const c_void) void {
+        _glDrawElements(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glDrawPixels(arg0: GLsizei, arg1: GLsizei, arg2: GLenum, arg3: GLenum, arg4: ?*const c_void) void {
+        _glDrawPixels(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glDrawRangeElements(arg0: GLenum, arg1: GLuint, arg2: GLuint, arg3: GLsizei, arg4: GLenum, arg5: ?*const c_void) void {
+        _glDrawRangeElements(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+    pub inline fn glEdgeFlag(arg0: GLboolean) void {
+        _glEdgeFlag(arg0);
+    }
+    pub inline fn glEdgeFlagPointer(arg0: GLsizei, arg1: ?*const c_void) void {
+        _glEdgeFlagPointer(arg0, arg1);
+    }
+    pub inline fn glEdgeFlagv(arg0: [*c]const GLboolean) void {
+        _glEdgeFlagv(arg0);
+    }
+    pub inline fn glEnable(arg0: GLenum) void {
+        _glEnable(arg0);
+    }
+    pub inline fn glEnableClientState(arg0: GLenum) void {
+        _glEnableClientState(arg0);
+    }
+    pub inline fn glEnableVertexAttribArray(arg0: GLuint) void {
+        _glEnableVertexAttribArray(arg0);
+    }
+    pub inline fn glEnd() void {
+        _glEnd();
+    }
+    pub inline fn glEndList() void {
+        _glEndList();
+    }
+    pub inline fn glEndQuery(arg0: GLenum) void {
+        _glEndQuery(arg0);
+    }
+    pub inline fn glEvalCoord1d(arg0: GLdouble) void {
+        _glEvalCoord1d(arg0);
+    }
+    pub inline fn glEvalCoord1dv(arg0: [*c]const GLdouble) void {
+        _glEvalCoord1dv(arg0);
+    }
+    pub inline fn glEvalCoord1f(arg0: GLfloat) void {
+        _glEvalCoord1f(arg0);
+    }
+    pub inline fn glEvalCoord1fv(arg0: [*c]const GLfloat) void {
+        _glEvalCoord1fv(arg0);
+    }
+    pub inline fn glEvalCoord2d(arg0: GLdouble, arg1: GLdouble) void {
+        _glEvalCoord2d(arg0, arg1);
+    }
+    pub inline fn glEvalCoord2dv(arg0: [*c]const GLdouble) void {
+        _glEvalCoord2dv(arg0);
+    }
+    pub inline fn glEvalCoord2f(arg0: GLfloat, arg1: GLfloat) void {
+        _glEvalCoord2f(arg0, arg1);
+    }
+    pub inline fn glEvalCoord2fv(arg0: [*c]const GLfloat) void {
+        _glEvalCoord2fv(arg0);
+    }
+    pub inline fn glEvalMesh1(arg0: GLenum, arg1: GLint, arg2: GLint) void {
+        _glEvalMesh1(arg0, arg1, arg2);
+    }
+    pub inline fn glEvalMesh2(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLint, arg4: GLint) void {
+        _glEvalMesh2(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glEvalPoint1(arg0: GLint) void {
+        _glEvalPoint1(arg0);
+    }
+    pub inline fn glEvalPoint2(arg0: GLint, arg1: GLint) void {
+        _glEvalPoint2(arg0, arg1);
+    }
+    pub inline fn glFeedbackBuffer(arg0: GLsizei, arg1: GLenum, arg2: [*c]GLfloat) void {
+        _glFeedbackBuffer(arg0, arg1, arg2);
+    }
+    pub inline fn glFinish() void {
+        _glFinish();
+    }
+    pub inline fn glFlush() void {
+        _glFlush();
+    }
+    pub inline fn glFogCoordPointer(arg0: GLenum, arg1: GLsizei, arg2: ?*const c_void) void {
+        _glFogCoordPointer(arg0, arg1, arg2);
+    }
+    pub inline fn glFogCoordd(arg0: GLdouble) void {
+        _glFogCoordd(arg0);
+    }
+    pub inline fn glFogCoorddv(arg0: [*c]const GLdouble) void {
+        _glFogCoorddv(arg0);
+    }
+    pub inline fn glFogCoordf(arg0: GLfloat) void {
+        _glFogCoordf(arg0);
+    }
+    pub inline fn glFogCoordfv(arg0: [*c]const GLfloat) void {
+        _glFogCoordfv(arg0);
+    }
+    pub inline fn glFogf(arg0: GLenum, arg1: GLfloat) void {
+        _glFogf(arg0, arg1);
+    }
+    pub inline fn glFogfv(arg0: GLenum, arg1: [*c]const GLfloat) void {
+        _glFogfv(arg0, arg1);
+    }
+    pub inline fn glFogi(arg0: GLenum, arg1: GLint) void {
+        _glFogi(arg0, arg1);
+    }
+    pub inline fn glFogiv(arg0: GLenum, arg1: [*c]const GLint) void {
+        _glFogiv(arg0, arg1);
+    }
+    pub inline fn glFramebufferRenderbuffer(arg0: GLenum, arg1: GLenum, arg2: GLenum, arg3: GLuint) void {
+        _glFramebufferRenderbuffer(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glFramebufferTexture1D(arg0: GLenum, arg1: GLenum, arg2: GLenum, arg3: GLuint, arg4: GLint) void {
+        _glFramebufferTexture1D(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glFramebufferTexture2D(arg0: GLenum, arg1: GLenum, arg2: GLenum, arg3: GLuint, arg4: GLint) void {
+        _glFramebufferTexture2D(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glFramebufferTexture3D(arg0: GLenum, arg1: GLenum, arg2: GLenum, arg3: GLuint, arg4: GLint, arg5: GLint) void {
+        _glFramebufferTexture3D(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+    pub inline fn glFramebufferTextureLayer(arg0: GLenum, arg1: GLenum, arg2: GLuint, arg3: GLint, arg4: GLint) void {
+        _glFramebufferTextureLayer(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glFrontFace(arg0: GLenum) void {
+        _glFrontFace(arg0);
+    }
+    pub inline fn glFrustum(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble, arg4: GLdouble, arg5: GLdouble) void {
+        _glFrustum(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+    pub inline fn glGenBuffers(arg0: GLsizei, arg1: [*c]GLuint) void {
+        _glGenBuffers(arg0, arg1);
+    }
+    pub inline fn glGenFramebuffers(arg0: GLsizei, arg1: [*c]GLuint) void {
+        _glGenFramebuffers(arg0, arg1);
+    }
+    pub inline fn glGenLists(arg0: GLsizei) GLuint {
+        return _glGenLists(arg0);
+    }
+    pub inline fn glGenQueries(arg0: GLsizei, arg1: [*c]GLuint) void {
+        _glGenQueries(arg0, arg1);
+    }
+    pub inline fn glGenRenderbuffers(arg0: GLsizei, arg1: [*c]GLuint) void {
+        _glGenRenderbuffers(arg0, arg1);
+    }
+    pub inline fn glGenTextures(arg0: GLsizei, arg1: [*c]GLuint) void {
+        _glGenTextures(arg0, arg1);
+    }
+    pub inline fn glGenerateMipmap(arg0: GLenum) void {
+        _glGenerateMipmap(arg0);
+    }
+    pub inline fn glGetActiveAttrib(arg0: GLuint, arg1: GLuint, arg2: GLsizei, arg3: [*c]GLsizei, arg4: [*c]GLint, arg5: [*c]GLenum, arg6: [*c]GLchar) void {
+        _glGetActiveAttrib(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+    }
+    pub inline fn glGetActiveUniform(arg0: GLuint, arg1: GLuint, arg2: GLsizei, arg3: [*c]GLsizei, arg4: [*c]GLint, arg5: [*c]GLenum, arg6: [*c]GLchar) void {
+        _glGetActiveUniform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+    }
+    pub inline fn glGetAttachedShaders(arg0: GLuint, arg1: GLsizei, arg2: [*c]GLsizei, arg3: [*c]GLuint) void {
+        _glGetAttachedShaders(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glGetAttribLocation(arg0: GLuint, arg1: [*c]const GLchar) GLint {
+        return _glGetAttribLocation(arg0, arg1);
+    }
+    pub inline fn glGetBooleanv(arg0: GLenum, arg1: [*c]GLboolean) void {
+        _glGetBooleanv(arg0, arg1);
+    }
+    pub inline fn glGetBufferParameteriv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetBufferParameteriv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetBufferPointerv(arg0: GLenum, arg1: GLenum, arg2: [*c]?*c_void) void {
+        _glGetBufferPointerv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetBufferSubData(arg0: GLenum, arg1: GLintptr, arg2: GLsizeiptr, arg3: ?*c_void) void {
+        _glGetBufferSubData(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glGetClipPlane(arg0: GLenum, arg1: [*c]GLdouble) void {
+        _glGetClipPlane(arg0, arg1);
+    }
+    pub inline fn glGetCompressedTexImage(arg0: GLenum, arg1: GLint, arg2: ?*c_void) void {
+        _glGetCompressedTexImage(arg0, arg1, arg2);
+    }
+    pub inline fn glGetDoublev(arg0: GLenum, arg1: [*c]GLdouble) void {
+        _glGetDoublev(arg0, arg1);
+    }
+    pub inline fn glGetError() GLenum {
+        return _glGetError();
+    }
+    pub inline fn glGetFloatv(arg0: GLenum, arg1: [*c]GLfloat) void {
+        _glGetFloatv(arg0, arg1);
+    }
+    pub inline fn glGetFramebufferAttachmentParameteriv(arg0: GLenum, arg1: GLenum, arg2: GLenum, arg3: [*c]GLint) void {
+        _glGetFramebufferAttachmentParameteriv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glGetIntegerv(arg0: GLenum, arg1: [*c]GLint) void {
+        _glGetIntegerv(arg0, arg1);
+    }
+    pub inline fn glGetLightfv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLfloat) void {
+        _glGetLightfv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetLightiv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetLightiv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetMapdv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLdouble) void {
+        _glGetMapdv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetMapfv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLfloat) void {
+        _glGetMapfv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetMapiv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetMapiv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetMaterialfv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLfloat) void {
+        _glGetMaterialfv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetMaterialiv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetMaterialiv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetPixelMapfv(arg0: GLenum, arg1: [*c]GLfloat) void {
+        _glGetPixelMapfv(arg0, arg1);
+    }
+    pub inline fn glGetPixelMapuiv(arg0: GLenum, arg1: [*c]GLuint) void {
+        _glGetPixelMapuiv(arg0, arg1);
+    }
+    pub inline fn glGetPixelMapusv(arg0: GLenum, arg1: [*c]GLushort) void {
+        _glGetPixelMapusv(arg0, arg1);
+    }
+    pub inline fn glGetPointerv(arg0: GLenum, arg1: [*c]?*c_void) void {
+        _glGetPointerv(arg0, arg1);
+    }
+    pub inline fn glGetPolygonStipple(arg0: [*c]GLubyte) void {
+        _glGetPolygonStipple(arg0);
+    }
+    pub inline fn glGetProgramInfoLog(arg0: GLuint, arg1: GLsizei, arg2: [*c]GLsizei, arg3: [*c]GLchar) void {
+        _glGetProgramInfoLog(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glGetProgramiv(arg0: GLuint, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetProgramiv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetQueryObjectiv(arg0: GLuint, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetQueryObjectiv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetQueryObjectuiv(arg0: GLuint, arg1: GLenum, arg2: [*c]GLuint) void {
+        _glGetQueryObjectuiv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetQueryiv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetQueryiv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetRenderbufferParameteriv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetRenderbufferParameteriv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetShaderInfoLog(arg0: GLuint, arg1: GLsizei, arg2: [*c]GLsizei, arg3: [*c]GLchar) void {
+        _glGetShaderInfoLog(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glGetShaderSource(arg0: GLuint, arg1: GLsizei, arg2: [*c]GLsizei, arg3: [*c]GLchar) void {
+        _glGetShaderSource(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glGetShaderiv(arg0: GLuint, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetShaderiv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetString(arg0: GLenum) [*c]const GLubyte {
+        return _glGetString(arg0);
+    }
+    pub inline fn glGetTexEnvfv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLfloat) void {
+        _glGetTexEnvfv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetTexEnviv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetTexEnviv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetTexGendv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLdouble) void {
+        _glGetTexGendv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetTexGenfv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLfloat) void {
+        _glGetTexGenfv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetTexGeniv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetTexGeniv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetTexImage(arg0: GLenum, arg1: GLint, arg2: GLenum, arg3: GLenum, arg4: ?*c_void) void {
+        _glGetTexImage(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glGetTexLevelParameterfv(arg0: GLenum, arg1: GLint, arg2: GLenum, arg3: [*c]GLfloat) void {
+        _glGetTexLevelParameterfv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glGetTexLevelParameteriv(arg0: GLenum, arg1: GLint, arg2: GLenum, arg3: [*c]GLint) void {
+        _glGetTexLevelParameteriv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glGetTexParameterfv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLfloat) void {
+        _glGetTexParameterfv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetTexParameteriv(arg0: GLenum, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetTexParameteriv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetUniformLocation(arg0: GLuint, arg1: [*c]const GLchar) GLint {
+        return _glGetUniformLocation(arg0, arg1);
+    }
+    pub inline fn glGetUniformfv(arg0: GLuint, arg1: GLint, arg2: [*c]GLfloat) void {
+        _glGetUniformfv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetUniformiv(arg0: GLuint, arg1: GLint, arg2: [*c]GLint) void {
+        _glGetUniformiv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetVertexAttribPointerv(arg0: GLuint, arg1: GLenum, arg2: [*c]?*c_void) void {
+        _glGetVertexAttribPointerv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetVertexAttribdv(arg0: GLuint, arg1: GLenum, arg2: [*c]GLdouble) void {
+        _glGetVertexAttribdv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetVertexAttribfv(arg0: GLuint, arg1: GLenum, arg2: [*c]GLfloat) void {
+        _glGetVertexAttribfv(arg0, arg1, arg2);
+    }
+    pub inline fn glGetVertexAttribiv(arg0: GLuint, arg1: GLenum, arg2: [*c]GLint) void {
+        _glGetVertexAttribiv(arg0, arg1, arg2);
+    }
+    pub inline fn glHint(arg0: GLenum, arg1: GLenum) void {
+        _glHint(arg0, arg1);
+    }
+    pub inline fn glIndexMask(arg0: GLuint) void {
+        _glIndexMask(arg0);
+    }
+    pub inline fn glIndexPointer(arg0: GLenum, arg1: GLsizei, arg2: ?*const c_void) void {
+        _glIndexPointer(arg0, arg1, arg2);
+    }
+    pub inline fn glIndexd(arg0: GLdouble) void {
+        _glIndexd(arg0);
+    }
+    pub inline fn glIndexdv(arg0: [*c]const GLdouble) void {
+        _glIndexdv(arg0);
+    }
+    pub inline fn glIndexf(arg0: GLfloat) void {
+        _glIndexf(arg0);
+    }
+    pub inline fn glIndexfv(arg0: [*c]const GLfloat) void {
+        _glIndexfv(arg0);
+    }
+    pub inline fn glIndexi(arg0: GLint) void {
+        _glIndexi(arg0);
+    }
+    pub inline fn glIndexiv(arg0: [*c]const GLint) void {
+        _glIndexiv(arg0);
+    }
+    pub inline fn glIndexs(arg0: GLshort) void {
+        _glIndexs(arg0);
+    }
+    pub inline fn glIndexsv(arg0: [*c]const GLshort) void {
+        _glIndexsv(arg0);
+    }
+    pub inline fn glIndexub(arg0: GLubyte) void {
+        _glIndexub(arg0);
+    }
+    pub inline fn glIndexubv(arg0: [*c]const GLubyte) void {
+        _glIndexubv(arg0);
+    }
+    pub inline fn glInitNames() void {
+        _glInitNames();
+    }
+    pub inline fn glInterleavedArrays(arg0: GLenum, arg1: GLsizei, arg2: ?*const c_void) void {
+        _glInterleavedArrays(arg0, arg1, arg2);
+    }
+    pub inline fn glIsBuffer(arg0: GLuint) GLboolean {
+        return _glIsBuffer(arg0);
+    }
+    pub inline fn glIsEnabled(arg0: GLenum) GLboolean {
+        return _glIsEnabled(arg0);
+    }
+    pub inline fn glIsFramebuffer(arg0: GLuint) GLboolean {
+        return _glIsFramebuffer(arg0);
+    }
+    pub inline fn glIsList(arg0: GLuint) GLboolean {
+        return _glIsList(arg0);
+    }
+    pub inline fn glIsProgram(arg0: GLuint) GLboolean {
+        return _glIsProgram(arg0);
+    }
+    pub inline fn glIsQuery(arg0: GLuint) GLboolean {
+        return _glIsQuery(arg0);
+    }
+    pub inline fn glIsRenderbuffer(arg0: GLuint) GLboolean {
+        return _glIsRenderbuffer(arg0);
+    }
+    pub inline fn glIsShader(arg0: GLuint) GLboolean {
+        return _glIsShader(arg0);
+    }
+    pub inline fn glIsTexture(arg0: GLuint) GLboolean {
+        return _glIsTexture(arg0);
+    }
+    pub inline fn glLightModelf(arg0: GLenum, arg1: GLfloat) void {
+        _glLightModelf(arg0, arg1);
+    }
+    pub inline fn glLightModelfv(arg0: GLenum, arg1: [*c]const GLfloat) void {
+        _glLightModelfv(arg0, arg1);
+    }
+    pub inline fn glLightModeli(arg0: GLenum, arg1: GLint) void {
+        _glLightModeli(arg0, arg1);
+    }
+    pub inline fn glLightModeliv(arg0: GLenum, arg1: [*c]const GLint) void {
+        _glLightModeliv(arg0, arg1);
+    }
+    pub inline fn glLightf(arg0: GLenum, arg1: GLenum, arg2: GLfloat) void {
+        _glLightf(arg0, arg1, arg2);
+    }
+    pub inline fn glLightfv(arg0: GLenum, arg1: GLenum, arg2: [*c]const GLfloat) void {
+        _glLightfv(arg0, arg1, arg2);
+    }
+    pub inline fn glLighti(arg0: GLenum, arg1: GLenum, arg2: GLint) void {
+        _glLighti(arg0, arg1, arg2);
+    }
+    pub inline fn glLightiv(arg0: GLenum, arg1: GLenum, arg2: [*c]const GLint) void {
+        _glLightiv(arg0, arg1, arg2);
+    }
+    pub inline fn glLineStipple(arg0: GLint, arg1: GLushort) void {
+        _glLineStipple(arg0, arg1);
+    }
+    pub inline fn glLineWidth(arg0: GLfloat) void {
+        _glLineWidth(arg0);
+    }
+    pub inline fn glLinkProgram(arg0: GLuint) void {
+        _glLinkProgram(arg0);
+    }
+    pub inline fn glListBase(arg0: GLuint) void {
+        _glListBase(arg0);
+    }
+    pub inline fn glLoadIdentity() void {
+        _glLoadIdentity();
+    }
+    pub inline fn glLoadMatrixd(arg0: [*c]const GLdouble) void {
+        _glLoadMatrixd(arg0);
+    }
+    pub inline fn glLoadMatrixf(arg0: [*c]const GLfloat) void {
+        _glLoadMatrixf(arg0);
+    }
+    pub inline fn glLoadName(arg0: GLuint) void {
+        _glLoadName(arg0);
+    }
+    pub inline fn glLoadTransposeMatrixd(arg0: [*c]const GLdouble) void {
+        _glLoadTransposeMatrixd(arg0);
+    }
+    pub inline fn glLoadTransposeMatrixf(arg0: [*c]const GLfloat) void {
+        _glLoadTransposeMatrixf(arg0);
+    }
+    pub inline fn glLogicOp(arg0: GLenum) void {
+        _glLogicOp(arg0);
+    }
+    pub inline fn glMap1d(arg0: GLenum, arg1: GLdouble, arg2: GLdouble, arg3: GLint, arg4: GLint, arg5: [*c]const GLdouble) void {
+        _glMap1d(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+    pub inline fn glMap1f(arg0: GLenum, arg1: GLfloat, arg2: GLfloat, arg3: GLint, arg4: GLint, arg5: [*c]const GLfloat) void {
+        _glMap1f(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+    pub inline fn glMap2d(arg0: GLenum, arg1: GLdouble, arg2: GLdouble, arg3: GLint, arg4: GLint, arg5: GLdouble, arg6: GLdouble, arg7: GLint, arg8: GLint, arg9: [*c]const GLdouble) void {
+        _glMap2d(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
+    }
+    pub inline fn glMap2f(arg0: GLenum, arg1: GLfloat, arg2: GLfloat, arg3: GLint, arg4: GLint, arg5: GLfloat, arg6: GLfloat, arg7: GLint, arg8: GLint, arg9: [*c]const GLfloat) void {
+        _glMap2f(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
+    }
+    pub inline fn glMapBuffer(arg0: GLenum, arg1: GLenum) ?*c_void {
+        return _glMapBuffer(arg0, arg1);
+    }
+    pub inline fn glMapGrid1d(arg0: GLint, arg1: GLdouble, arg2: GLdouble) void {
+        _glMapGrid1d(arg0, arg1, arg2);
+    }
+    pub inline fn glMapGrid1f(arg0: GLint, arg1: GLfloat, arg2: GLfloat) void {
+        _glMapGrid1f(arg0, arg1, arg2);
+    }
+    pub inline fn glMapGrid2d(arg0: GLint, arg1: GLdouble, arg2: GLdouble, arg3: GLint, arg4: GLdouble, arg5: GLdouble) void {
+        _glMapGrid2d(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+    pub inline fn glMapGrid2f(arg0: GLint, arg1: GLfloat, arg2: GLfloat, arg3: GLint, arg4: GLfloat, arg5: GLfloat) void {
+        _glMapGrid2f(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+    pub inline fn glMaterialf(arg0: GLenum, arg1: GLenum, arg2: GLfloat) void {
+        _glMaterialf(arg0, arg1, arg2);
+    }
+    pub inline fn glMaterialfv(arg0: GLenum, arg1: GLenum, arg2: [*c]const GLfloat) void {
+        _glMaterialfv(arg0, arg1, arg2);
+    }
+    pub inline fn glMateriali(arg0: GLenum, arg1: GLenum, arg2: GLint) void {
+        _glMateriali(arg0, arg1, arg2);
+    }
+    pub inline fn glMaterialiv(arg0: GLenum, arg1: GLenum, arg2: [*c]const GLint) void {
+        _glMaterialiv(arg0, arg1, arg2);
+    }
+    pub inline fn glMatrixMode(arg0: GLenum) void {
+        _glMatrixMode(arg0);
+    }
+    pub inline fn glMultMatrixd(arg0: [*c]const GLdouble) void {
+        _glMultMatrixd(arg0);
+    }
+    pub inline fn glMultMatrixf(arg0: [*c]const GLfloat) void {
+        _glMultMatrixf(arg0);
+    }
+    pub inline fn glMultTransposeMatrixd(arg0: [*c]const GLdouble) void {
+        _glMultTransposeMatrixd(arg0);
+    }
+    pub inline fn glMultTransposeMatrixf(arg0: [*c]const GLfloat) void {
+        _glMultTransposeMatrixf(arg0);
+    }
+    pub inline fn glMultiDrawArrays(arg0: GLenum, arg1: [*c]const GLint, arg2: [*c]const GLsizei, arg3: GLsizei) void {
+        _glMultiDrawArrays(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glMultiDrawElements(arg0: GLenum, arg1: [*c]const GLsizei, arg2: GLenum, arg3: [*c]const ?*const c_void, arg4: GLsizei) void {
+        _glMultiDrawElements(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glMultiTexCoord1d(arg0: GLenum, arg1: GLdouble) void {
+        _glMultiTexCoord1d(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord1dv(arg0: GLenum, arg1: [*c]const GLdouble) void {
+        _glMultiTexCoord1dv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord1f(arg0: GLenum, arg1: GLfloat) void {
+        _glMultiTexCoord1f(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord1fv(arg0: GLenum, arg1: [*c]const GLfloat) void {
+        _glMultiTexCoord1fv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord1i(arg0: GLenum, arg1: GLint) void {
+        _glMultiTexCoord1i(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord1iv(arg0: GLenum, arg1: [*c]const GLint) void {
+        _glMultiTexCoord1iv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord1s(arg0: GLenum, arg1: GLshort) void {
+        _glMultiTexCoord1s(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord1sv(arg0: GLenum, arg1: [*c]const GLshort) void {
+        _glMultiTexCoord1sv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord2d(arg0: GLenum, arg1: GLdouble, arg2: GLdouble) void {
+        _glMultiTexCoord2d(arg0, arg1, arg2);
+    }
+    pub inline fn glMultiTexCoord2dv(arg0: GLenum, arg1: [*c]const GLdouble) void {
+        _glMultiTexCoord2dv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord2f(arg0: GLenum, arg1: GLfloat, arg2: GLfloat) void {
+        _glMultiTexCoord2f(arg0, arg1, arg2);
+    }
+    pub inline fn glMultiTexCoord2fv(arg0: GLenum, arg1: [*c]const GLfloat) void {
+        _glMultiTexCoord2fv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord2i(arg0: GLenum, arg1: GLint, arg2: GLint) void {
+        _glMultiTexCoord2i(arg0, arg1, arg2);
+    }
+    pub inline fn glMultiTexCoord2iv(arg0: GLenum, arg1: [*c]const GLint) void {
+        _glMultiTexCoord2iv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord2s(arg0: GLenum, arg1: GLshort, arg2: GLshort) void {
+        _glMultiTexCoord2s(arg0, arg1, arg2);
+    }
+    pub inline fn glMultiTexCoord2sv(arg0: GLenum, arg1: [*c]const GLshort) void {
+        _glMultiTexCoord2sv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord3d(arg0: GLenum, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble) void {
+        _glMultiTexCoord3d(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glMultiTexCoord3dv(arg0: GLenum, arg1: [*c]const GLdouble) void {
+        _glMultiTexCoord3dv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord3f(arg0: GLenum, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glMultiTexCoord3f(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glMultiTexCoord3fv(arg0: GLenum, arg1: [*c]const GLfloat) void {
+        _glMultiTexCoord3fv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord3i(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLint) void {
+        _glMultiTexCoord3i(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glMultiTexCoord3iv(arg0: GLenum, arg1: [*c]const GLint) void {
+        _glMultiTexCoord3iv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord3s(arg0: GLenum, arg1: GLshort, arg2: GLshort, arg3: GLshort) void {
+        _glMultiTexCoord3s(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glMultiTexCoord3sv(arg0: GLenum, arg1: [*c]const GLshort) void {
+        _glMultiTexCoord3sv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord4d(arg0: GLenum, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble, arg4: GLdouble) void {
+        _glMultiTexCoord4d(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glMultiTexCoord4dv(arg0: GLenum, arg1: [*c]const GLdouble) void {
+        _glMultiTexCoord4dv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord4f(arg0: GLenum, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat, arg4: GLfloat) void {
+        _glMultiTexCoord4f(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glMultiTexCoord4fv(arg0: GLenum, arg1: [*c]const GLfloat) void {
+        _glMultiTexCoord4fv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord4i(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLint, arg4: GLint) void {
+        _glMultiTexCoord4i(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glMultiTexCoord4iv(arg0: GLenum, arg1: [*c]const GLint) void {
+        _glMultiTexCoord4iv(arg0, arg1);
+    }
+    pub inline fn glMultiTexCoord4s(arg0: GLenum, arg1: GLshort, arg2: GLshort, arg3: GLshort, arg4: GLshort) void {
+        _glMultiTexCoord4s(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glMultiTexCoord4sv(arg0: GLenum, arg1: [*c]const GLshort) void {
+        _glMultiTexCoord4sv(arg0, arg1);
+    }
+    pub inline fn glNewList(arg0: GLuint, arg1: GLenum) void {
+        _glNewList(arg0, arg1);
+    }
+    pub inline fn glNormal3b(arg0: GLbyte, arg1: GLbyte, arg2: GLbyte) void {
+        _glNormal3b(arg0, arg1, arg2);
+    }
+    pub inline fn glNormal3bv(arg0: [*c]const GLbyte) void {
+        _glNormal3bv(arg0);
+    }
+    pub inline fn glNormal3d(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble) void {
+        _glNormal3d(arg0, arg1, arg2);
+    }
+    pub inline fn glNormal3dv(arg0: [*c]const GLdouble) void {
+        _glNormal3dv(arg0);
+    }
+    pub inline fn glNormal3f(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat) void {
+        _glNormal3f(arg0, arg1, arg2);
+    }
+    pub inline fn glNormal3fv(arg0: [*c]const GLfloat) void {
+        _glNormal3fv(arg0);
+    }
+    pub inline fn glNormal3i(arg0: GLint, arg1: GLint, arg2: GLint) void {
+        _glNormal3i(arg0, arg1, arg2);
+    }
+    pub inline fn glNormal3iv(arg0: [*c]const GLint) void {
+        _glNormal3iv(arg0);
+    }
+    pub inline fn glNormal3s(arg0: GLshort, arg1: GLshort, arg2: GLshort) void {
+        _glNormal3s(arg0, arg1, arg2);
+    }
+    pub inline fn glNormal3sv(arg0: [*c]const GLshort) void {
+        _glNormal3sv(arg0);
+    }
+    pub inline fn glNormalPointer(arg0: GLenum, arg1: GLsizei, arg2: ?*const c_void) void {
+        _glNormalPointer(arg0, arg1, arg2);
+    }
+    pub inline fn glOrtho(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble, arg4: GLdouble, arg5: GLdouble) void {
+        _glOrtho(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+    pub inline fn glPassThrough(arg0: GLfloat) void {
+        _glPassThrough(arg0);
+    }
+    pub inline fn glPixelMapfv(arg0: GLenum, arg1: GLsizei, arg2: [*c]const GLfloat) void {
+        _glPixelMapfv(arg0, arg1, arg2);
+    }
+    pub inline fn glPixelMapuiv(arg0: GLenum, arg1: GLsizei, arg2: [*c]const GLuint) void {
+        _glPixelMapuiv(arg0, arg1, arg2);
+    }
+    pub inline fn glPixelMapusv(arg0: GLenum, arg1: GLsizei, arg2: [*c]const GLushort) void {
+        _glPixelMapusv(arg0, arg1, arg2);
+    }
+    pub inline fn glPixelStoref(arg0: GLenum, arg1: GLfloat) void {
+        _glPixelStoref(arg0, arg1);
+    }
+    pub inline fn glPixelStorei(arg0: GLenum, arg1: GLint) void {
+        _glPixelStorei(arg0, arg1);
+    }
+    pub inline fn glPixelTransferf(arg0: GLenum, arg1: GLfloat) void {
+        _glPixelTransferf(arg0, arg1);
+    }
+    pub inline fn glPixelTransferi(arg0: GLenum, arg1: GLint) void {
+        _glPixelTransferi(arg0, arg1);
+    }
+    pub inline fn glPixelZoom(arg0: GLfloat, arg1: GLfloat) void {
+        _glPixelZoom(arg0, arg1);
+    }
+    pub inline fn glPointParameterf(arg0: GLenum, arg1: GLfloat) void {
+        _glPointParameterf(arg0, arg1);
+    }
+    pub inline fn glPointParameterfv(arg0: GLenum, arg1: [*c]const GLfloat) void {
+        _glPointParameterfv(arg0, arg1);
+    }
+    pub inline fn glPointParameteri(arg0: GLenum, arg1: GLint) void {
+        _glPointParameteri(arg0, arg1);
+    }
+    pub inline fn glPointParameteriv(arg0: GLenum, arg1: [*c]const GLint) void {
+        _glPointParameteriv(arg0, arg1);
+    }
+    pub inline fn glPointSize(arg0: GLfloat) void {
+        _glPointSize(arg0);
+    }
+    pub inline fn glPolygonMode(arg0: GLenum, arg1: GLenum) void {
+        _glPolygonMode(arg0, arg1);
+    }
+    pub inline fn glPolygonOffset(arg0: GLfloat, arg1: GLfloat) void {
+        _glPolygonOffset(arg0, arg1);
+    }
+    pub inline fn glPolygonStipple(arg0: [*c]const GLubyte) void {
+        _glPolygonStipple(arg0);
+    }
+    pub inline fn glPopAttrib() void {
+        _glPopAttrib();
+    }
+    pub inline fn glPopClientAttrib() void {
+        _glPopClientAttrib();
+    }
+    pub inline fn glPopMatrix() void {
+        _glPopMatrix();
+    }
+    pub inline fn glPopName() void {
+        _glPopName();
+    }
+    pub inline fn glPrioritizeTextures(arg0: GLsizei, arg1: [*c]const GLuint, arg2: [*c]const GLfloat) void {
+        _glPrioritizeTextures(arg0, arg1, arg2);
+    }
+    pub inline fn glPushAttrib(arg0: GLbitfield) void {
+        _glPushAttrib(arg0);
+    }
+    pub inline fn glPushClientAttrib(arg0: GLbitfield) void {
+        _glPushClientAttrib(arg0);
+    }
+    pub inline fn glPushMatrix() void {
+        _glPushMatrix();
+    }
+    pub inline fn glPushName(arg0: GLuint) void {
+        _glPushName(arg0);
+    }
+    pub inline fn glRasterPos2d(arg0: GLdouble, arg1: GLdouble) void {
+        _glRasterPos2d(arg0, arg1);
+    }
+    pub inline fn glRasterPos2dv(arg0: [*c]const GLdouble) void {
+        _glRasterPos2dv(arg0);
+    }
+    pub inline fn glRasterPos2f(arg0: GLfloat, arg1: GLfloat) void {
+        _glRasterPos2f(arg0, arg1);
+    }
+    pub inline fn glRasterPos2fv(arg0: [*c]const GLfloat) void {
+        _glRasterPos2fv(arg0);
+    }
+    pub inline fn glRasterPos2i(arg0: GLint, arg1: GLint) void {
+        _glRasterPos2i(arg0, arg1);
+    }
+    pub inline fn glRasterPos2iv(arg0: [*c]const GLint) void {
+        _glRasterPos2iv(arg0);
+    }
+    pub inline fn glRasterPos2s(arg0: GLshort, arg1: GLshort) void {
+        _glRasterPos2s(arg0, arg1);
+    }
+    pub inline fn glRasterPos2sv(arg0: [*c]const GLshort) void {
+        _glRasterPos2sv(arg0);
+    }
+    pub inline fn glRasterPos3d(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble) void {
+        _glRasterPos3d(arg0, arg1, arg2);
+    }
+    pub inline fn glRasterPos3dv(arg0: [*c]const GLdouble) void {
+        _glRasterPos3dv(arg0);
+    }
+    pub inline fn glRasterPos3f(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat) void {
+        _glRasterPos3f(arg0, arg1, arg2);
+    }
+    pub inline fn glRasterPos3fv(arg0: [*c]const GLfloat) void {
+        _glRasterPos3fv(arg0);
+    }
+    pub inline fn glRasterPos3i(arg0: GLint, arg1: GLint, arg2: GLint) void {
+        _glRasterPos3i(arg0, arg1, arg2);
+    }
+    pub inline fn glRasterPos3iv(arg0: [*c]const GLint) void {
+        _glRasterPos3iv(arg0);
+    }
+    pub inline fn glRasterPos3s(arg0: GLshort, arg1: GLshort, arg2: GLshort) void {
+        _glRasterPos3s(arg0, arg1, arg2);
+    }
+    pub inline fn glRasterPos3sv(arg0: [*c]const GLshort) void {
+        _glRasterPos3sv(arg0);
+    }
+    pub inline fn glRasterPos4d(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble) void {
+        _glRasterPos4d(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glRasterPos4dv(arg0: [*c]const GLdouble) void {
+        _glRasterPos4dv(arg0);
+    }
+    pub inline fn glRasterPos4f(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glRasterPos4f(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glRasterPos4fv(arg0: [*c]const GLfloat) void {
+        _glRasterPos4fv(arg0);
+    }
+    pub inline fn glRasterPos4i(arg0: GLint, arg1: GLint, arg2: GLint, arg3: GLint) void {
+        _glRasterPos4i(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glRasterPos4iv(arg0: [*c]const GLint) void {
+        _glRasterPos4iv(arg0);
+    }
+    pub inline fn glRasterPos4s(arg0: GLshort, arg1: GLshort, arg2: GLshort, arg3: GLshort) void {
+        _glRasterPos4s(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glRasterPos4sv(arg0: [*c]const GLshort) void {
+        _glRasterPos4sv(arg0);
+    }
+    pub inline fn glReadBuffer(arg0: GLenum) void {
+        _glReadBuffer(arg0);
+    }
+    pub inline fn glReadPixels(arg0: GLint, arg1: GLint, arg2: GLsizei, arg3: GLsizei, arg4: GLenum, arg5: GLenum, arg6: ?*c_void) void {
+        _glReadPixels(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+    }
+    pub inline fn glRectd(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble) void {
+        _glRectd(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glRectdv(arg0: [*c]const GLdouble, arg1: [*c]const GLdouble) void {
+        _glRectdv(arg0, arg1);
+    }
+    pub inline fn glRectf(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glRectf(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glRectfv(arg0: [*c]const GLfloat, arg1: [*c]const GLfloat) void {
+        _glRectfv(arg0, arg1);
+    }
+    pub inline fn glRecti(arg0: GLint, arg1: GLint, arg2: GLint, arg3: GLint) void {
+        _glRecti(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glRectiv(arg0: [*c]const GLint, arg1: [*c]const GLint) void {
+        _glRectiv(arg0, arg1);
+    }
+    pub inline fn glRects(arg0: GLshort, arg1: GLshort, arg2: GLshort, arg3: GLshort) void {
+        _glRects(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glRectsv(arg0: [*c]const GLshort, arg1: [*c]const GLshort) void {
+        _glRectsv(arg0, arg1);
+    }
+    pub inline fn glRenderMode(arg0: GLenum) GLint {
+        return _glRenderMode(arg0);
+    }
+    pub inline fn glRenderbufferStorage(arg0: GLenum, arg1: GLenum, arg2: GLsizei, arg3: GLsizei) void {
+        _glRenderbufferStorage(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glRenderbufferStorageMultisample(arg0: GLenum, arg1: GLsizei, arg2: GLenum, arg3: GLsizei, arg4: GLsizei) void {
+        _glRenderbufferStorageMultisample(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glRotated(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble) void {
+        _glRotated(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glRotatef(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glRotatef(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glSampleCoverage(arg0: GLfloat, arg1: GLboolean) void {
+        _glSampleCoverage(arg0, arg1);
+    }
+    pub inline fn glScaled(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble) void {
+        _glScaled(arg0, arg1, arg2);
+    }
+    pub inline fn glScalef(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat) void {
+        _glScalef(arg0, arg1, arg2);
+    }
+    pub inline fn glScissor(arg0: GLint, arg1: GLint, arg2: GLsizei, arg3: GLsizei) void {
+        _glScissor(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glSecondaryColor3b(arg0: GLbyte, arg1: GLbyte, arg2: GLbyte) void {
+        _glSecondaryColor3b(arg0, arg1, arg2);
+    }
+    pub inline fn glSecondaryColor3bv(arg0: [*c]const GLbyte) void {
+        _glSecondaryColor3bv(arg0);
+    }
+    pub inline fn glSecondaryColor3d(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble) void {
+        _glSecondaryColor3d(arg0, arg1, arg2);
+    }
+    pub inline fn glSecondaryColor3dv(arg0: [*c]const GLdouble) void {
+        _glSecondaryColor3dv(arg0);
+    }
+    pub inline fn glSecondaryColor3f(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat) void {
+        _glSecondaryColor3f(arg0, arg1, arg2);
+    }
+    pub inline fn glSecondaryColor3fv(arg0: [*c]const GLfloat) void {
+        _glSecondaryColor3fv(arg0);
+    }
+    pub inline fn glSecondaryColor3i(arg0: GLint, arg1: GLint, arg2: GLint) void {
+        _glSecondaryColor3i(arg0, arg1, arg2);
+    }
+    pub inline fn glSecondaryColor3iv(arg0: [*c]const GLint) void {
+        _glSecondaryColor3iv(arg0);
+    }
+    pub inline fn glSecondaryColor3s(arg0: GLshort, arg1: GLshort, arg2: GLshort) void {
+        _glSecondaryColor3s(arg0, arg1, arg2);
+    }
+    pub inline fn glSecondaryColor3sv(arg0: [*c]const GLshort) void {
+        _glSecondaryColor3sv(arg0);
+    }
+    pub inline fn glSecondaryColor3ub(arg0: GLubyte, arg1: GLubyte, arg2: GLubyte) void {
+        _glSecondaryColor3ub(arg0, arg1, arg2);
+    }
+    pub inline fn glSecondaryColor3ubv(arg0: [*c]const GLubyte) void {
+        _glSecondaryColor3ubv(arg0);
+    }
+    pub inline fn glSecondaryColor3ui(arg0: GLuint, arg1: GLuint, arg2: GLuint) void {
+        _glSecondaryColor3ui(arg0, arg1, arg2);
+    }
+    pub inline fn glSecondaryColor3uiv(arg0: [*c]const GLuint) void {
+        _glSecondaryColor3uiv(arg0);
+    }
+    pub inline fn glSecondaryColor3us(arg0: GLushort, arg1: GLushort, arg2: GLushort) void {
+        _glSecondaryColor3us(arg0, arg1, arg2);
+    }
+    pub inline fn glSecondaryColor3usv(arg0: [*c]const GLushort) void {
+        _glSecondaryColor3usv(arg0);
+    }
+    pub inline fn glSecondaryColorPointer(arg0: GLint, arg1: GLenum, arg2: GLsizei, arg3: ?*const c_void) void {
+        _glSecondaryColorPointer(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glSelectBuffer(arg0: GLsizei, arg1: [*c]GLuint) void {
+        _glSelectBuffer(arg0, arg1);
+    }
+    pub inline fn glShadeModel(arg0: GLenum) void {
+        _glShadeModel(arg0);
+    }
+    pub inline fn glShaderSource(arg0: GLuint, arg1: GLsizei, arg2: [*c]const [*c]const GLchar, arg3: [*c]const GLint) void {
+        _glShaderSource(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glStencilFunc(arg0: GLenum, arg1: GLint, arg2: GLuint) void {
+        _glStencilFunc(arg0, arg1, arg2);
+    }
+    pub inline fn glStencilFuncSeparate(arg0: GLenum, arg1: GLenum, arg2: GLint, arg3: GLuint) void {
+        _glStencilFuncSeparate(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glStencilMask(arg0: GLuint) void {
+        _glStencilMask(arg0);
+    }
+    pub inline fn glStencilMaskSeparate(arg0: GLenum, arg1: GLuint) void {
+        _glStencilMaskSeparate(arg0, arg1);
+    }
+    pub inline fn glStencilOp(arg0: GLenum, arg1: GLenum, arg2: GLenum) void {
+        _glStencilOp(arg0, arg1, arg2);
+    }
+    pub inline fn glStencilOpSeparate(arg0: GLenum, arg1: GLenum, arg2: GLenum, arg3: GLenum) void {
+        _glStencilOpSeparate(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glTexCoord1d(arg0: GLdouble) void {
+        _glTexCoord1d(arg0);
+    }
+    pub inline fn glTexCoord1dv(arg0: [*c]const GLdouble) void {
+        _glTexCoord1dv(arg0);
+    }
+    pub inline fn glTexCoord1f(arg0: GLfloat) void {
+        _glTexCoord1f(arg0);
+    }
+    pub inline fn glTexCoord1fv(arg0: [*c]const GLfloat) void {
+        _glTexCoord1fv(arg0);
+    }
+    pub inline fn glTexCoord1i(arg0: GLint) void {
+        _glTexCoord1i(arg0);
+    }
+    pub inline fn glTexCoord1iv(arg0: [*c]const GLint) void {
+        _glTexCoord1iv(arg0);
+    }
+    pub inline fn glTexCoord1s(arg0: GLshort) void {
+        _glTexCoord1s(arg0);
+    }
+    pub inline fn glTexCoord1sv(arg0: [*c]const GLshort) void {
+        _glTexCoord1sv(arg0);
+    }
+    pub inline fn glTexCoord2d(arg0: GLdouble, arg1: GLdouble) void {
+        _glTexCoord2d(arg0, arg1);
+    }
+    pub inline fn glTexCoord2dv(arg0: [*c]const GLdouble) void {
+        _glTexCoord2dv(arg0);
+    }
+    pub inline fn glTexCoord2f(arg0: GLfloat, arg1: GLfloat) void {
+        _glTexCoord2f(arg0, arg1);
+    }
+    pub inline fn glTexCoord2fv(arg0: [*c]const GLfloat) void {
+        _glTexCoord2fv(arg0);
+    }
+    pub inline fn glTexCoord2i(arg0: GLint, arg1: GLint) void {
+        _glTexCoord2i(arg0, arg1);
+    }
+    pub inline fn glTexCoord2iv(arg0: [*c]const GLint) void {
+        _glTexCoord2iv(arg0);
+    }
+    pub inline fn glTexCoord2s(arg0: GLshort, arg1: GLshort) void {
+        _glTexCoord2s(arg0, arg1);
+    }
+    pub inline fn glTexCoord2sv(arg0: [*c]const GLshort) void {
+        _glTexCoord2sv(arg0);
+    }
+    pub inline fn glTexCoord3d(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble) void {
+        _glTexCoord3d(arg0, arg1, arg2);
+    }
+    pub inline fn glTexCoord3dv(arg0: [*c]const GLdouble) void {
+        _glTexCoord3dv(arg0);
+    }
+    pub inline fn glTexCoord3f(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat) void {
+        _glTexCoord3f(arg0, arg1, arg2);
+    }
+    pub inline fn glTexCoord3fv(arg0: [*c]const GLfloat) void {
+        _glTexCoord3fv(arg0);
+    }
+    pub inline fn glTexCoord3i(arg0: GLint, arg1: GLint, arg2: GLint) void {
+        _glTexCoord3i(arg0, arg1, arg2);
+    }
+    pub inline fn glTexCoord3iv(arg0: [*c]const GLint) void {
+        _glTexCoord3iv(arg0);
+    }
+    pub inline fn glTexCoord3s(arg0: GLshort, arg1: GLshort, arg2: GLshort) void {
+        _glTexCoord3s(arg0, arg1, arg2);
+    }
+    pub inline fn glTexCoord3sv(arg0: [*c]const GLshort) void {
+        _glTexCoord3sv(arg0);
+    }
+    pub inline fn glTexCoord4d(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble) void {
+        _glTexCoord4d(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glTexCoord4dv(arg0: [*c]const GLdouble) void {
+        _glTexCoord4dv(arg0);
+    }
+    pub inline fn glTexCoord4f(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glTexCoord4f(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glTexCoord4fv(arg0: [*c]const GLfloat) void {
+        _glTexCoord4fv(arg0);
+    }
+    pub inline fn glTexCoord4i(arg0: GLint, arg1: GLint, arg2: GLint, arg3: GLint) void {
+        _glTexCoord4i(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glTexCoord4iv(arg0: [*c]const GLint) void {
+        _glTexCoord4iv(arg0);
+    }
+    pub inline fn glTexCoord4s(arg0: GLshort, arg1: GLshort, arg2: GLshort, arg3: GLshort) void {
+        _glTexCoord4s(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glTexCoord4sv(arg0: [*c]const GLshort) void {
+        _glTexCoord4sv(arg0);
+    }
+    pub inline fn glTexCoordPointer(arg0: GLint, arg1: GLenum, arg2: GLsizei, arg3: ?*const c_void) void {
+        _glTexCoordPointer(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glTexEnvf(arg0: GLenum, arg1: GLenum, arg2: GLfloat) void {
+        _glTexEnvf(arg0, arg1, arg2);
+    }
+    pub inline fn glTexEnvfv(arg0: GLenum, arg1: GLenum, arg2: [*c]const GLfloat) void {
+        _glTexEnvfv(arg0, arg1, arg2);
+    }
+    pub inline fn glTexEnvi(arg0: GLenum, arg1: GLenum, arg2: GLint) void {
+        _glTexEnvi(arg0, arg1, arg2);
+    }
+    pub inline fn glTexEnviv(arg0: GLenum, arg1: GLenum, arg2: [*c]const GLint) void {
+        _glTexEnviv(arg0, arg1, arg2);
+    }
+    pub inline fn glTexGend(arg0: GLenum, arg1: GLenum, arg2: GLdouble) void {
+        _glTexGend(arg0, arg1, arg2);
+    }
+    pub inline fn glTexGendv(arg0: GLenum, arg1: GLenum, arg2: [*c]const GLdouble) void {
+        _glTexGendv(arg0, arg1, arg2);
+    }
+    pub inline fn glTexGenf(arg0: GLenum, arg1: GLenum, arg2: GLfloat) void {
+        _glTexGenf(arg0, arg1, arg2);
+    }
+    pub inline fn glTexGenfv(arg0: GLenum, arg1: GLenum, arg2: [*c]const GLfloat) void {
+        _glTexGenfv(arg0, arg1, arg2);
+    }
+    pub inline fn glTexGeni(arg0: GLenum, arg1: GLenum, arg2: GLint) void {
+        _glTexGeni(arg0, arg1, arg2);
+    }
+    pub inline fn glTexGeniv(arg0: GLenum, arg1: GLenum, arg2: [*c]const GLint) void {
+        _glTexGeniv(arg0, arg1, arg2);
+    }
+    pub inline fn glTexImage1D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLsizei, arg4: GLint, arg5: GLenum, arg6: GLenum, arg7: ?*const c_void) void {
+        _glTexImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+    }
+    pub inline fn glTexImage2D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLsizei, arg4: GLsizei, arg5: GLint, arg6: GLenum, arg7: GLenum, arg8: ?*const c_void) void {
+        _glTexImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+    }
+    pub inline fn glTexImage3D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLsizei, arg4: GLsizei, arg5: GLsizei, arg6: GLint, arg7: GLenum, arg8: GLenum, arg9: ?*const c_void) void {
+        _glTexImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
+    }
+    pub inline fn glTexParameterf(arg0: GLenum, arg1: GLenum, arg2: GLfloat) void {
+        _glTexParameterf(arg0, arg1, arg2);
+    }
+    pub inline fn glTexParameterfv(arg0: GLenum, arg1: GLenum, arg2: [*c]const GLfloat) void {
+        _glTexParameterfv(arg0, arg1, arg2);
+    }
+    pub inline fn glTexParameteri(arg0: GLenum, arg1: GLenum, arg2: GLint) void {
+        _glTexParameteri(arg0, arg1, arg2);
+    }
+    pub inline fn glTexParameteriv(arg0: GLenum, arg1: GLenum, arg2: [*c]const GLint) void {
+        _glTexParameteriv(arg0, arg1, arg2);
+    }
+    pub inline fn glTexSubImage1D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLsizei, arg4: GLenum, arg5: GLenum, arg6: ?*const c_void) void {
+        _glTexSubImage1D(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+    }
+    pub inline fn glTexSubImage2D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLint, arg4: GLsizei, arg5: GLsizei, arg6: GLenum, arg7: GLenum, arg8: ?*const c_void) void {
+        _glTexSubImage2D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+    }
+    pub inline fn glTexSubImage3D(arg0: GLenum, arg1: GLint, arg2: GLint, arg3: GLint, arg4: GLint, arg5: GLsizei, arg6: GLsizei, arg7: GLsizei, arg8: GLenum, arg9: GLenum, arg10: ?*const c_void) void {
+        _glTexSubImage3D(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+    }
+    pub inline fn glTranslated(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble) void {
+        _glTranslated(arg0, arg1, arg2);
+    }
+    pub inline fn glTranslatef(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat) void {
+        _glTranslatef(arg0, arg1, arg2);
+    }
+    pub inline fn glUniform1f(arg0: GLint, arg1: GLfloat) void {
+        _glUniform1f(arg0, arg1);
+    }
+    pub inline fn glUniform1fv(arg0: GLint, arg1: GLsizei, arg2: [*c]const GLfloat) void {
+        _glUniform1fv(arg0, arg1, arg2);
+    }
+    pub inline fn glUniform1i(arg0: GLint, arg1: GLint) void {
+        _glUniform1i(arg0, arg1);
+    }
+    pub inline fn glUniform1iv(arg0: GLint, arg1: GLsizei, arg2: [*c]const GLint) void {
+        _glUniform1iv(arg0, arg1, arg2);
+    }
+    pub inline fn glUniform2f(arg0: GLint, arg1: GLfloat, arg2: GLfloat) void {
+        _glUniform2f(arg0, arg1, arg2);
+    }
+    pub inline fn glUniform2fv(arg0: GLint, arg1: GLsizei, arg2: [*c]const GLfloat) void {
+        _glUniform2fv(arg0, arg1, arg2);
+    }
+    pub inline fn glUniform2i(arg0: GLint, arg1: GLint, arg2: GLint) void {
+        _glUniform2i(arg0, arg1, arg2);
+    }
+    pub inline fn glUniform2iv(arg0: GLint, arg1: GLsizei, arg2: [*c]const GLint) void {
+        _glUniform2iv(arg0, arg1, arg2);
+    }
+    pub inline fn glUniform3f(arg0: GLint, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glUniform3f(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glUniform3fv(arg0: GLint, arg1: GLsizei, arg2: [*c]const GLfloat) void {
+        _glUniform3fv(arg0, arg1, arg2);
+    }
+    pub inline fn glUniform3i(arg0: GLint, arg1: GLint, arg2: GLint, arg3: GLint) void {
+        _glUniform3i(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glUniform3iv(arg0: GLint, arg1: GLsizei, arg2: [*c]const GLint) void {
+        _glUniform3iv(arg0, arg1, arg2);
+    }
+    pub inline fn glUniform4f(arg0: GLint, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat, arg4: GLfloat) void {
+        _glUniform4f(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glUniform4fv(arg0: GLint, arg1: GLsizei, arg2: [*c]const GLfloat) void {
+        _glUniform4fv(arg0, arg1, arg2);
+    }
+    pub inline fn glUniform4i(arg0: GLint, arg1: GLint, arg2: GLint, arg3: GLint, arg4: GLint) void {
+        _glUniform4i(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glUniform4iv(arg0: GLint, arg1: GLsizei, arg2: [*c]const GLint) void {
+        _glUniform4iv(arg0, arg1, arg2);
+    }
+    pub inline fn glUniformMatrix2fv(arg0: GLint, arg1: GLsizei, arg2: GLboolean, arg3: [*c]const GLfloat) void {
+        _glUniformMatrix2fv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glUniformMatrix2x3fv(arg0: GLint, arg1: GLsizei, arg2: GLboolean, arg3: [*c]const GLfloat) void {
+        _glUniformMatrix2x3fv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glUniformMatrix2x4fv(arg0: GLint, arg1: GLsizei, arg2: GLboolean, arg3: [*c]const GLfloat) void {
+        _glUniformMatrix2x4fv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glUniformMatrix3fv(arg0: GLint, arg1: GLsizei, arg2: GLboolean, arg3: [*c]const GLfloat) void {
+        _glUniformMatrix3fv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glUniformMatrix3x2fv(arg0: GLint, arg1: GLsizei, arg2: GLboolean, arg3: [*c]const GLfloat) void {
+        _glUniformMatrix3x2fv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glUniformMatrix3x4fv(arg0: GLint, arg1: GLsizei, arg2: GLboolean, arg3: [*c]const GLfloat) void {
+        _glUniformMatrix3x4fv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glUniformMatrix4fv(arg0: GLint, arg1: GLsizei, arg2: GLboolean, arg3: [*c]const GLfloat) void {
+        _glUniformMatrix4fv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glUniformMatrix4x2fv(arg0: GLint, arg1: GLsizei, arg2: GLboolean, arg3: [*c]const GLfloat) void {
+        _glUniformMatrix4x2fv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glUniformMatrix4x3fv(arg0: GLint, arg1: GLsizei, arg2: GLboolean, arg3: [*c]const GLfloat) void {
+        _glUniformMatrix4x3fv(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glUnmapBuffer(arg0: GLenum) GLboolean {
+        return _glUnmapBuffer(arg0);
+    }
+    pub inline fn glUseProgram(arg0: GLuint) void {
+        _glUseProgram(arg0);
+    }
+    pub inline fn glValidateProgram(arg0: GLuint) void {
+        _glValidateProgram(arg0);
+    }
+    pub inline fn glVertex2d(arg0: GLdouble, arg1: GLdouble) void {
+        _glVertex2d(arg0, arg1);
+    }
+    pub inline fn glVertex2dv(arg0: [*c]const GLdouble) void {
+        _glVertex2dv(arg0);
+    }
+    pub inline fn glVertex2f(arg0: GLfloat, arg1: GLfloat) void {
+        _glVertex2f(arg0, arg1);
+    }
+    pub inline fn glVertex2fv(arg0: [*c]const GLfloat) void {
+        _glVertex2fv(arg0);
+    }
+    pub inline fn glVertex2i(arg0: GLint, arg1: GLint) void {
+        _glVertex2i(arg0, arg1);
+    }
+    pub inline fn glVertex2iv(arg0: [*c]const GLint) void {
+        _glVertex2iv(arg0);
+    }
+    pub inline fn glVertex2s(arg0: GLshort, arg1: GLshort) void {
+        _glVertex2s(arg0, arg1);
+    }
+    pub inline fn glVertex2sv(arg0: [*c]const GLshort) void {
+        _glVertex2sv(arg0);
+    }
+    pub inline fn glVertex3d(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble) void {
+        _glVertex3d(arg0, arg1, arg2);
+    }
+    pub inline fn glVertex3dv(arg0: [*c]const GLdouble) void {
+        _glVertex3dv(arg0);
+    }
+    pub inline fn glVertex3f(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat) void {
+        _glVertex3f(arg0, arg1, arg2);
+    }
+    pub inline fn glVertex3fv(arg0: [*c]const GLfloat) void {
+        _glVertex3fv(arg0);
+    }
+    pub inline fn glVertex3i(arg0: GLint, arg1: GLint, arg2: GLint) void {
+        _glVertex3i(arg0, arg1, arg2);
+    }
+    pub inline fn glVertex3iv(arg0: [*c]const GLint) void {
+        _glVertex3iv(arg0);
+    }
+    pub inline fn glVertex3s(arg0: GLshort, arg1: GLshort, arg2: GLshort) void {
+        _glVertex3s(arg0, arg1, arg2);
+    }
+    pub inline fn glVertex3sv(arg0: [*c]const GLshort) void {
+        _glVertex3sv(arg0);
+    }
+    pub inline fn glVertex4d(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble) void {
+        _glVertex4d(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glVertex4dv(arg0: [*c]const GLdouble) void {
+        _glVertex4dv(arg0);
+    }
+    pub inline fn glVertex4f(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glVertex4f(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glVertex4fv(arg0: [*c]const GLfloat) void {
+        _glVertex4fv(arg0);
+    }
+    pub inline fn glVertex4i(arg0: GLint, arg1: GLint, arg2: GLint, arg3: GLint) void {
+        _glVertex4i(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glVertex4iv(arg0: [*c]const GLint) void {
+        _glVertex4iv(arg0);
+    }
+    pub inline fn glVertex4s(arg0: GLshort, arg1: GLshort, arg2: GLshort, arg3: GLshort) void {
+        _glVertex4s(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glVertex4sv(arg0: [*c]const GLshort) void {
+        _glVertex4sv(arg0);
+    }
+    pub inline fn glVertexAttrib1d(arg0: GLuint, arg1: GLdouble) void {
+        _glVertexAttrib1d(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib1dv(arg0: GLuint, arg1: [*c]const GLdouble) void {
+        _glVertexAttrib1dv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib1f(arg0: GLuint, arg1: GLfloat) void {
+        _glVertexAttrib1f(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib1fv(arg0: GLuint, arg1: [*c]const GLfloat) void {
+        _glVertexAttrib1fv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib1s(arg0: GLuint, arg1: GLshort) void {
+        _glVertexAttrib1s(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib1sv(arg0: GLuint, arg1: [*c]const GLshort) void {
+        _glVertexAttrib1sv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib2d(arg0: GLuint, arg1: GLdouble, arg2: GLdouble) void {
+        _glVertexAttrib2d(arg0, arg1, arg2);
+    }
+    pub inline fn glVertexAttrib2dv(arg0: GLuint, arg1: [*c]const GLdouble) void {
+        _glVertexAttrib2dv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib2f(arg0: GLuint, arg1: GLfloat, arg2: GLfloat) void {
+        _glVertexAttrib2f(arg0, arg1, arg2);
+    }
+    pub inline fn glVertexAttrib2fv(arg0: GLuint, arg1: [*c]const GLfloat) void {
+        _glVertexAttrib2fv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib2s(arg0: GLuint, arg1: GLshort, arg2: GLshort) void {
+        _glVertexAttrib2s(arg0, arg1, arg2);
+    }
+    pub inline fn glVertexAttrib2sv(arg0: GLuint, arg1: [*c]const GLshort) void {
+        _glVertexAttrib2sv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib3d(arg0: GLuint, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble) void {
+        _glVertexAttrib3d(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glVertexAttrib3dv(arg0: GLuint, arg1: [*c]const GLdouble) void {
+        _glVertexAttrib3dv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib3f(arg0: GLuint, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat) void {
+        _glVertexAttrib3f(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glVertexAttrib3fv(arg0: GLuint, arg1: [*c]const GLfloat) void {
+        _glVertexAttrib3fv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib3s(arg0: GLuint, arg1: GLshort, arg2: GLshort, arg3: GLshort) void {
+        _glVertexAttrib3s(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glVertexAttrib3sv(arg0: GLuint, arg1: [*c]const GLshort) void {
+        _glVertexAttrib3sv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4Nbv(arg0: GLuint, arg1: [*c]const GLbyte) void {
+        _glVertexAttrib4Nbv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4Niv(arg0: GLuint, arg1: [*c]const GLint) void {
+        _glVertexAttrib4Niv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4Nsv(arg0: GLuint, arg1: [*c]const GLshort) void {
+        _glVertexAttrib4Nsv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4Nub(arg0: GLuint, arg1: GLubyte, arg2: GLubyte, arg3: GLubyte, arg4: GLubyte) void {
+        _glVertexAttrib4Nub(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glVertexAttrib4Nubv(arg0: GLuint, arg1: [*c]const GLubyte) void {
+        _glVertexAttrib4Nubv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4Nuiv(arg0: GLuint, arg1: [*c]const GLuint) void {
+        _glVertexAttrib4Nuiv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4Nusv(arg0: GLuint, arg1: [*c]const GLushort) void {
+        _glVertexAttrib4Nusv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4bv(arg0: GLuint, arg1: [*c]const GLbyte) void {
+        _glVertexAttrib4bv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4d(arg0: GLuint, arg1: GLdouble, arg2: GLdouble, arg3: GLdouble, arg4: GLdouble) void {
+        _glVertexAttrib4d(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glVertexAttrib4dv(arg0: GLuint, arg1: [*c]const GLdouble) void {
+        _glVertexAttrib4dv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4f(arg0: GLuint, arg1: GLfloat, arg2: GLfloat, arg3: GLfloat, arg4: GLfloat) void {
+        _glVertexAttrib4f(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glVertexAttrib4fv(arg0: GLuint, arg1: [*c]const GLfloat) void {
+        _glVertexAttrib4fv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4iv(arg0: GLuint, arg1: [*c]const GLint) void {
+        _glVertexAttrib4iv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4s(arg0: GLuint, arg1: GLshort, arg2: GLshort, arg3: GLshort, arg4: GLshort) void {
+        _glVertexAttrib4s(arg0, arg1, arg2, arg3, arg4);
+    }
+    pub inline fn glVertexAttrib4sv(arg0: GLuint, arg1: [*c]const GLshort) void {
+        _glVertexAttrib4sv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4ubv(arg0: GLuint, arg1: [*c]const GLubyte) void {
+        _glVertexAttrib4ubv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4uiv(arg0: GLuint, arg1: [*c]const GLuint) void {
+        _glVertexAttrib4uiv(arg0, arg1);
+    }
+    pub inline fn glVertexAttrib4usv(arg0: GLuint, arg1: [*c]const GLushort) void {
+        _glVertexAttrib4usv(arg0, arg1);
+    }
+    pub inline fn glVertexAttribPointer(arg0: GLuint, arg1: GLint, arg2: GLenum, arg3: GLboolean, arg4: GLsizei, arg5: ?*const c_void) void {
+        _glVertexAttribPointer(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+    pub inline fn glVertexPointer(arg0: GLint, arg1: GLenum, arg2: GLsizei, arg3: ?*const c_void) void {
+        _glVertexPointer(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glViewport(arg0: GLint, arg1: GLint, arg2: GLsizei, arg3: GLsizei) void {
+        _glViewport(arg0, arg1, arg2, arg3);
+    }
+    pub inline fn glWindowPos2d(arg0: GLdouble, arg1: GLdouble) void {
+        _glWindowPos2d(arg0, arg1);
+    }
+    pub inline fn glWindowPos2dv(arg0: [*c]const GLdouble) void {
+        _glWindowPos2dv(arg0);
+    }
+    pub inline fn glWindowPos2f(arg0: GLfloat, arg1: GLfloat) void {
+        _glWindowPos2f(arg0, arg1);
+    }
+    pub inline fn glWindowPos2fv(arg0: [*c]const GLfloat) void {
+        _glWindowPos2fv(arg0);
+    }
+    pub inline fn glWindowPos2i(arg0: GLint, arg1: GLint) void {
+        _glWindowPos2i(arg0, arg1);
+    }
+    pub inline fn glWindowPos2iv(arg0: [*c]const GLint) void {
+        _glWindowPos2iv(arg0);
+    }
+    pub inline fn glWindowPos2s(arg0: GLshort, arg1: GLshort) void {
+        _glWindowPos2s(arg0, arg1);
+    }
+    pub inline fn glWindowPos2sv(arg0: [*c]const GLshort) void {
+        _glWindowPos2sv(arg0);
+    }
+    pub inline fn glWindowPos3d(arg0: GLdouble, arg1: GLdouble, arg2: GLdouble) void {
+        _glWindowPos3d(arg0, arg1, arg2);
+    }
+    pub inline fn glWindowPos3dv(arg0: [*c]const GLdouble) void {
+        _glWindowPos3dv(arg0);
+    }
+    pub inline fn glWindowPos3f(arg0: GLfloat, arg1: GLfloat, arg2: GLfloat) void {
+        _glWindowPos3f(arg0, arg1, arg2);
+    }
+    pub inline fn glWindowPos3fv(arg0: [*c]const GLfloat) void {
+        _glWindowPos3fv(arg0);
+    }
+    pub inline fn glWindowPos3i(arg0: GLint, arg1: GLint, arg2: GLint) void {
+        _glWindowPos3i(arg0, arg1, arg2);
+    }
+    pub inline fn glWindowPos3iv(arg0: [*c]const GLint) void {
+        _glWindowPos3iv(arg0);
+    }
+    pub inline fn glWindowPos3s(arg0: GLshort, arg1: GLshort, arg2: GLshort) void {
+        _glWindowPos3s(arg0, arg1, arg2);
+    }
+    pub inline fn glWindowPos3sv(arg0: [*c]const GLshort) void {
+        _glWindowPos3sv(arg0);
+    }
 };
 
 pub const extensions = [_][:0]const u8{
@@ -1563,575 +3277,575 @@ pub const Command = struct {
 };
 
 pub const commands = [_]Command{
-    .{ .name = "glAccum", .ptr = @ptrCast(**const c_void, &namespace.glAccum) },
-    .{ .name = "glActiveTexture", .ptr = @ptrCast(**const c_void, &namespace.glActiveTexture) },
-    .{ .name = "glAlphaFunc", .ptr = @ptrCast(**const c_void, &namespace.glAlphaFunc) },
-    .{ .name = "glAreTexturesResident", .ptr = @ptrCast(**const c_void, &namespace.glAreTexturesResident) },
-    .{ .name = "glArrayElement", .ptr = @ptrCast(**const c_void, &namespace.glArrayElement) },
-    .{ .name = "glAttachShader", .ptr = @ptrCast(**const c_void, &namespace.glAttachShader) },
-    .{ .name = "glBegin", .ptr = @ptrCast(**const c_void, &namespace.glBegin) },
-    .{ .name = "glBeginQuery", .ptr = @ptrCast(**const c_void, &namespace.glBeginQuery) },
-    .{ .name = "glBindAttribLocation", .ptr = @ptrCast(**const c_void, &namespace.glBindAttribLocation) },
-    .{ .name = "glBindBuffer", .ptr = @ptrCast(**const c_void, &namespace.glBindBuffer) },
-    .{ .name = "glBindFramebuffer", .ptr = @ptrCast(**const c_void, &namespace.glBindFramebuffer) },
-    .{ .name = "glBindRenderbuffer", .ptr = @ptrCast(**const c_void, &namespace.glBindRenderbuffer) },
-    .{ .name = "glBindTexture", .ptr = @ptrCast(**const c_void, &namespace.glBindTexture) },
-    .{ .name = "glBitmap", .ptr = @ptrCast(**const c_void, &namespace.glBitmap) },
-    .{ .name = "glBlendColor", .ptr = @ptrCast(**const c_void, &namespace.glBlendColor) },
-    .{ .name = "glBlendEquation", .ptr = @ptrCast(**const c_void, &namespace.glBlendEquation) },
-    .{ .name = "glBlendEquationSeparate", .ptr = @ptrCast(**const c_void, &namespace.glBlendEquationSeparate) },
-    .{ .name = "glBlendFunc", .ptr = @ptrCast(**const c_void, &namespace.glBlendFunc) },
-    .{ .name = "glBlendFuncSeparate", .ptr = @ptrCast(**const c_void, &namespace.glBlendFuncSeparate) },
-    .{ .name = "glBlitFramebuffer", .ptr = @ptrCast(**const c_void, &namespace.glBlitFramebuffer) },
-    .{ .name = "glBufferData", .ptr = @ptrCast(**const c_void, &namespace.glBufferData) },
-    .{ .name = "glBufferSubData", .ptr = @ptrCast(**const c_void, &namespace.glBufferSubData) },
-    .{ .name = "glCallList", .ptr = @ptrCast(**const c_void, &namespace.glCallList) },
-    .{ .name = "glCallLists", .ptr = @ptrCast(**const c_void, &namespace.glCallLists) },
-    .{ .name = "glCheckFramebufferStatus", .ptr = @ptrCast(**const c_void, &namespace.glCheckFramebufferStatus) },
-    .{ .name = "glClear", .ptr = @ptrCast(**const c_void, &namespace.glClear) },
-    .{ .name = "glClearAccum", .ptr = @ptrCast(**const c_void, &namespace.glClearAccum) },
-    .{ .name = "glClearColor", .ptr = @ptrCast(**const c_void, &namespace.glClearColor) },
-    .{ .name = "glClearDepth", .ptr = @ptrCast(**const c_void, &namespace.glClearDepth) },
-    .{ .name = "glClearIndex", .ptr = @ptrCast(**const c_void, &namespace.glClearIndex) },
-    .{ .name = "glClearStencil", .ptr = @ptrCast(**const c_void, &namespace.glClearStencil) },
-    .{ .name = "glClientActiveTexture", .ptr = @ptrCast(**const c_void, &namespace.glClientActiveTexture) },
-    .{ .name = "glClipPlane", .ptr = @ptrCast(**const c_void, &namespace.glClipPlane) },
-    .{ .name = "glColor3b", .ptr = @ptrCast(**const c_void, &namespace.glColor3b) },
-    .{ .name = "glColor3bv", .ptr = @ptrCast(**const c_void, &namespace.glColor3bv) },
-    .{ .name = "glColor3d", .ptr = @ptrCast(**const c_void, &namespace.glColor3d) },
-    .{ .name = "glColor3dv", .ptr = @ptrCast(**const c_void, &namespace.glColor3dv) },
-    .{ .name = "glColor3f", .ptr = @ptrCast(**const c_void, &namespace.glColor3f) },
-    .{ .name = "glColor3fv", .ptr = @ptrCast(**const c_void, &namespace.glColor3fv) },
-    .{ .name = "glColor3i", .ptr = @ptrCast(**const c_void, &namespace.glColor3i) },
-    .{ .name = "glColor3iv", .ptr = @ptrCast(**const c_void, &namespace.glColor3iv) },
-    .{ .name = "glColor3s", .ptr = @ptrCast(**const c_void, &namespace.glColor3s) },
-    .{ .name = "glColor3sv", .ptr = @ptrCast(**const c_void, &namespace.glColor3sv) },
-    .{ .name = "glColor3ub", .ptr = @ptrCast(**const c_void, &namespace.glColor3ub) },
-    .{ .name = "glColor3ubv", .ptr = @ptrCast(**const c_void, &namespace.glColor3ubv) },
-    .{ .name = "glColor3ui", .ptr = @ptrCast(**const c_void, &namespace.glColor3ui) },
-    .{ .name = "glColor3uiv", .ptr = @ptrCast(**const c_void, &namespace.glColor3uiv) },
-    .{ .name = "glColor3us", .ptr = @ptrCast(**const c_void, &namespace.glColor3us) },
-    .{ .name = "glColor3usv", .ptr = @ptrCast(**const c_void, &namespace.glColor3usv) },
-    .{ .name = "glColor4b", .ptr = @ptrCast(**const c_void, &namespace.glColor4b) },
-    .{ .name = "glColor4bv", .ptr = @ptrCast(**const c_void, &namespace.glColor4bv) },
-    .{ .name = "glColor4d", .ptr = @ptrCast(**const c_void, &namespace.glColor4d) },
-    .{ .name = "glColor4dv", .ptr = @ptrCast(**const c_void, &namespace.glColor4dv) },
-    .{ .name = "glColor4f", .ptr = @ptrCast(**const c_void, &namespace.glColor4f) },
-    .{ .name = "glColor4fv", .ptr = @ptrCast(**const c_void, &namespace.glColor4fv) },
-    .{ .name = "glColor4i", .ptr = @ptrCast(**const c_void, &namespace.glColor4i) },
-    .{ .name = "glColor4iv", .ptr = @ptrCast(**const c_void, &namespace.glColor4iv) },
-    .{ .name = "glColor4s", .ptr = @ptrCast(**const c_void, &namespace.glColor4s) },
-    .{ .name = "glColor4sv", .ptr = @ptrCast(**const c_void, &namespace.glColor4sv) },
-    .{ .name = "glColor4ub", .ptr = @ptrCast(**const c_void, &namespace.glColor4ub) },
-    .{ .name = "glColor4ubv", .ptr = @ptrCast(**const c_void, &namespace.glColor4ubv) },
-    .{ .name = "glColor4ui", .ptr = @ptrCast(**const c_void, &namespace.glColor4ui) },
-    .{ .name = "glColor4uiv", .ptr = @ptrCast(**const c_void, &namespace.glColor4uiv) },
-    .{ .name = "glColor4us", .ptr = @ptrCast(**const c_void, &namespace.glColor4us) },
-    .{ .name = "glColor4usv", .ptr = @ptrCast(**const c_void, &namespace.glColor4usv) },
-    .{ .name = "glColorMask", .ptr = @ptrCast(**const c_void, &namespace.glColorMask) },
-    .{ .name = "glColorMaterial", .ptr = @ptrCast(**const c_void, &namespace.glColorMaterial) },
-    .{ .name = "glColorPointer", .ptr = @ptrCast(**const c_void, &namespace.glColorPointer) },
-    .{ .name = "glCompileShader", .ptr = @ptrCast(**const c_void, &namespace.glCompileShader) },
-    .{ .name = "glCompressedTexImage1D", .ptr = @ptrCast(**const c_void, &namespace.glCompressedTexImage1D) },
-    .{ .name = "glCompressedTexImage2D", .ptr = @ptrCast(**const c_void, &namespace.glCompressedTexImage2D) },
-    .{ .name = "glCompressedTexImage3D", .ptr = @ptrCast(**const c_void, &namespace.glCompressedTexImage3D) },
-    .{ .name = "glCompressedTexSubImage1D", .ptr = @ptrCast(**const c_void, &namespace.glCompressedTexSubImage1D) },
-    .{ .name = "glCompressedTexSubImage2D", .ptr = @ptrCast(**const c_void, &namespace.glCompressedTexSubImage2D) },
-    .{ .name = "glCompressedTexSubImage3D", .ptr = @ptrCast(**const c_void, &namespace.glCompressedTexSubImage3D) },
-    .{ .name = "glCopyPixels", .ptr = @ptrCast(**const c_void, &namespace.glCopyPixels) },
-    .{ .name = "glCopyTexImage1D", .ptr = @ptrCast(**const c_void, &namespace.glCopyTexImage1D) },
-    .{ .name = "glCopyTexImage2D", .ptr = @ptrCast(**const c_void, &namespace.glCopyTexImage2D) },
-    .{ .name = "glCopyTexSubImage1D", .ptr = @ptrCast(**const c_void, &namespace.glCopyTexSubImage1D) },
-    .{ .name = "glCopyTexSubImage2D", .ptr = @ptrCast(**const c_void, &namespace.glCopyTexSubImage2D) },
-    .{ .name = "glCopyTexSubImage3D", .ptr = @ptrCast(**const c_void, &namespace.glCopyTexSubImage3D) },
-    .{ .name = "glCreateProgram", .ptr = @ptrCast(**const c_void, &namespace.glCreateProgram) },
-    .{ .name = "glCreateShader", .ptr = @ptrCast(**const c_void, &namespace.glCreateShader) },
-    .{ .name = "glCullFace", .ptr = @ptrCast(**const c_void, &namespace.glCullFace) },
-    .{ .name = "glDeleteBuffers", .ptr = @ptrCast(**const c_void, &namespace.glDeleteBuffers) },
-    .{ .name = "glDeleteFramebuffers", .ptr = @ptrCast(**const c_void, &namespace.glDeleteFramebuffers) },
-    .{ .name = "glDeleteLists", .ptr = @ptrCast(**const c_void, &namespace.glDeleteLists) },
-    .{ .name = "glDeleteProgram", .ptr = @ptrCast(**const c_void, &namespace.glDeleteProgram) },
-    .{ .name = "glDeleteQueries", .ptr = @ptrCast(**const c_void, &namespace.glDeleteQueries) },
-    .{ .name = "glDeleteRenderbuffers", .ptr = @ptrCast(**const c_void, &namespace.glDeleteRenderbuffers) },
-    .{ .name = "glDeleteShader", .ptr = @ptrCast(**const c_void, &namespace.glDeleteShader) },
-    .{ .name = "glDeleteTextures", .ptr = @ptrCast(**const c_void, &namespace.glDeleteTextures) },
-    .{ .name = "glDepthFunc", .ptr = @ptrCast(**const c_void, &namespace.glDepthFunc) },
-    .{ .name = "glDepthMask", .ptr = @ptrCast(**const c_void, &namespace.glDepthMask) },
-    .{ .name = "glDepthRange", .ptr = @ptrCast(**const c_void, &namespace.glDepthRange) },
-    .{ .name = "glDetachShader", .ptr = @ptrCast(**const c_void, &namespace.glDetachShader) },
-    .{ .name = "glDisable", .ptr = @ptrCast(**const c_void, &namespace.glDisable) },
-    .{ .name = "glDisableClientState", .ptr = @ptrCast(**const c_void, &namespace.glDisableClientState) },
-    .{ .name = "glDisableVertexAttribArray", .ptr = @ptrCast(**const c_void, &namespace.glDisableVertexAttribArray) },
-    .{ .name = "glDrawArrays", .ptr = @ptrCast(**const c_void, &namespace.glDrawArrays) },
-    .{ .name = "glDrawBuffer", .ptr = @ptrCast(**const c_void, &namespace.glDrawBuffer) },
-    .{ .name = "glDrawBuffers", .ptr = @ptrCast(**const c_void, &namespace.glDrawBuffers) },
-    .{ .name = "glDrawElements", .ptr = @ptrCast(**const c_void, &namespace.glDrawElements) },
-    .{ .name = "glDrawPixels", .ptr = @ptrCast(**const c_void, &namespace.glDrawPixels) },
-    .{ .name = "glDrawRangeElements", .ptr = @ptrCast(**const c_void, &namespace.glDrawRangeElements) },
-    .{ .name = "glEdgeFlag", .ptr = @ptrCast(**const c_void, &namespace.glEdgeFlag) },
-    .{ .name = "glEdgeFlagPointer", .ptr = @ptrCast(**const c_void, &namespace.glEdgeFlagPointer) },
-    .{ .name = "glEdgeFlagv", .ptr = @ptrCast(**const c_void, &namespace.glEdgeFlagv) },
-    .{ .name = "glEnable", .ptr = @ptrCast(**const c_void, &namespace.glEnable) },
-    .{ .name = "glEnableClientState", .ptr = @ptrCast(**const c_void, &namespace.glEnableClientState) },
-    .{ .name = "glEnableVertexAttribArray", .ptr = @ptrCast(**const c_void, &namespace.glEnableVertexAttribArray) },
-    .{ .name = "glEnd", .ptr = @ptrCast(**const c_void, &namespace.glEnd) },
-    .{ .name = "glEndList", .ptr = @ptrCast(**const c_void, &namespace.glEndList) },
-    .{ .name = "glEndQuery", .ptr = @ptrCast(**const c_void, &namespace.glEndQuery) },
-    .{ .name = "glEvalCoord1d", .ptr = @ptrCast(**const c_void, &namespace.glEvalCoord1d) },
-    .{ .name = "glEvalCoord1dv", .ptr = @ptrCast(**const c_void, &namespace.glEvalCoord1dv) },
-    .{ .name = "glEvalCoord1f", .ptr = @ptrCast(**const c_void, &namespace.glEvalCoord1f) },
-    .{ .name = "glEvalCoord1fv", .ptr = @ptrCast(**const c_void, &namespace.glEvalCoord1fv) },
-    .{ .name = "glEvalCoord2d", .ptr = @ptrCast(**const c_void, &namespace.glEvalCoord2d) },
-    .{ .name = "glEvalCoord2dv", .ptr = @ptrCast(**const c_void, &namespace.glEvalCoord2dv) },
-    .{ .name = "glEvalCoord2f", .ptr = @ptrCast(**const c_void, &namespace.glEvalCoord2f) },
-    .{ .name = "glEvalCoord2fv", .ptr = @ptrCast(**const c_void, &namespace.glEvalCoord2fv) },
-    .{ .name = "glEvalMesh1", .ptr = @ptrCast(**const c_void, &namespace.glEvalMesh1) },
-    .{ .name = "glEvalMesh2", .ptr = @ptrCast(**const c_void, &namespace.glEvalMesh2) },
-    .{ .name = "glEvalPoint1", .ptr = @ptrCast(**const c_void, &namespace.glEvalPoint1) },
-    .{ .name = "glEvalPoint2", .ptr = @ptrCast(**const c_void, &namespace.glEvalPoint2) },
-    .{ .name = "glFeedbackBuffer", .ptr = @ptrCast(**const c_void, &namespace.glFeedbackBuffer) },
-    .{ .name = "glFinish", .ptr = @ptrCast(**const c_void, &namespace.glFinish) },
-    .{ .name = "glFlush", .ptr = @ptrCast(**const c_void, &namespace.glFlush) },
-    .{ .name = "glFogCoordPointer", .ptr = @ptrCast(**const c_void, &namespace.glFogCoordPointer) },
-    .{ .name = "glFogCoordd", .ptr = @ptrCast(**const c_void, &namespace.glFogCoordd) },
-    .{ .name = "glFogCoorddv", .ptr = @ptrCast(**const c_void, &namespace.glFogCoorddv) },
-    .{ .name = "glFogCoordf", .ptr = @ptrCast(**const c_void, &namespace.glFogCoordf) },
-    .{ .name = "glFogCoordfv", .ptr = @ptrCast(**const c_void, &namespace.glFogCoordfv) },
-    .{ .name = "glFogf", .ptr = @ptrCast(**const c_void, &namespace.glFogf) },
-    .{ .name = "glFogfv", .ptr = @ptrCast(**const c_void, &namespace.glFogfv) },
-    .{ .name = "glFogi", .ptr = @ptrCast(**const c_void, &namespace.glFogi) },
-    .{ .name = "glFogiv", .ptr = @ptrCast(**const c_void, &namespace.glFogiv) },
-    .{ .name = "glFramebufferRenderbuffer", .ptr = @ptrCast(**const c_void, &namespace.glFramebufferRenderbuffer) },
-    .{ .name = "glFramebufferTexture1D", .ptr = @ptrCast(**const c_void, &namespace.glFramebufferTexture1D) },
-    .{ .name = "glFramebufferTexture2D", .ptr = @ptrCast(**const c_void, &namespace.glFramebufferTexture2D) },
-    .{ .name = "glFramebufferTexture3D", .ptr = @ptrCast(**const c_void, &namespace.glFramebufferTexture3D) },
-    .{ .name = "glFramebufferTextureLayer", .ptr = @ptrCast(**const c_void, &namespace.glFramebufferTextureLayer) },
-    .{ .name = "glFrontFace", .ptr = @ptrCast(**const c_void, &namespace.glFrontFace) },
-    .{ .name = "glFrustum", .ptr = @ptrCast(**const c_void, &namespace.glFrustum) },
-    .{ .name = "glGenBuffers", .ptr = @ptrCast(**const c_void, &namespace.glGenBuffers) },
-    .{ .name = "glGenFramebuffers", .ptr = @ptrCast(**const c_void, &namespace.glGenFramebuffers) },
-    .{ .name = "glGenLists", .ptr = @ptrCast(**const c_void, &namespace.glGenLists) },
-    .{ .name = "glGenQueries", .ptr = @ptrCast(**const c_void, &namespace.glGenQueries) },
-    .{ .name = "glGenRenderbuffers", .ptr = @ptrCast(**const c_void, &namespace.glGenRenderbuffers) },
-    .{ .name = "glGenTextures", .ptr = @ptrCast(**const c_void, &namespace.glGenTextures) },
-    .{ .name = "glGenerateMipmap", .ptr = @ptrCast(**const c_void, &namespace.glGenerateMipmap) },
-    .{ .name = "glGetActiveAttrib", .ptr = @ptrCast(**const c_void, &namespace.glGetActiveAttrib) },
-    .{ .name = "glGetActiveUniform", .ptr = @ptrCast(**const c_void, &namespace.glGetActiveUniform) },
-    .{ .name = "glGetAttachedShaders", .ptr = @ptrCast(**const c_void, &namespace.glGetAttachedShaders) },
-    .{ .name = "glGetAttribLocation", .ptr = @ptrCast(**const c_void, &namespace.glGetAttribLocation) },
-    .{ .name = "glGetBooleanv", .ptr = @ptrCast(**const c_void, &namespace.glGetBooleanv) },
-    .{ .name = "glGetBufferParameteriv", .ptr = @ptrCast(**const c_void, &namespace.glGetBufferParameteriv) },
-    .{ .name = "glGetBufferPointerv", .ptr = @ptrCast(**const c_void, &namespace.glGetBufferPointerv) },
-    .{ .name = "glGetBufferSubData", .ptr = @ptrCast(**const c_void, &namespace.glGetBufferSubData) },
-    .{ .name = "glGetClipPlane", .ptr = @ptrCast(**const c_void, &namespace.glGetClipPlane) },
-    .{ .name = "glGetCompressedTexImage", .ptr = @ptrCast(**const c_void, &namespace.glGetCompressedTexImage) },
-    .{ .name = "glGetDoublev", .ptr = @ptrCast(**const c_void, &namespace.glGetDoublev) },
-    .{ .name = "glGetError", .ptr = @ptrCast(**const c_void, &namespace.glGetError) },
-    .{ .name = "glGetFloatv", .ptr = @ptrCast(**const c_void, &namespace.glGetFloatv) },
-    .{ .name = "glGetFramebufferAttachmentParameteriv", .ptr = @ptrCast(**const c_void, &namespace.glGetFramebufferAttachmentParameteriv) },
-    .{ .name = "glGetIntegerv", .ptr = @ptrCast(**const c_void, &namespace.glGetIntegerv) },
-    .{ .name = "glGetLightfv", .ptr = @ptrCast(**const c_void, &namespace.glGetLightfv) },
-    .{ .name = "glGetLightiv", .ptr = @ptrCast(**const c_void, &namespace.glGetLightiv) },
-    .{ .name = "glGetMapdv", .ptr = @ptrCast(**const c_void, &namespace.glGetMapdv) },
-    .{ .name = "glGetMapfv", .ptr = @ptrCast(**const c_void, &namespace.glGetMapfv) },
-    .{ .name = "glGetMapiv", .ptr = @ptrCast(**const c_void, &namespace.glGetMapiv) },
-    .{ .name = "glGetMaterialfv", .ptr = @ptrCast(**const c_void, &namespace.glGetMaterialfv) },
-    .{ .name = "glGetMaterialiv", .ptr = @ptrCast(**const c_void, &namespace.glGetMaterialiv) },
-    .{ .name = "glGetPixelMapfv", .ptr = @ptrCast(**const c_void, &namespace.glGetPixelMapfv) },
-    .{ .name = "glGetPixelMapuiv", .ptr = @ptrCast(**const c_void, &namespace.glGetPixelMapuiv) },
-    .{ .name = "glGetPixelMapusv", .ptr = @ptrCast(**const c_void, &namespace.glGetPixelMapusv) },
-    .{ .name = "glGetPointerv", .ptr = @ptrCast(**const c_void, &namespace.glGetPointerv) },
-    .{ .name = "glGetPolygonStipple", .ptr = @ptrCast(**const c_void, &namespace.glGetPolygonStipple) },
-    .{ .name = "glGetProgramInfoLog", .ptr = @ptrCast(**const c_void, &namespace.glGetProgramInfoLog) },
-    .{ .name = "glGetProgramiv", .ptr = @ptrCast(**const c_void, &namespace.glGetProgramiv) },
-    .{ .name = "glGetQueryObjectiv", .ptr = @ptrCast(**const c_void, &namespace.glGetQueryObjectiv) },
-    .{ .name = "glGetQueryObjectuiv", .ptr = @ptrCast(**const c_void, &namespace.glGetQueryObjectuiv) },
-    .{ .name = "glGetQueryiv", .ptr = @ptrCast(**const c_void, &namespace.glGetQueryiv) },
-    .{ .name = "glGetRenderbufferParameteriv", .ptr = @ptrCast(**const c_void, &namespace.glGetRenderbufferParameteriv) },
-    .{ .name = "glGetShaderInfoLog", .ptr = @ptrCast(**const c_void, &namespace.glGetShaderInfoLog) },
-    .{ .name = "glGetShaderSource", .ptr = @ptrCast(**const c_void, &namespace.glGetShaderSource) },
-    .{ .name = "glGetShaderiv", .ptr = @ptrCast(**const c_void, &namespace.glGetShaderiv) },
-    .{ .name = "glGetString", .ptr = @ptrCast(**const c_void, &namespace.glGetString) },
-    .{ .name = "glGetTexEnvfv", .ptr = @ptrCast(**const c_void, &namespace.glGetTexEnvfv) },
-    .{ .name = "glGetTexEnviv", .ptr = @ptrCast(**const c_void, &namespace.glGetTexEnviv) },
-    .{ .name = "glGetTexGendv", .ptr = @ptrCast(**const c_void, &namespace.glGetTexGendv) },
-    .{ .name = "glGetTexGenfv", .ptr = @ptrCast(**const c_void, &namespace.glGetTexGenfv) },
-    .{ .name = "glGetTexGeniv", .ptr = @ptrCast(**const c_void, &namespace.glGetTexGeniv) },
-    .{ .name = "glGetTexImage", .ptr = @ptrCast(**const c_void, &namespace.glGetTexImage) },
-    .{ .name = "glGetTexLevelParameterfv", .ptr = @ptrCast(**const c_void, &namespace.glGetTexLevelParameterfv) },
-    .{ .name = "glGetTexLevelParameteriv", .ptr = @ptrCast(**const c_void, &namespace.glGetTexLevelParameteriv) },
-    .{ .name = "glGetTexParameterfv", .ptr = @ptrCast(**const c_void, &namespace.glGetTexParameterfv) },
-    .{ .name = "glGetTexParameteriv", .ptr = @ptrCast(**const c_void, &namespace.glGetTexParameteriv) },
-    .{ .name = "glGetUniformLocation", .ptr = @ptrCast(**const c_void, &namespace.glGetUniformLocation) },
-    .{ .name = "glGetUniformfv", .ptr = @ptrCast(**const c_void, &namespace.glGetUniformfv) },
-    .{ .name = "glGetUniformiv", .ptr = @ptrCast(**const c_void, &namespace.glGetUniformiv) },
-    .{ .name = "glGetVertexAttribPointerv", .ptr = @ptrCast(**const c_void, &namespace.glGetVertexAttribPointerv) },
-    .{ .name = "glGetVertexAttribdv", .ptr = @ptrCast(**const c_void, &namespace.glGetVertexAttribdv) },
-    .{ .name = "glGetVertexAttribfv", .ptr = @ptrCast(**const c_void, &namespace.glGetVertexAttribfv) },
-    .{ .name = "glGetVertexAttribiv", .ptr = @ptrCast(**const c_void, &namespace.glGetVertexAttribiv) },
-    .{ .name = "glHint", .ptr = @ptrCast(**const c_void, &namespace.glHint) },
-    .{ .name = "glIndexMask", .ptr = @ptrCast(**const c_void, &namespace.glIndexMask) },
-    .{ .name = "glIndexPointer", .ptr = @ptrCast(**const c_void, &namespace.glIndexPointer) },
-    .{ .name = "glIndexd", .ptr = @ptrCast(**const c_void, &namespace.glIndexd) },
-    .{ .name = "glIndexdv", .ptr = @ptrCast(**const c_void, &namespace.glIndexdv) },
-    .{ .name = "glIndexf", .ptr = @ptrCast(**const c_void, &namespace.glIndexf) },
-    .{ .name = "glIndexfv", .ptr = @ptrCast(**const c_void, &namespace.glIndexfv) },
-    .{ .name = "glIndexi", .ptr = @ptrCast(**const c_void, &namespace.glIndexi) },
-    .{ .name = "glIndexiv", .ptr = @ptrCast(**const c_void, &namespace.glIndexiv) },
-    .{ .name = "glIndexs", .ptr = @ptrCast(**const c_void, &namespace.glIndexs) },
-    .{ .name = "glIndexsv", .ptr = @ptrCast(**const c_void, &namespace.glIndexsv) },
-    .{ .name = "glIndexub", .ptr = @ptrCast(**const c_void, &namespace.glIndexub) },
-    .{ .name = "glIndexubv", .ptr = @ptrCast(**const c_void, &namespace.glIndexubv) },
-    .{ .name = "glInitNames", .ptr = @ptrCast(**const c_void, &namespace.glInitNames) },
-    .{ .name = "glInterleavedArrays", .ptr = @ptrCast(**const c_void, &namespace.glInterleavedArrays) },
-    .{ .name = "glIsBuffer", .ptr = @ptrCast(**const c_void, &namespace.glIsBuffer) },
-    .{ .name = "glIsEnabled", .ptr = @ptrCast(**const c_void, &namespace.glIsEnabled) },
-    .{ .name = "glIsFramebuffer", .ptr = @ptrCast(**const c_void, &namespace.glIsFramebuffer) },
-    .{ .name = "glIsList", .ptr = @ptrCast(**const c_void, &namespace.glIsList) },
-    .{ .name = "glIsProgram", .ptr = @ptrCast(**const c_void, &namespace.glIsProgram) },
-    .{ .name = "glIsQuery", .ptr = @ptrCast(**const c_void, &namespace.glIsQuery) },
-    .{ .name = "glIsRenderbuffer", .ptr = @ptrCast(**const c_void, &namespace.glIsRenderbuffer) },
-    .{ .name = "glIsShader", .ptr = @ptrCast(**const c_void, &namespace.glIsShader) },
-    .{ .name = "glIsTexture", .ptr = @ptrCast(**const c_void, &namespace.glIsTexture) },
-    .{ .name = "glLightModelf", .ptr = @ptrCast(**const c_void, &namespace.glLightModelf) },
-    .{ .name = "glLightModelfv", .ptr = @ptrCast(**const c_void, &namespace.glLightModelfv) },
-    .{ .name = "glLightModeli", .ptr = @ptrCast(**const c_void, &namespace.glLightModeli) },
-    .{ .name = "glLightModeliv", .ptr = @ptrCast(**const c_void, &namespace.glLightModeliv) },
-    .{ .name = "glLightf", .ptr = @ptrCast(**const c_void, &namespace.glLightf) },
-    .{ .name = "glLightfv", .ptr = @ptrCast(**const c_void, &namespace.glLightfv) },
-    .{ .name = "glLighti", .ptr = @ptrCast(**const c_void, &namespace.glLighti) },
-    .{ .name = "glLightiv", .ptr = @ptrCast(**const c_void, &namespace.glLightiv) },
-    .{ .name = "glLineStipple", .ptr = @ptrCast(**const c_void, &namespace.glLineStipple) },
-    .{ .name = "glLineWidth", .ptr = @ptrCast(**const c_void, &namespace.glLineWidth) },
-    .{ .name = "glLinkProgram", .ptr = @ptrCast(**const c_void, &namespace.glLinkProgram) },
-    .{ .name = "glListBase", .ptr = @ptrCast(**const c_void, &namespace.glListBase) },
-    .{ .name = "glLoadIdentity", .ptr = @ptrCast(**const c_void, &namespace.glLoadIdentity) },
-    .{ .name = "glLoadMatrixd", .ptr = @ptrCast(**const c_void, &namespace.glLoadMatrixd) },
-    .{ .name = "glLoadMatrixf", .ptr = @ptrCast(**const c_void, &namespace.glLoadMatrixf) },
-    .{ .name = "glLoadName", .ptr = @ptrCast(**const c_void, &namespace.glLoadName) },
-    .{ .name = "glLoadTransposeMatrixd", .ptr = @ptrCast(**const c_void, &namespace.glLoadTransposeMatrixd) },
-    .{ .name = "glLoadTransposeMatrixf", .ptr = @ptrCast(**const c_void, &namespace.glLoadTransposeMatrixf) },
-    .{ .name = "glLogicOp", .ptr = @ptrCast(**const c_void, &namespace.glLogicOp) },
-    .{ .name = "glMap1d", .ptr = @ptrCast(**const c_void, &namespace.glMap1d) },
-    .{ .name = "glMap1f", .ptr = @ptrCast(**const c_void, &namespace.glMap1f) },
-    .{ .name = "glMap2d", .ptr = @ptrCast(**const c_void, &namespace.glMap2d) },
-    .{ .name = "glMap2f", .ptr = @ptrCast(**const c_void, &namespace.glMap2f) },
-    .{ .name = "glMapBuffer", .ptr = @ptrCast(**const c_void, &namespace.glMapBuffer) },
-    .{ .name = "glMapGrid1d", .ptr = @ptrCast(**const c_void, &namespace.glMapGrid1d) },
-    .{ .name = "glMapGrid1f", .ptr = @ptrCast(**const c_void, &namespace.glMapGrid1f) },
-    .{ .name = "glMapGrid2d", .ptr = @ptrCast(**const c_void, &namespace.glMapGrid2d) },
-    .{ .name = "glMapGrid2f", .ptr = @ptrCast(**const c_void, &namespace.glMapGrid2f) },
-    .{ .name = "glMaterialf", .ptr = @ptrCast(**const c_void, &namespace.glMaterialf) },
-    .{ .name = "glMaterialfv", .ptr = @ptrCast(**const c_void, &namespace.glMaterialfv) },
-    .{ .name = "glMateriali", .ptr = @ptrCast(**const c_void, &namespace.glMateriali) },
-    .{ .name = "glMaterialiv", .ptr = @ptrCast(**const c_void, &namespace.glMaterialiv) },
-    .{ .name = "glMatrixMode", .ptr = @ptrCast(**const c_void, &namespace.glMatrixMode) },
-    .{ .name = "glMultMatrixd", .ptr = @ptrCast(**const c_void, &namespace.glMultMatrixd) },
-    .{ .name = "glMultMatrixf", .ptr = @ptrCast(**const c_void, &namespace.glMultMatrixf) },
-    .{ .name = "glMultTransposeMatrixd", .ptr = @ptrCast(**const c_void, &namespace.glMultTransposeMatrixd) },
-    .{ .name = "glMultTransposeMatrixf", .ptr = @ptrCast(**const c_void, &namespace.glMultTransposeMatrixf) },
-    .{ .name = "glMultiDrawArrays", .ptr = @ptrCast(**const c_void, &namespace.glMultiDrawArrays) },
-    .{ .name = "glMultiDrawElements", .ptr = @ptrCast(**const c_void, &namespace.glMultiDrawElements) },
-    .{ .name = "glMultiTexCoord1d", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord1d) },
-    .{ .name = "glMultiTexCoord1dv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord1dv) },
-    .{ .name = "glMultiTexCoord1f", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord1f) },
-    .{ .name = "glMultiTexCoord1fv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord1fv) },
-    .{ .name = "glMultiTexCoord1i", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord1i) },
-    .{ .name = "glMultiTexCoord1iv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord1iv) },
-    .{ .name = "glMultiTexCoord1s", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord1s) },
-    .{ .name = "glMultiTexCoord1sv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord1sv) },
-    .{ .name = "glMultiTexCoord2d", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord2d) },
-    .{ .name = "glMultiTexCoord2dv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord2dv) },
-    .{ .name = "glMultiTexCoord2f", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord2f) },
-    .{ .name = "glMultiTexCoord2fv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord2fv) },
-    .{ .name = "glMultiTexCoord2i", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord2i) },
-    .{ .name = "glMultiTexCoord2iv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord2iv) },
-    .{ .name = "glMultiTexCoord2s", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord2s) },
-    .{ .name = "glMultiTexCoord2sv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord2sv) },
-    .{ .name = "glMultiTexCoord3d", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord3d) },
-    .{ .name = "glMultiTexCoord3dv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord3dv) },
-    .{ .name = "glMultiTexCoord3f", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord3f) },
-    .{ .name = "glMultiTexCoord3fv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord3fv) },
-    .{ .name = "glMultiTexCoord3i", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord3i) },
-    .{ .name = "glMultiTexCoord3iv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord3iv) },
-    .{ .name = "glMultiTexCoord3s", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord3s) },
-    .{ .name = "glMultiTexCoord3sv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord3sv) },
-    .{ .name = "glMultiTexCoord4d", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord4d) },
-    .{ .name = "glMultiTexCoord4dv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord4dv) },
-    .{ .name = "glMultiTexCoord4f", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord4f) },
-    .{ .name = "glMultiTexCoord4fv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord4fv) },
-    .{ .name = "glMultiTexCoord4i", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord4i) },
-    .{ .name = "glMultiTexCoord4iv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord4iv) },
-    .{ .name = "glMultiTexCoord4s", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord4s) },
-    .{ .name = "glMultiTexCoord4sv", .ptr = @ptrCast(**const c_void, &namespace.glMultiTexCoord4sv) },
-    .{ .name = "glNewList", .ptr = @ptrCast(**const c_void, &namespace.glNewList) },
-    .{ .name = "glNormal3b", .ptr = @ptrCast(**const c_void, &namespace.glNormal3b) },
-    .{ .name = "glNormal3bv", .ptr = @ptrCast(**const c_void, &namespace.glNormal3bv) },
-    .{ .name = "glNormal3d", .ptr = @ptrCast(**const c_void, &namespace.glNormal3d) },
-    .{ .name = "glNormal3dv", .ptr = @ptrCast(**const c_void, &namespace.glNormal3dv) },
-    .{ .name = "glNormal3f", .ptr = @ptrCast(**const c_void, &namespace.glNormal3f) },
-    .{ .name = "glNormal3fv", .ptr = @ptrCast(**const c_void, &namespace.glNormal3fv) },
-    .{ .name = "glNormal3i", .ptr = @ptrCast(**const c_void, &namespace.glNormal3i) },
-    .{ .name = "glNormal3iv", .ptr = @ptrCast(**const c_void, &namespace.glNormal3iv) },
-    .{ .name = "glNormal3s", .ptr = @ptrCast(**const c_void, &namespace.glNormal3s) },
-    .{ .name = "glNormal3sv", .ptr = @ptrCast(**const c_void, &namespace.glNormal3sv) },
-    .{ .name = "glNormalPointer", .ptr = @ptrCast(**const c_void, &namespace.glNormalPointer) },
-    .{ .name = "glOrtho", .ptr = @ptrCast(**const c_void, &namespace.glOrtho) },
-    .{ .name = "glPassThrough", .ptr = @ptrCast(**const c_void, &namespace.glPassThrough) },
-    .{ .name = "glPixelMapfv", .ptr = @ptrCast(**const c_void, &namespace.glPixelMapfv) },
-    .{ .name = "glPixelMapuiv", .ptr = @ptrCast(**const c_void, &namespace.glPixelMapuiv) },
-    .{ .name = "glPixelMapusv", .ptr = @ptrCast(**const c_void, &namespace.glPixelMapusv) },
-    .{ .name = "glPixelStoref", .ptr = @ptrCast(**const c_void, &namespace.glPixelStoref) },
-    .{ .name = "glPixelStorei", .ptr = @ptrCast(**const c_void, &namespace.glPixelStorei) },
-    .{ .name = "glPixelTransferf", .ptr = @ptrCast(**const c_void, &namespace.glPixelTransferf) },
-    .{ .name = "glPixelTransferi", .ptr = @ptrCast(**const c_void, &namespace.glPixelTransferi) },
-    .{ .name = "glPixelZoom", .ptr = @ptrCast(**const c_void, &namespace.glPixelZoom) },
-    .{ .name = "glPointParameterf", .ptr = @ptrCast(**const c_void, &namespace.glPointParameterf) },
-    .{ .name = "glPointParameterfv", .ptr = @ptrCast(**const c_void, &namespace.glPointParameterfv) },
-    .{ .name = "glPointParameteri", .ptr = @ptrCast(**const c_void, &namespace.glPointParameteri) },
-    .{ .name = "glPointParameteriv", .ptr = @ptrCast(**const c_void, &namespace.glPointParameteriv) },
-    .{ .name = "glPointSize", .ptr = @ptrCast(**const c_void, &namespace.glPointSize) },
-    .{ .name = "glPolygonMode", .ptr = @ptrCast(**const c_void, &namespace.glPolygonMode) },
-    .{ .name = "glPolygonOffset", .ptr = @ptrCast(**const c_void, &namespace.glPolygonOffset) },
-    .{ .name = "glPolygonStipple", .ptr = @ptrCast(**const c_void, &namespace.glPolygonStipple) },
-    .{ .name = "glPopAttrib", .ptr = @ptrCast(**const c_void, &namespace.glPopAttrib) },
-    .{ .name = "glPopClientAttrib", .ptr = @ptrCast(**const c_void, &namespace.glPopClientAttrib) },
-    .{ .name = "glPopMatrix", .ptr = @ptrCast(**const c_void, &namespace.glPopMatrix) },
-    .{ .name = "glPopName", .ptr = @ptrCast(**const c_void, &namespace.glPopName) },
-    .{ .name = "glPrioritizeTextures", .ptr = @ptrCast(**const c_void, &namespace.glPrioritizeTextures) },
-    .{ .name = "glPushAttrib", .ptr = @ptrCast(**const c_void, &namespace.glPushAttrib) },
-    .{ .name = "glPushClientAttrib", .ptr = @ptrCast(**const c_void, &namespace.glPushClientAttrib) },
-    .{ .name = "glPushMatrix", .ptr = @ptrCast(**const c_void, &namespace.glPushMatrix) },
-    .{ .name = "glPushName", .ptr = @ptrCast(**const c_void, &namespace.glPushName) },
-    .{ .name = "glRasterPos2d", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos2d) },
-    .{ .name = "glRasterPos2dv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos2dv) },
-    .{ .name = "glRasterPos2f", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos2f) },
-    .{ .name = "glRasterPos2fv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos2fv) },
-    .{ .name = "glRasterPos2i", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos2i) },
-    .{ .name = "glRasterPos2iv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos2iv) },
-    .{ .name = "glRasterPos2s", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos2s) },
-    .{ .name = "glRasterPos2sv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos2sv) },
-    .{ .name = "glRasterPos3d", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos3d) },
-    .{ .name = "glRasterPos3dv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos3dv) },
-    .{ .name = "glRasterPos3f", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos3f) },
-    .{ .name = "glRasterPos3fv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos3fv) },
-    .{ .name = "glRasterPos3i", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos3i) },
-    .{ .name = "glRasterPos3iv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos3iv) },
-    .{ .name = "glRasterPos3s", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos3s) },
-    .{ .name = "glRasterPos3sv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos3sv) },
-    .{ .name = "glRasterPos4d", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos4d) },
-    .{ .name = "glRasterPos4dv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos4dv) },
-    .{ .name = "glRasterPos4f", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos4f) },
-    .{ .name = "glRasterPos4fv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos4fv) },
-    .{ .name = "glRasterPos4i", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos4i) },
-    .{ .name = "glRasterPos4iv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos4iv) },
-    .{ .name = "glRasterPos4s", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos4s) },
-    .{ .name = "glRasterPos4sv", .ptr = @ptrCast(**const c_void, &namespace.glRasterPos4sv) },
-    .{ .name = "glReadBuffer", .ptr = @ptrCast(**const c_void, &namespace.glReadBuffer) },
-    .{ .name = "glReadPixels", .ptr = @ptrCast(**const c_void, &namespace.glReadPixels) },
-    .{ .name = "glRectd", .ptr = @ptrCast(**const c_void, &namespace.glRectd) },
-    .{ .name = "glRectdv", .ptr = @ptrCast(**const c_void, &namespace.glRectdv) },
-    .{ .name = "glRectf", .ptr = @ptrCast(**const c_void, &namespace.glRectf) },
-    .{ .name = "glRectfv", .ptr = @ptrCast(**const c_void, &namespace.glRectfv) },
-    .{ .name = "glRecti", .ptr = @ptrCast(**const c_void, &namespace.glRecti) },
-    .{ .name = "glRectiv", .ptr = @ptrCast(**const c_void, &namespace.glRectiv) },
-    .{ .name = "glRects", .ptr = @ptrCast(**const c_void, &namespace.glRects) },
-    .{ .name = "glRectsv", .ptr = @ptrCast(**const c_void, &namespace.glRectsv) },
-    .{ .name = "glRenderMode", .ptr = @ptrCast(**const c_void, &namespace.glRenderMode) },
-    .{ .name = "glRenderbufferStorage", .ptr = @ptrCast(**const c_void, &namespace.glRenderbufferStorage) },
-    .{ .name = "glRenderbufferStorageMultisample", .ptr = @ptrCast(**const c_void, &namespace.glRenderbufferStorageMultisample) },
-    .{ .name = "glRotated", .ptr = @ptrCast(**const c_void, &namespace.glRotated) },
-    .{ .name = "glRotatef", .ptr = @ptrCast(**const c_void, &namespace.glRotatef) },
-    .{ .name = "glSampleCoverage", .ptr = @ptrCast(**const c_void, &namespace.glSampleCoverage) },
-    .{ .name = "glScaled", .ptr = @ptrCast(**const c_void, &namespace.glScaled) },
-    .{ .name = "glScalef", .ptr = @ptrCast(**const c_void, &namespace.glScalef) },
-    .{ .name = "glScissor", .ptr = @ptrCast(**const c_void, &namespace.glScissor) },
-    .{ .name = "glSecondaryColor3b", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3b) },
-    .{ .name = "glSecondaryColor3bv", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3bv) },
-    .{ .name = "glSecondaryColor3d", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3d) },
-    .{ .name = "glSecondaryColor3dv", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3dv) },
-    .{ .name = "glSecondaryColor3f", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3f) },
-    .{ .name = "glSecondaryColor3fv", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3fv) },
-    .{ .name = "glSecondaryColor3i", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3i) },
-    .{ .name = "glSecondaryColor3iv", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3iv) },
-    .{ .name = "glSecondaryColor3s", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3s) },
-    .{ .name = "glSecondaryColor3sv", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3sv) },
-    .{ .name = "glSecondaryColor3ub", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3ub) },
-    .{ .name = "glSecondaryColor3ubv", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3ubv) },
-    .{ .name = "glSecondaryColor3ui", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3ui) },
-    .{ .name = "glSecondaryColor3uiv", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3uiv) },
-    .{ .name = "glSecondaryColor3us", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3us) },
-    .{ .name = "glSecondaryColor3usv", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColor3usv) },
-    .{ .name = "glSecondaryColorPointer", .ptr = @ptrCast(**const c_void, &namespace.glSecondaryColorPointer) },
-    .{ .name = "glSelectBuffer", .ptr = @ptrCast(**const c_void, &namespace.glSelectBuffer) },
-    .{ .name = "glShadeModel", .ptr = @ptrCast(**const c_void, &namespace.glShadeModel) },
-    .{ .name = "glShaderSource", .ptr = @ptrCast(**const c_void, &namespace.glShaderSource) },
-    .{ .name = "glStencilFunc", .ptr = @ptrCast(**const c_void, &namespace.glStencilFunc) },
-    .{ .name = "glStencilFuncSeparate", .ptr = @ptrCast(**const c_void, &namespace.glStencilFuncSeparate) },
-    .{ .name = "glStencilMask", .ptr = @ptrCast(**const c_void, &namespace.glStencilMask) },
-    .{ .name = "glStencilMaskSeparate", .ptr = @ptrCast(**const c_void, &namespace.glStencilMaskSeparate) },
-    .{ .name = "glStencilOp", .ptr = @ptrCast(**const c_void, &namespace.glStencilOp) },
-    .{ .name = "glStencilOpSeparate", .ptr = @ptrCast(**const c_void, &namespace.glStencilOpSeparate) },
-    .{ .name = "glTexCoord1d", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord1d) },
-    .{ .name = "glTexCoord1dv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord1dv) },
-    .{ .name = "glTexCoord1f", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord1f) },
-    .{ .name = "glTexCoord1fv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord1fv) },
-    .{ .name = "glTexCoord1i", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord1i) },
-    .{ .name = "glTexCoord1iv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord1iv) },
-    .{ .name = "glTexCoord1s", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord1s) },
-    .{ .name = "glTexCoord1sv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord1sv) },
-    .{ .name = "glTexCoord2d", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord2d) },
-    .{ .name = "glTexCoord2dv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord2dv) },
-    .{ .name = "glTexCoord2f", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord2f) },
-    .{ .name = "glTexCoord2fv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord2fv) },
-    .{ .name = "glTexCoord2i", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord2i) },
-    .{ .name = "glTexCoord2iv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord2iv) },
-    .{ .name = "glTexCoord2s", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord2s) },
-    .{ .name = "glTexCoord2sv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord2sv) },
-    .{ .name = "glTexCoord3d", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord3d) },
-    .{ .name = "glTexCoord3dv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord3dv) },
-    .{ .name = "glTexCoord3f", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord3f) },
-    .{ .name = "glTexCoord3fv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord3fv) },
-    .{ .name = "glTexCoord3i", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord3i) },
-    .{ .name = "glTexCoord3iv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord3iv) },
-    .{ .name = "glTexCoord3s", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord3s) },
-    .{ .name = "glTexCoord3sv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord3sv) },
-    .{ .name = "glTexCoord4d", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord4d) },
-    .{ .name = "glTexCoord4dv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord4dv) },
-    .{ .name = "glTexCoord4f", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord4f) },
-    .{ .name = "glTexCoord4fv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord4fv) },
-    .{ .name = "glTexCoord4i", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord4i) },
-    .{ .name = "glTexCoord4iv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord4iv) },
-    .{ .name = "glTexCoord4s", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord4s) },
-    .{ .name = "glTexCoord4sv", .ptr = @ptrCast(**const c_void, &namespace.glTexCoord4sv) },
-    .{ .name = "glTexCoordPointer", .ptr = @ptrCast(**const c_void, &namespace.glTexCoordPointer) },
-    .{ .name = "glTexEnvf", .ptr = @ptrCast(**const c_void, &namespace.glTexEnvf) },
-    .{ .name = "glTexEnvfv", .ptr = @ptrCast(**const c_void, &namespace.glTexEnvfv) },
-    .{ .name = "glTexEnvi", .ptr = @ptrCast(**const c_void, &namespace.glTexEnvi) },
-    .{ .name = "glTexEnviv", .ptr = @ptrCast(**const c_void, &namespace.glTexEnviv) },
-    .{ .name = "glTexGend", .ptr = @ptrCast(**const c_void, &namespace.glTexGend) },
-    .{ .name = "glTexGendv", .ptr = @ptrCast(**const c_void, &namespace.glTexGendv) },
-    .{ .name = "glTexGenf", .ptr = @ptrCast(**const c_void, &namespace.glTexGenf) },
-    .{ .name = "glTexGenfv", .ptr = @ptrCast(**const c_void, &namespace.glTexGenfv) },
-    .{ .name = "glTexGeni", .ptr = @ptrCast(**const c_void, &namespace.glTexGeni) },
-    .{ .name = "glTexGeniv", .ptr = @ptrCast(**const c_void, &namespace.glTexGeniv) },
-    .{ .name = "glTexImage1D", .ptr = @ptrCast(**const c_void, &namespace.glTexImage1D) },
-    .{ .name = "glTexImage2D", .ptr = @ptrCast(**const c_void, &namespace.glTexImage2D) },
-    .{ .name = "glTexImage3D", .ptr = @ptrCast(**const c_void, &namespace.glTexImage3D) },
-    .{ .name = "glTexParameterf", .ptr = @ptrCast(**const c_void, &namespace.glTexParameterf) },
-    .{ .name = "glTexParameterfv", .ptr = @ptrCast(**const c_void, &namespace.glTexParameterfv) },
-    .{ .name = "glTexParameteri", .ptr = @ptrCast(**const c_void, &namespace.glTexParameteri) },
-    .{ .name = "glTexParameteriv", .ptr = @ptrCast(**const c_void, &namespace.glTexParameteriv) },
-    .{ .name = "glTexSubImage1D", .ptr = @ptrCast(**const c_void, &namespace.glTexSubImage1D) },
-    .{ .name = "glTexSubImage2D", .ptr = @ptrCast(**const c_void, &namespace.glTexSubImage2D) },
-    .{ .name = "glTexSubImage3D", .ptr = @ptrCast(**const c_void, &namespace.glTexSubImage3D) },
-    .{ .name = "glTranslated", .ptr = @ptrCast(**const c_void, &namespace.glTranslated) },
-    .{ .name = "glTranslatef", .ptr = @ptrCast(**const c_void, &namespace.glTranslatef) },
-    .{ .name = "glUniform1f", .ptr = @ptrCast(**const c_void, &namespace.glUniform1f) },
-    .{ .name = "glUniform1fv", .ptr = @ptrCast(**const c_void, &namespace.glUniform1fv) },
-    .{ .name = "glUniform1i", .ptr = @ptrCast(**const c_void, &namespace.glUniform1i) },
-    .{ .name = "glUniform1iv", .ptr = @ptrCast(**const c_void, &namespace.glUniform1iv) },
-    .{ .name = "glUniform2f", .ptr = @ptrCast(**const c_void, &namespace.glUniform2f) },
-    .{ .name = "glUniform2fv", .ptr = @ptrCast(**const c_void, &namespace.glUniform2fv) },
-    .{ .name = "glUniform2i", .ptr = @ptrCast(**const c_void, &namespace.glUniform2i) },
-    .{ .name = "glUniform2iv", .ptr = @ptrCast(**const c_void, &namespace.glUniform2iv) },
-    .{ .name = "glUniform3f", .ptr = @ptrCast(**const c_void, &namespace.glUniform3f) },
-    .{ .name = "glUniform3fv", .ptr = @ptrCast(**const c_void, &namespace.glUniform3fv) },
-    .{ .name = "glUniform3i", .ptr = @ptrCast(**const c_void, &namespace.glUniform3i) },
-    .{ .name = "glUniform3iv", .ptr = @ptrCast(**const c_void, &namespace.glUniform3iv) },
-    .{ .name = "glUniform4f", .ptr = @ptrCast(**const c_void, &namespace.glUniform4f) },
-    .{ .name = "glUniform4fv", .ptr = @ptrCast(**const c_void, &namespace.glUniform4fv) },
-    .{ .name = "glUniform4i", .ptr = @ptrCast(**const c_void, &namespace.glUniform4i) },
-    .{ .name = "glUniform4iv", .ptr = @ptrCast(**const c_void, &namespace.glUniform4iv) },
-    .{ .name = "glUniformMatrix2fv", .ptr = @ptrCast(**const c_void, &namespace.glUniformMatrix2fv) },
-    .{ .name = "glUniformMatrix2x3fv", .ptr = @ptrCast(**const c_void, &namespace.glUniformMatrix2x3fv) },
-    .{ .name = "glUniformMatrix2x4fv", .ptr = @ptrCast(**const c_void, &namespace.glUniformMatrix2x4fv) },
-    .{ .name = "glUniformMatrix3fv", .ptr = @ptrCast(**const c_void, &namespace.glUniformMatrix3fv) },
-    .{ .name = "glUniformMatrix3x2fv", .ptr = @ptrCast(**const c_void, &namespace.glUniformMatrix3x2fv) },
-    .{ .name = "glUniformMatrix3x4fv", .ptr = @ptrCast(**const c_void, &namespace.glUniformMatrix3x4fv) },
-    .{ .name = "glUniformMatrix4fv", .ptr = @ptrCast(**const c_void, &namespace.glUniformMatrix4fv) },
-    .{ .name = "glUniformMatrix4x2fv", .ptr = @ptrCast(**const c_void, &namespace.glUniformMatrix4x2fv) },
-    .{ .name = "glUniformMatrix4x3fv", .ptr = @ptrCast(**const c_void, &namespace.glUniformMatrix4x3fv) },
-    .{ .name = "glUnmapBuffer", .ptr = @ptrCast(**const c_void, &namespace.glUnmapBuffer) },
-    .{ .name = "glUseProgram", .ptr = @ptrCast(**const c_void, &namespace.glUseProgram) },
-    .{ .name = "glValidateProgram", .ptr = @ptrCast(**const c_void, &namespace.glValidateProgram) },
-    .{ .name = "glVertex2d", .ptr = @ptrCast(**const c_void, &namespace.glVertex2d) },
-    .{ .name = "glVertex2dv", .ptr = @ptrCast(**const c_void, &namespace.glVertex2dv) },
-    .{ .name = "glVertex2f", .ptr = @ptrCast(**const c_void, &namespace.glVertex2f) },
-    .{ .name = "glVertex2fv", .ptr = @ptrCast(**const c_void, &namespace.glVertex2fv) },
-    .{ .name = "glVertex2i", .ptr = @ptrCast(**const c_void, &namespace.glVertex2i) },
-    .{ .name = "glVertex2iv", .ptr = @ptrCast(**const c_void, &namespace.glVertex2iv) },
-    .{ .name = "glVertex2s", .ptr = @ptrCast(**const c_void, &namespace.glVertex2s) },
-    .{ .name = "glVertex2sv", .ptr = @ptrCast(**const c_void, &namespace.glVertex2sv) },
-    .{ .name = "glVertex3d", .ptr = @ptrCast(**const c_void, &namespace.glVertex3d) },
-    .{ .name = "glVertex3dv", .ptr = @ptrCast(**const c_void, &namespace.glVertex3dv) },
-    .{ .name = "glVertex3f", .ptr = @ptrCast(**const c_void, &namespace.glVertex3f) },
-    .{ .name = "glVertex3fv", .ptr = @ptrCast(**const c_void, &namespace.glVertex3fv) },
-    .{ .name = "glVertex3i", .ptr = @ptrCast(**const c_void, &namespace.glVertex3i) },
-    .{ .name = "glVertex3iv", .ptr = @ptrCast(**const c_void, &namespace.glVertex3iv) },
-    .{ .name = "glVertex3s", .ptr = @ptrCast(**const c_void, &namespace.glVertex3s) },
-    .{ .name = "glVertex3sv", .ptr = @ptrCast(**const c_void, &namespace.glVertex3sv) },
-    .{ .name = "glVertex4d", .ptr = @ptrCast(**const c_void, &namespace.glVertex4d) },
-    .{ .name = "glVertex4dv", .ptr = @ptrCast(**const c_void, &namespace.glVertex4dv) },
-    .{ .name = "glVertex4f", .ptr = @ptrCast(**const c_void, &namespace.glVertex4f) },
-    .{ .name = "glVertex4fv", .ptr = @ptrCast(**const c_void, &namespace.glVertex4fv) },
-    .{ .name = "glVertex4i", .ptr = @ptrCast(**const c_void, &namespace.glVertex4i) },
-    .{ .name = "glVertex4iv", .ptr = @ptrCast(**const c_void, &namespace.glVertex4iv) },
-    .{ .name = "glVertex4s", .ptr = @ptrCast(**const c_void, &namespace.glVertex4s) },
-    .{ .name = "glVertex4sv", .ptr = @ptrCast(**const c_void, &namespace.glVertex4sv) },
-    .{ .name = "glVertexAttrib1d", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib1d) },
-    .{ .name = "glVertexAttrib1dv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib1dv) },
-    .{ .name = "glVertexAttrib1f", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib1f) },
-    .{ .name = "glVertexAttrib1fv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib1fv) },
-    .{ .name = "glVertexAttrib1s", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib1s) },
-    .{ .name = "glVertexAttrib1sv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib1sv) },
-    .{ .name = "glVertexAttrib2d", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib2d) },
-    .{ .name = "glVertexAttrib2dv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib2dv) },
-    .{ .name = "glVertexAttrib2f", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib2f) },
-    .{ .name = "glVertexAttrib2fv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib2fv) },
-    .{ .name = "glVertexAttrib2s", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib2s) },
-    .{ .name = "glVertexAttrib2sv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib2sv) },
-    .{ .name = "glVertexAttrib3d", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib3d) },
-    .{ .name = "glVertexAttrib3dv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib3dv) },
-    .{ .name = "glVertexAttrib3f", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib3f) },
-    .{ .name = "glVertexAttrib3fv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib3fv) },
-    .{ .name = "glVertexAttrib3s", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib3s) },
-    .{ .name = "glVertexAttrib3sv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib3sv) },
-    .{ .name = "glVertexAttrib4Nbv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4Nbv) },
-    .{ .name = "glVertexAttrib4Niv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4Niv) },
-    .{ .name = "glVertexAttrib4Nsv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4Nsv) },
-    .{ .name = "glVertexAttrib4Nub", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4Nub) },
-    .{ .name = "glVertexAttrib4Nubv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4Nubv) },
-    .{ .name = "glVertexAttrib4Nuiv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4Nuiv) },
-    .{ .name = "glVertexAttrib4Nusv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4Nusv) },
-    .{ .name = "glVertexAttrib4bv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4bv) },
-    .{ .name = "glVertexAttrib4d", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4d) },
-    .{ .name = "glVertexAttrib4dv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4dv) },
-    .{ .name = "glVertexAttrib4f", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4f) },
-    .{ .name = "glVertexAttrib4fv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4fv) },
-    .{ .name = "glVertexAttrib4iv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4iv) },
-    .{ .name = "glVertexAttrib4s", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4s) },
-    .{ .name = "glVertexAttrib4sv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4sv) },
-    .{ .name = "glVertexAttrib4ubv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4ubv) },
-    .{ .name = "glVertexAttrib4uiv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4uiv) },
-    .{ .name = "glVertexAttrib4usv", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttrib4usv) },
-    .{ .name = "glVertexAttribPointer", .ptr = @ptrCast(**const c_void, &namespace.glVertexAttribPointer) },
-    .{ .name = "glVertexPointer", .ptr = @ptrCast(**const c_void, &namespace.glVertexPointer) },
-    .{ .name = "glViewport", .ptr = @ptrCast(**const c_void, &namespace.glViewport) },
-    .{ .name = "glWindowPos2d", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos2d) },
-    .{ .name = "glWindowPos2dv", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos2dv) },
-    .{ .name = "glWindowPos2f", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos2f) },
-    .{ .name = "glWindowPos2fv", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos2fv) },
-    .{ .name = "glWindowPos2i", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos2i) },
-    .{ .name = "glWindowPos2iv", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos2iv) },
-    .{ .name = "glWindowPos2s", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos2s) },
-    .{ .name = "glWindowPos2sv", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos2sv) },
-    .{ .name = "glWindowPos3d", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos3d) },
-    .{ .name = "glWindowPos3dv", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos3dv) },
-    .{ .name = "glWindowPos3f", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos3f) },
-    .{ .name = "glWindowPos3fv", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos3fv) },
-    .{ .name = "glWindowPos3i", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos3i) },
-    .{ .name = "glWindowPos3iv", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos3iv) },
-    .{ .name = "glWindowPos3s", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos3s) },
-    .{ .name = "glWindowPos3sv", .ptr = @ptrCast(**const c_void, &namespace.glWindowPos3sv) },
+    .{ .name = "glAccum", .ptr = @ptrCast(**const c_void, &namespace._glAccum) },
+    .{ .name = "glActiveTexture", .ptr = @ptrCast(**const c_void, &namespace._glActiveTexture) },
+    .{ .name = "glAlphaFunc", .ptr = @ptrCast(**const c_void, &namespace._glAlphaFunc) },
+    .{ .name = "glAreTexturesResident", .ptr = @ptrCast(**const c_void, &namespace._glAreTexturesResident) },
+    .{ .name = "glArrayElement", .ptr = @ptrCast(**const c_void, &namespace._glArrayElement) },
+    .{ .name = "glAttachShader", .ptr = @ptrCast(**const c_void, &namespace._glAttachShader) },
+    .{ .name = "glBegin", .ptr = @ptrCast(**const c_void, &namespace._glBegin) },
+    .{ .name = "glBeginQuery", .ptr = @ptrCast(**const c_void, &namespace._glBeginQuery) },
+    .{ .name = "glBindAttribLocation", .ptr = @ptrCast(**const c_void, &namespace._glBindAttribLocation) },
+    .{ .name = "glBindBuffer", .ptr = @ptrCast(**const c_void, &namespace._glBindBuffer) },
+    .{ .name = "glBindFramebuffer", .ptr = @ptrCast(**const c_void, &namespace._glBindFramebuffer) },
+    .{ .name = "glBindRenderbuffer", .ptr = @ptrCast(**const c_void, &namespace._glBindRenderbuffer) },
+    .{ .name = "glBindTexture", .ptr = @ptrCast(**const c_void, &namespace._glBindTexture) },
+    .{ .name = "glBitmap", .ptr = @ptrCast(**const c_void, &namespace._glBitmap) },
+    .{ .name = "glBlendColor", .ptr = @ptrCast(**const c_void, &namespace._glBlendColor) },
+    .{ .name = "glBlendEquation", .ptr = @ptrCast(**const c_void, &namespace._glBlendEquation) },
+    .{ .name = "glBlendEquationSeparate", .ptr = @ptrCast(**const c_void, &namespace._glBlendEquationSeparate) },
+    .{ .name = "glBlendFunc", .ptr = @ptrCast(**const c_void, &namespace._glBlendFunc) },
+    .{ .name = "glBlendFuncSeparate", .ptr = @ptrCast(**const c_void, &namespace._glBlendFuncSeparate) },
+    .{ .name = "glBlitFramebuffer", .ptr = @ptrCast(**const c_void, &namespace._glBlitFramebuffer) },
+    .{ .name = "glBufferData", .ptr = @ptrCast(**const c_void, &namespace._glBufferData) },
+    .{ .name = "glBufferSubData", .ptr = @ptrCast(**const c_void, &namespace._glBufferSubData) },
+    .{ .name = "glCallList", .ptr = @ptrCast(**const c_void, &namespace._glCallList) },
+    .{ .name = "glCallLists", .ptr = @ptrCast(**const c_void, &namespace._glCallLists) },
+    .{ .name = "glCheckFramebufferStatus", .ptr = @ptrCast(**const c_void, &namespace._glCheckFramebufferStatus) },
+    .{ .name = "glClear", .ptr = @ptrCast(**const c_void, &namespace._glClear) },
+    .{ .name = "glClearAccum", .ptr = @ptrCast(**const c_void, &namespace._glClearAccum) },
+    .{ .name = "glClearColor", .ptr = @ptrCast(**const c_void, &namespace._glClearColor) },
+    .{ .name = "glClearDepth", .ptr = @ptrCast(**const c_void, &namespace._glClearDepth) },
+    .{ .name = "glClearIndex", .ptr = @ptrCast(**const c_void, &namespace._glClearIndex) },
+    .{ .name = "glClearStencil", .ptr = @ptrCast(**const c_void, &namespace._glClearStencil) },
+    .{ .name = "glClientActiveTexture", .ptr = @ptrCast(**const c_void, &namespace._glClientActiveTexture) },
+    .{ .name = "glClipPlane", .ptr = @ptrCast(**const c_void, &namespace._glClipPlane) },
+    .{ .name = "glColor3b", .ptr = @ptrCast(**const c_void, &namespace._glColor3b) },
+    .{ .name = "glColor3bv", .ptr = @ptrCast(**const c_void, &namespace._glColor3bv) },
+    .{ .name = "glColor3d", .ptr = @ptrCast(**const c_void, &namespace._glColor3d) },
+    .{ .name = "glColor3dv", .ptr = @ptrCast(**const c_void, &namespace._glColor3dv) },
+    .{ .name = "glColor3f", .ptr = @ptrCast(**const c_void, &namespace._glColor3f) },
+    .{ .name = "glColor3fv", .ptr = @ptrCast(**const c_void, &namespace._glColor3fv) },
+    .{ .name = "glColor3i", .ptr = @ptrCast(**const c_void, &namespace._glColor3i) },
+    .{ .name = "glColor3iv", .ptr = @ptrCast(**const c_void, &namespace._glColor3iv) },
+    .{ .name = "glColor3s", .ptr = @ptrCast(**const c_void, &namespace._glColor3s) },
+    .{ .name = "glColor3sv", .ptr = @ptrCast(**const c_void, &namespace._glColor3sv) },
+    .{ .name = "glColor3ub", .ptr = @ptrCast(**const c_void, &namespace._glColor3ub) },
+    .{ .name = "glColor3ubv", .ptr = @ptrCast(**const c_void, &namespace._glColor3ubv) },
+    .{ .name = "glColor3ui", .ptr = @ptrCast(**const c_void, &namespace._glColor3ui) },
+    .{ .name = "glColor3uiv", .ptr = @ptrCast(**const c_void, &namespace._glColor3uiv) },
+    .{ .name = "glColor3us", .ptr = @ptrCast(**const c_void, &namespace._glColor3us) },
+    .{ .name = "glColor3usv", .ptr = @ptrCast(**const c_void, &namespace._glColor3usv) },
+    .{ .name = "glColor4b", .ptr = @ptrCast(**const c_void, &namespace._glColor4b) },
+    .{ .name = "glColor4bv", .ptr = @ptrCast(**const c_void, &namespace._glColor4bv) },
+    .{ .name = "glColor4d", .ptr = @ptrCast(**const c_void, &namespace._glColor4d) },
+    .{ .name = "glColor4dv", .ptr = @ptrCast(**const c_void, &namespace._glColor4dv) },
+    .{ .name = "glColor4f", .ptr = @ptrCast(**const c_void, &namespace._glColor4f) },
+    .{ .name = "glColor4fv", .ptr = @ptrCast(**const c_void, &namespace._glColor4fv) },
+    .{ .name = "glColor4i", .ptr = @ptrCast(**const c_void, &namespace._glColor4i) },
+    .{ .name = "glColor4iv", .ptr = @ptrCast(**const c_void, &namespace._glColor4iv) },
+    .{ .name = "glColor4s", .ptr = @ptrCast(**const c_void, &namespace._glColor4s) },
+    .{ .name = "glColor4sv", .ptr = @ptrCast(**const c_void, &namespace._glColor4sv) },
+    .{ .name = "glColor4ub", .ptr = @ptrCast(**const c_void, &namespace._glColor4ub) },
+    .{ .name = "glColor4ubv", .ptr = @ptrCast(**const c_void, &namespace._glColor4ubv) },
+    .{ .name = "glColor4ui", .ptr = @ptrCast(**const c_void, &namespace._glColor4ui) },
+    .{ .name = "glColor4uiv", .ptr = @ptrCast(**const c_void, &namespace._glColor4uiv) },
+    .{ .name = "glColor4us", .ptr = @ptrCast(**const c_void, &namespace._glColor4us) },
+    .{ .name = "glColor4usv", .ptr = @ptrCast(**const c_void, &namespace._glColor4usv) },
+    .{ .name = "glColorMask", .ptr = @ptrCast(**const c_void, &namespace._glColorMask) },
+    .{ .name = "glColorMaterial", .ptr = @ptrCast(**const c_void, &namespace._glColorMaterial) },
+    .{ .name = "glColorPointer", .ptr = @ptrCast(**const c_void, &namespace._glColorPointer) },
+    .{ .name = "glCompileShader", .ptr = @ptrCast(**const c_void, &namespace._glCompileShader) },
+    .{ .name = "glCompressedTexImage1D", .ptr = @ptrCast(**const c_void, &namespace._glCompressedTexImage1D) },
+    .{ .name = "glCompressedTexImage2D", .ptr = @ptrCast(**const c_void, &namespace._glCompressedTexImage2D) },
+    .{ .name = "glCompressedTexImage3D", .ptr = @ptrCast(**const c_void, &namespace._glCompressedTexImage3D) },
+    .{ .name = "glCompressedTexSubImage1D", .ptr = @ptrCast(**const c_void, &namespace._glCompressedTexSubImage1D) },
+    .{ .name = "glCompressedTexSubImage2D", .ptr = @ptrCast(**const c_void, &namespace._glCompressedTexSubImage2D) },
+    .{ .name = "glCompressedTexSubImage3D", .ptr = @ptrCast(**const c_void, &namespace._glCompressedTexSubImage3D) },
+    .{ .name = "glCopyPixels", .ptr = @ptrCast(**const c_void, &namespace._glCopyPixels) },
+    .{ .name = "glCopyTexImage1D", .ptr = @ptrCast(**const c_void, &namespace._glCopyTexImage1D) },
+    .{ .name = "glCopyTexImage2D", .ptr = @ptrCast(**const c_void, &namespace._glCopyTexImage2D) },
+    .{ .name = "glCopyTexSubImage1D", .ptr = @ptrCast(**const c_void, &namespace._glCopyTexSubImage1D) },
+    .{ .name = "glCopyTexSubImage2D", .ptr = @ptrCast(**const c_void, &namespace._glCopyTexSubImage2D) },
+    .{ .name = "glCopyTexSubImage3D", .ptr = @ptrCast(**const c_void, &namespace._glCopyTexSubImage3D) },
+    .{ .name = "glCreateProgram", .ptr = @ptrCast(**const c_void, &namespace._glCreateProgram) },
+    .{ .name = "glCreateShader", .ptr = @ptrCast(**const c_void, &namespace._glCreateShader) },
+    .{ .name = "glCullFace", .ptr = @ptrCast(**const c_void, &namespace._glCullFace) },
+    .{ .name = "glDeleteBuffers", .ptr = @ptrCast(**const c_void, &namespace._glDeleteBuffers) },
+    .{ .name = "glDeleteFramebuffers", .ptr = @ptrCast(**const c_void, &namespace._glDeleteFramebuffers) },
+    .{ .name = "glDeleteLists", .ptr = @ptrCast(**const c_void, &namespace._glDeleteLists) },
+    .{ .name = "glDeleteProgram", .ptr = @ptrCast(**const c_void, &namespace._glDeleteProgram) },
+    .{ .name = "glDeleteQueries", .ptr = @ptrCast(**const c_void, &namespace._glDeleteQueries) },
+    .{ .name = "glDeleteRenderbuffers", .ptr = @ptrCast(**const c_void, &namespace._glDeleteRenderbuffers) },
+    .{ .name = "glDeleteShader", .ptr = @ptrCast(**const c_void, &namespace._glDeleteShader) },
+    .{ .name = "glDeleteTextures", .ptr = @ptrCast(**const c_void, &namespace._glDeleteTextures) },
+    .{ .name = "glDepthFunc", .ptr = @ptrCast(**const c_void, &namespace._glDepthFunc) },
+    .{ .name = "glDepthMask", .ptr = @ptrCast(**const c_void, &namespace._glDepthMask) },
+    .{ .name = "glDepthRange", .ptr = @ptrCast(**const c_void, &namespace._glDepthRange) },
+    .{ .name = "glDetachShader", .ptr = @ptrCast(**const c_void, &namespace._glDetachShader) },
+    .{ .name = "glDisable", .ptr = @ptrCast(**const c_void, &namespace._glDisable) },
+    .{ .name = "glDisableClientState", .ptr = @ptrCast(**const c_void, &namespace._glDisableClientState) },
+    .{ .name = "glDisableVertexAttribArray", .ptr = @ptrCast(**const c_void, &namespace._glDisableVertexAttribArray) },
+    .{ .name = "glDrawArrays", .ptr = @ptrCast(**const c_void, &namespace._glDrawArrays) },
+    .{ .name = "glDrawBuffer", .ptr = @ptrCast(**const c_void, &namespace._glDrawBuffer) },
+    .{ .name = "glDrawBuffers", .ptr = @ptrCast(**const c_void, &namespace._glDrawBuffers) },
+    .{ .name = "glDrawElements", .ptr = @ptrCast(**const c_void, &namespace._glDrawElements) },
+    .{ .name = "glDrawPixels", .ptr = @ptrCast(**const c_void, &namespace._glDrawPixels) },
+    .{ .name = "glDrawRangeElements", .ptr = @ptrCast(**const c_void, &namespace._glDrawRangeElements) },
+    .{ .name = "glEdgeFlag", .ptr = @ptrCast(**const c_void, &namespace._glEdgeFlag) },
+    .{ .name = "glEdgeFlagPointer", .ptr = @ptrCast(**const c_void, &namespace._glEdgeFlagPointer) },
+    .{ .name = "glEdgeFlagv", .ptr = @ptrCast(**const c_void, &namespace._glEdgeFlagv) },
+    .{ .name = "glEnable", .ptr = @ptrCast(**const c_void, &namespace._glEnable) },
+    .{ .name = "glEnableClientState", .ptr = @ptrCast(**const c_void, &namespace._glEnableClientState) },
+    .{ .name = "glEnableVertexAttribArray", .ptr = @ptrCast(**const c_void, &namespace._glEnableVertexAttribArray) },
+    .{ .name = "glEnd", .ptr = @ptrCast(**const c_void, &namespace._glEnd) },
+    .{ .name = "glEndList", .ptr = @ptrCast(**const c_void, &namespace._glEndList) },
+    .{ .name = "glEndQuery", .ptr = @ptrCast(**const c_void, &namespace._glEndQuery) },
+    .{ .name = "glEvalCoord1d", .ptr = @ptrCast(**const c_void, &namespace._glEvalCoord1d) },
+    .{ .name = "glEvalCoord1dv", .ptr = @ptrCast(**const c_void, &namespace._glEvalCoord1dv) },
+    .{ .name = "glEvalCoord1f", .ptr = @ptrCast(**const c_void, &namespace._glEvalCoord1f) },
+    .{ .name = "glEvalCoord1fv", .ptr = @ptrCast(**const c_void, &namespace._glEvalCoord1fv) },
+    .{ .name = "glEvalCoord2d", .ptr = @ptrCast(**const c_void, &namespace._glEvalCoord2d) },
+    .{ .name = "glEvalCoord2dv", .ptr = @ptrCast(**const c_void, &namespace._glEvalCoord2dv) },
+    .{ .name = "glEvalCoord2f", .ptr = @ptrCast(**const c_void, &namespace._glEvalCoord2f) },
+    .{ .name = "glEvalCoord2fv", .ptr = @ptrCast(**const c_void, &namespace._glEvalCoord2fv) },
+    .{ .name = "glEvalMesh1", .ptr = @ptrCast(**const c_void, &namespace._glEvalMesh1) },
+    .{ .name = "glEvalMesh2", .ptr = @ptrCast(**const c_void, &namespace._glEvalMesh2) },
+    .{ .name = "glEvalPoint1", .ptr = @ptrCast(**const c_void, &namespace._glEvalPoint1) },
+    .{ .name = "glEvalPoint2", .ptr = @ptrCast(**const c_void, &namespace._glEvalPoint2) },
+    .{ .name = "glFeedbackBuffer", .ptr = @ptrCast(**const c_void, &namespace._glFeedbackBuffer) },
+    .{ .name = "glFinish", .ptr = @ptrCast(**const c_void, &namespace._glFinish) },
+    .{ .name = "glFlush", .ptr = @ptrCast(**const c_void, &namespace._glFlush) },
+    .{ .name = "glFogCoordPointer", .ptr = @ptrCast(**const c_void, &namespace._glFogCoordPointer) },
+    .{ .name = "glFogCoordd", .ptr = @ptrCast(**const c_void, &namespace._glFogCoordd) },
+    .{ .name = "glFogCoorddv", .ptr = @ptrCast(**const c_void, &namespace._glFogCoorddv) },
+    .{ .name = "glFogCoordf", .ptr = @ptrCast(**const c_void, &namespace._glFogCoordf) },
+    .{ .name = "glFogCoordfv", .ptr = @ptrCast(**const c_void, &namespace._glFogCoordfv) },
+    .{ .name = "glFogf", .ptr = @ptrCast(**const c_void, &namespace._glFogf) },
+    .{ .name = "glFogfv", .ptr = @ptrCast(**const c_void, &namespace._glFogfv) },
+    .{ .name = "glFogi", .ptr = @ptrCast(**const c_void, &namespace._glFogi) },
+    .{ .name = "glFogiv", .ptr = @ptrCast(**const c_void, &namespace._glFogiv) },
+    .{ .name = "glFramebufferRenderbuffer", .ptr = @ptrCast(**const c_void, &namespace._glFramebufferRenderbuffer) },
+    .{ .name = "glFramebufferTexture1D", .ptr = @ptrCast(**const c_void, &namespace._glFramebufferTexture1D) },
+    .{ .name = "glFramebufferTexture2D", .ptr = @ptrCast(**const c_void, &namespace._glFramebufferTexture2D) },
+    .{ .name = "glFramebufferTexture3D", .ptr = @ptrCast(**const c_void, &namespace._glFramebufferTexture3D) },
+    .{ .name = "glFramebufferTextureLayer", .ptr = @ptrCast(**const c_void, &namespace._glFramebufferTextureLayer) },
+    .{ .name = "glFrontFace", .ptr = @ptrCast(**const c_void, &namespace._glFrontFace) },
+    .{ .name = "glFrustum", .ptr = @ptrCast(**const c_void, &namespace._glFrustum) },
+    .{ .name = "glGenBuffers", .ptr = @ptrCast(**const c_void, &namespace._glGenBuffers) },
+    .{ .name = "glGenFramebuffers", .ptr = @ptrCast(**const c_void, &namespace._glGenFramebuffers) },
+    .{ .name = "glGenLists", .ptr = @ptrCast(**const c_void, &namespace._glGenLists) },
+    .{ .name = "glGenQueries", .ptr = @ptrCast(**const c_void, &namespace._glGenQueries) },
+    .{ .name = "glGenRenderbuffers", .ptr = @ptrCast(**const c_void, &namespace._glGenRenderbuffers) },
+    .{ .name = "glGenTextures", .ptr = @ptrCast(**const c_void, &namespace._glGenTextures) },
+    .{ .name = "glGenerateMipmap", .ptr = @ptrCast(**const c_void, &namespace._glGenerateMipmap) },
+    .{ .name = "glGetActiveAttrib", .ptr = @ptrCast(**const c_void, &namespace._glGetActiveAttrib) },
+    .{ .name = "glGetActiveUniform", .ptr = @ptrCast(**const c_void, &namespace._glGetActiveUniform) },
+    .{ .name = "glGetAttachedShaders", .ptr = @ptrCast(**const c_void, &namespace._glGetAttachedShaders) },
+    .{ .name = "glGetAttribLocation", .ptr = @ptrCast(**const c_void, &namespace._glGetAttribLocation) },
+    .{ .name = "glGetBooleanv", .ptr = @ptrCast(**const c_void, &namespace._glGetBooleanv) },
+    .{ .name = "glGetBufferParameteriv", .ptr = @ptrCast(**const c_void, &namespace._glGetBufferParameteriv) },
+    .{ .name = "glGetBufferPointerv", .ptr = @ptrCast(**const c_void, &namespace._glGetBufferPointerv) },
+    .{ .name = "glGetBufferSubData", .ptr = @ptrCast(**const c_void, &namespace._glGetBufferSubData) },
+    .{ .name = "glGetClipPlane", .ptr = @ptrCast(**const c_void, &namespace._glGetClipPlane) },
+    .{ .name = "glGetCompressedTexImage", .ptr = @ptrCast(**const c_void, &namespace._glGetCompressedTexImage) },
+    .{ .name = "glGetDoublev", .ptr = @ptrCast(**const c_void, &namespace._glGetDoublev) },
+    .{ .name = "glGetError", .ptr = @ptrCast(**const c_void, &namespace._glGetError) },
+    .{ .name = "glGetFloatv", .ptr = @ptrCast(**const c_void, &namespace._glGetFloatv) },
+    .{ .name = "glGetFramebufferAttachmentParameteriv", .ptr = @ptrCast(**const c_void, &namespace._glGetFramebufferAttachmentParameteriv) },
+    .{ .name = "glGetIntegerv", .ptr = @ptrCast(**const c_void, &namespace._glGetIntegerv) },
+    .{ .name = "glGetLightfv", .ptr = @ptrCast(**const c_void, &namespace._glGetLightfv) },
+    .{ .name = "glGetLightiv", .ptr = @ptrCast(**const c_void, &namespace._glGetLightiv) },
+    .{ .name = "glGetMapdv", .ptr = @ptrCast(**const c_void, &namespace._glGetMapdv) },
+    .{ .name = "glGetMapfv", .ptr = @ptrCast(**const c_void, &namespace._glGetMapfv) },
+    .{ .name = "glGetMapiv", .ptr = @ptrCast(**const c_void, &namespace._glGetMapiv) },
+    .{ .name = "glGetMaterialfv", .ptr = @ptrCast(**const c_void, &namespace._glGetMaterialfv) },
+    .{ .name = "glGetMaterialiv", .ptr = @ptrCast(**const c_void, &namespace._glGetMaterialiv) },
+    .{ .name = "glGetPixelMapfv", .ptr = @ptrCast(**const c_void, &namespace._glGetPixelMapfv) },
+    .{ .name = "glGetPixelMapuiv", .ptr = @ptrCast(**const c_void, &namespace._glGetPixelMapuiv) },
+    .{ .name = "glGetPixelMapusv", .ptr = @ptrCast(**const c_void, &namespace._glGetPixelMapusv) },
+    .{ .name = "glGetPointerv", .ptr = @ptrCast(**const c_void, &namespace._glGetPointerv) },
+    .{ .name = "glGetPolygonStipple", .ptr = @ptrCast(**const c_void, &namespace._glGetPolygonStipple) },
+    .{ .name = "glGetProgramInfoLog", .ptr = @ptrCast(**const c_void, &namespace._glGetProgramInfoLog) },
+    .{ .name = "glGetProgramiv", .ptr = @ptrCast(**const c_void, &namespace._glGetProgramiv) },
+    .{ .name = "glGetQueryObjectiv", .ptr = @ptrCast(**const c_void, &namespace._glGetQueryObjectiv) },
+    .{ .name = "glGetQueryObjectuiv", .ptr = @ptrCast(**const c_void, &namespace._glGetQueryObjectuiv) },
+    .{ .name = "glGetQueryiv", .ptr = @ptrCast(**const c_void, &namespace._glGetQueryiv) },
+    .{ .name = "glGetRenderbufferParameteriv", .ptr = @ptrCast(**const c_void, &namespace._glGetRenderbufferParameteriv) },
+    .{ .name = "glGetShaderInfoLog", .ptr = @ptrCast(**const c_void, &namespace._glGetShaderInfoLog) },
+    .{ .name = "glGetShaderSource", .ptr = @ptrCast(**const c_void, &namespace._glGetShaderSource) },
+    .{ .name = "glGetShaderiv", .ptr = @ptrCast(**const c_void, &namespace._glGetShaderiv) },
+    .{ .name = "glGetString", .ptr = @ptrCast(**const c_void, &namespace._glGetString) },
+    .{ .name = "glGetTexEnvfv", .ptr = @ptrCast(**const c_void, &namespace._glGetTexEnvfv) },
+    .{ .name = "glGetTexEnviv", .ptr = @ptrCast(**const c_void, &namespace._glGetTexEnviv) },
+    .{ .name = "glGetTexGendv", .ptr = @ptrCast(**const c_void, &namespace._glGetTexGendv) },
+    .{ .name = "glGetTexGenfv", .ptr = @ptrCast(**const c_void, &namespace._glGetTexGenfv) },
+    .{ .name = "glGetTexGeniv", .ptr = @ptrCast(**const c_void, &namespace._glGetTexGeniv) },
+    .{ .name = "glGetTexImage", .ptr = @ptrCast(**const c_void, &namespace._glGetTexImage) },
+    .{ .name = "glGetTexLevelParameterfv", .ptr = @ptrCast(**const c_void, &namespace._glGetTexLevelParameterfv) },
+    .{ .name = "glGetTexLevelParameteriv", .ptr = @ptrCast(**const c_void, &namespace._glGetTexLevelParameteriv) },
+    .{ .name = "glGetTexParameterfv", .ptr = @ptrCast(**const c_void, &namespace._glGetTexParameterfv) },
+    .{ .name = "glGetTexParameteriv", .ptr = @ptrCast(**const c_void, &namespace._glGetTexParameteriv) },
+    .{ .name = "glGetUniformLocation", .ptr = @ptrCast(**const c_void, &namespace._glGetUniformLocation) },
+    .{ .name = "glGetUniformfv", .ptr = @ptrCast(**const c_void, &namespace._glGetUniformfv) },
+    .{ .name = "glGetUniformiv", .ptr = @ptrCast(**const c_void, &namespace._glGetUniformiv) },
+    .{ .name = "glGetVertexAttribPointerv", .ptr = @ptrCast(**const c_void, &namespace._glGetVertexAttribPointerv) },
+    .{ .name = "glGetVertexAttribdv", .ptr = @ptrCast(**const c_void, &namespace._glGetVertexAttribdv) },
+    .{ .name = "glGetVertexAttribfv", .ptr = @ptrCast(**const c_void, &namespace._glGetVertexAttribfv) },
+    .{ .name = "glGetVertexAttribiv", .ptr = @ptrCast(**const c_void, &namespace._glGetVertexAttribiv) },
+    .{ .name = "glHint", .ptr = @ptrCast(**const c_void, &namespace._glHint) },
+    .{ .name = "glIndexMask", .ptr = @ptrCast(**const c_void, &namespace._glIndexMask) },
+    .{ .name = "glIndexPointer", .ptr = @ptrCast(**const c_void, &namespace._glIndexPointer) },
+    .{ .name = "glIndexd", .ptr = @ptrCast(**const c_void, &namespace._glIndexd) },
+    .{ .name = "glIndexdv", .ptr = @ptrCast(**const c_void, &namespace._glIndexdv) },
+    .{ .name = "glIndexf", .ptr = @ptrCast(**const c_void, &namespace._glIndexf) },
+    .{ .name = "glIndexfv", .ptr = @ptrCast(**const c_void, &namespace._glIndexfv) },
+    .{ .name = "glIndexi", .ptr = @ptrCast(**const c_void, &namespace._glIndexi) },
+    .{ .name = "glIndexiv", .ptr = @ptrCast(**const c_void, &namespace._glIndexiv) },
+    .{ .name = "glIndexs", .ptr = @ptrCast(**const c_void, &namespace._glIndexs) },
+    .{ .name = "glIndexsv", .ptr = @ptrCast(**const c_void, &namespace._glIndexsv) },
+    .{ .name = "glIndexub", .ptr = @ptrCast(**const c_void, &namespace._glIndexub) },
+    .{ .name = "glIndexubv", .ptr = @ptrCast(**const c_void, &namespace._glIndexubv) },
+    .{ .name = "glInitNames", .ptr = @ptrCast(**const c_void, &namespace._glInitNames) },
+    .{ .name = "glInterleavedArrays", .ptr = @ptrCast(**const c_void, &namespace._glInterleavedArrays) },
+    .{ .name = "glIsBuffer", .ptr = @ptrCast(**const c_void, &namespace._glIsBuffer) },
+    .{ .name = "glIsEnabled", .ptr = @ptrCast(**const c_void, &namespace._glIsEnabled) },
+    .{ .name = "glIsFramebuffer", .ptr = @ptrCast(**const c_void, &namespace._glIsFramebuffer) },
+    .{ .name = "glIsList", .ptr = @ptrCast(**const c_void, &namespace._glIsList) },
+    .{ .name = "glIsProgram", .ptr = @ptrCast(**const c_void, &namespace._glIsProgram) },
+    .{ .name = "glIsQuery", .ptr = @ptrCast(**const c_void, &namespace._glIsQuery) },
+    .{ .name = "glIsRenderbuffer", .ptr = @ptrCast(**const c_void, &namespace._glIsRenderbuffer) },
+    .{ .name = "glIsShader", .ptr = @ptrCast(**const c_void, &namespace._glIsShader) },
+    .{ .name = "glIsTexture", .ptr = @ptrCast(**const c_void, &namespace._glIsTexture) },
+    .{ .name = "glLightModelf", .ptr = @ptrCast(**const c_void, &namespace._glLightModelf) },
+    .{ .name = "glLightModelfv", .ptr = @ptrCast(**const c_void, &namespace._glLightModelfv) },
+    .{ .name = "glLightModeli", .ptr = @ptrCast(**const c_void, &namespace._glLightModeli) },
+    .{ .name = "glLightModeliv", .ptr = @ptrCast(**const c_void, &namespace._glLightModeliv) },
+    .{ .name = "glLightf", .ptr = @ptrCast(**const c_void, &namespace._glLightf) },
+    .{ .name = "glLightfv", .ptr = @ptrCast(**const c_void, &namespace._glLightfv) },
+    .{ .name = "glLighti", .ptr = @ptrCast(**const c_void, &namespace._glLighti) },
+    .{ .name = "glLightiv", .ptr = @ptrCast(**const c_void, &namespace._glLightiv) },
+    .{ .name = "glLineStipple", .ptr = @ptrCast(**const c_void, &namespace._glLineStipple) },
+    .{ .name = "glLineWidth", .ptr = @ptrCast(**const c_void, &namespace._glLineWidth) },
+    .{ .name = "glLinkProgram", .ptr = @ptrCast(**const c_void, &namespace._glLinkProgram) },
+    .{ .name = "glListBase", .ptr = @ptrCast(**const c_void, &namespace._glListBase) },
+    .{ .name = "glLoadIdentity", .ptr = @ptrCast(**const c_void, &namespace._glLoadIdentity) },
+    .{ .name = "glLoadMatrixd", .ptr = @ptrCast(**const c_void, &namespace._glLoadMatrixd) },
+    .{ .name = "glLoadMatrixf", .ptr = @ptrCast(**const c_void, &namespace._glLoadMatrixf) },
+    .{ .name = "glLoadName", .ptr = @ptrCast(**const c_void, &namespace._glLoadName) },
+    .{ .name = "glLoadTransposeMatrixd", .ptr = @ptrCast(**const c_void, &namespace._glLoadTransposeMatrixd) },
+    .{ .name = "glLoadTransposeMatrixf", .ptr = @ptrCast(**const c_void, &namespace._glLoadTransposeMatrixf) },
+    .{ .name = "glLogicOp", .ptr = @ptrCast(**const c_void, &namespace._glLogicOp) },
+    .{ .name = "glMap1d", .ptr = @ptrCast(**const c_void, &namespace._glMap1d) },
+    .{ .name = "glMap1f", .ptr = @ptrCast(**const c_void, &namespace._glMap1f) },
+    .{ .name = "glMap2d", .ptr = @ptrCast(**const c_void, &namespace._glMap2d) },
+    .{ .name = "glMap2f", .ptr = @ptrCast(**const c_void, &namespace._glMap2f) },
+    .{ .name = "glMapBuffer", .ptr = @ptrCast(**const c_void, &namespace._glMapBuffer) },
+    .{ .name = "glMapGrid1d", .ptr = @ptrCast(**const c_void, &namespace._glMapGrid1d) },
+    .{ .name = "glMapGrid1f", .ptr = @ptrCast(**const c_void, &namespace._glMapGrid1f) },
+    .{ .name = "glMapGrid2d", .ptr = @ptrCast(**const c_void, &namespace._glMapGrid2d) },
+    .{ .name = "glMapGrid2f", .ptr = @ptrCast(**const c_void, &namespace._glMapGrid2f) },
+    .{ .name = "glMaterialf", .ptr = @ptrCast(**const c_void, &namespace._glMaterialf) },
+    .{ .name = "glMaterialfv", .ptr = @ptrCast(**const c_void, &namespace._glMaterialfv) },
+    .{ .name = "glMateriali", .ptr = @ptrCast(**const c_void, &namespace._glMateriali) },
+    .{ .name = "glMaterialiv", .ptr = @ptrCast(**const c_void, &namespace._glMaterialiv) },
+    .{ .name = "glMatrixMode", .ptr = @ptrCast(**const c_void, &namespace._glMatrixMode) },
+    .{ .name = "glMultMatrixd", .ptr = @ptrCast(**const c_void, &namespace._glMultMatrixd) },
+    .{ .name = "glMultMatrixf", .ptr = @ptrCast(**const c_void, &namespace._glMultMatrixf) },
+    .{ .name = "glMultTransposeMatrixd", .ptr = @ptrCast(**const c_void, &namespace._glMultTransposeMatrixd) },
+    .{ .name = "glMultTransposeMatrixf", .ptr = @ptrCast(**const c_void, &namespace._glMultTransposeMatrixf) },
+    .{ .name = "glMultiDrawArrays", .ptr = @ptrCast(**const c_void, &namespace._glMultiDrawArrays) },
+    .{ .name = "glMultiDrawElements", .ptr = @ptrCast(**const c_void, &namespace._glMultiDrawElements) },
+    .{ .name = "glMultiTexCoord1d", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord1d) },
+    .{ .name = "glMultiTexCoord1dv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord1dv) },
+    .{ .name = "glMultiTexCoord1f", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord1f) },
+    .{ .name = "glMultiTexCoord1fv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord1fv) },
+    .{ .name = "glMultiTexCoord1i", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord1i) },
+    .{ .name = "glMultiTexCoord1iv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord1iv) },
+    .{ .name = "glMultiTexCoord1s", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord1s) },
+    .{ .name = "glMultiTexCoord1sv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord1sv) },
+    .{ .name = "glMultiTexCoord2d", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord2d) },
+    .{ .name = "glMultiTexCoord2dv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord2dv) },
+    .{ .name = "glMultiTexCoord2f", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord2f) },
+    .{ .name = "glMultiTexCoord2fv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord2fv) },
+    .{ .name = "glMultiTexCoord2i", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord2i) },
+    .{ .name = "glMultiTexCoord2iv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord2iv) },
+    .{ .name = "glMultiTexCoord2s", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord2s) },
+    .{ .name = "glMultiTexCoord2sv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord2sv) },
+    .{ .name = "glMultiTexCoord3d", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord3d) },
+    .{ .name = "glMultiTexCoord3dv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord3dv) },
+    .{ .name = "glMultiTexCoord3f", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord3f) },
+    .{ .name = "glMultiTexCoord3fv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord3fv) },
+    .{ .name = "glMultiTexCoord3i", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord3i) },
+    .{ .name = "glMultiTexCoord3iv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord3iv) },
+    .{ .name = "glMultiTexCoord3s", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord3s) },
+    .{ .name = "glMultiTexCoord3sv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord3sv) },
+    .{ .name = "glMultiTexCoord4d", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord4d) },
+    .{ .name = "glMultiTexCoord4dv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord4dv) },
+    .{ .name = "glMultiTexCoord4f", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord4f) },
+    .{ .name = "glMultiTexCoord4fv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord4fv) },
+    .{ .name = "glMultiTexCoord4i", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord4i) },
+    .{ .name = "glMultiTexCoord4iv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord4iv) },
+    .{ .name = "glMultiTexCoord4s", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord4s) },
+    .{ .name = "glMultiTexCoord4sv", .ptr = @ptrCast(**const c_void, &namespace._glMultiTexCoord4sv) },
+    .{ .name = "glNewList", .ptr = @ptrCast(**const c_void, &namespace._glNewList) },
+    .{ .name = "glNormal3b", .ptr = @ptrCast(**const c_void, &namespace._glNormal3b) },
+    .{ .name = "glNormal3bv", .ptr = @ptrCast(**const c_void, &namespace._glNormal3bv) },
+    .{ .name = "glNormal3d", .ptr = @ptrCast(**const c_void, &namespace._glNormal3d) },
+    .{ .name = "glNormal3dv", .ptr = @ptrCast(**const c_void, &namespace._glNormal3dv) },
+    .{ .name = "glNormal3f", .ptr = @ptrCast(**const c_void, &namespace._glNormal3f) },
+    .{ .name = "glNormal3fv", .ptr = @ptrCast(**const c_void, &namespace._glNormal3fv) },
+    .{ .name = "glNormal3i", .ptr = @ptrCast(**const c_void, &namespace._glNormal3i) },
+    .{ .name = "glNormal3iv", .ptr = @ptrCast(**const c_void, &namespace._glNormal3iv) },
+    .{ .name = "glNormal3s", .ptr = @ptrCast(**const c_void, &namespace._glNormal3s) },
+    .{ .name = "glNormal3sv", .ptr = @ptrCast(**const c_void, &namespace._glNormal3sv) },
+    .{ .name = "glNormalPointer", .ptr = @ptrCast(**const c_void, &namespace._glNormalPointer) },
+    .{ .name = "glOrtho", .ptr = @ptrCast(**const c_void, &namespace._glOrtho) },
+    .{ .name = "glPassThrough", .ptr = @ptrCast(**const c_void, &namespace._glPassThrough) },
+    .{ .name = "glPixelMapfv", .ptr = @ptrCast(**const c_void, &namespace._glPixelMapfv) },
+    .{ .name = "glPixelMapuiv", .ptr = @ptrCast(**const c_void, &namespace._glPixelMapuiv) },
+    .{ .name = "glPixelMapusv", .ptr = @ptrCast(**const c_void, &namespace._glPixelMapusv) },
+    .{ .name = "glPixelStoref", .ptr = @ptrCast(**const c_void, &namespace._glPixelStoref) },
+    .{ .name = "glPixelStorei", .ptr = @ptrCast(**const c_void, &namespace._glPixelStorei) },
+    .{ .name = "glPixelTransferf", .ptr = @ptrCast(**const c_void, &namespace._glPixelTransferf) },
+    .{ .name = "glPixelTransferi", .ptr = @ptrCast(**const c_void, &namespace._glPixelTransferi) },
+    .{ .name = "glPixelZoom", .ptr = @ptrCast(**const c_void, &namespace._glPixelZoom) },
+    .{ .name = "glPointParameterf", .ptr = @ptrCast(**const c_void, &namespace._glPointParameterf) },
+    .{ .name = "glPointParameterfv", .ptr = @ptrCast(**const c_void, &namespace._glPointParameterfv) },
+    .{ .name = "glPointParameteri", .ptr = @ptrCast(**const c_void, &namespace._glPointParameteri) },
+    .{ .name = "glPointParameteriv", .ptr = @ptrCast(**const c_void, &namespace._glPointParameteriv) },
+    .{ .name = "glPointSize", .ptr = @ptrCast(**const c_void, &namespace._glPointSize) },
+    .{ .name = "glPolygonMode", .ptr = @ptrCast(**const c_void, &namespace._glPolygonMode) },
+    .{ .name = "glPolygonOffset", .ptr = @ptrCast(**const c_void, &namespace._glPolygonOffset) },
+    .{ .name = "glPolygonStipple", .ptr = @ptrCast(**const c_void, &namespace._glPolygonStipple) },
+    .{ .name = "glPopAttrib", .ptr = @ptrCast(**const c_void, &namespace._glPopAttrib) },
+    .{ .name = "glPopClientAttrib", .ptr = @ptrCast(**const c_void, &namespace._glPopClientAttrib) },
+    .{ .name = "glPopMatrix", .ptr = @ptrCast(**const c_void, &namespace._glPopMatrix) },
+    .{ .name = "glPopName", .ptr = @ptrCast(**const c_void, &namespace._glPopName) },
+    .{ .name = "glPrioritizeTextures", .ptr = @ptrCast(**const c_void, &namespace._glPrioritizeTextures) },
+    .{ .name = "glPushAttrib", .ptr = @ptrCast(**const c_void, &namespace._glPushAttrib) },
+    .{ .name = "glPushClientAttrib", .ptr = @ptrCast(**const c_void, &namespace._glPushClientAttrib) },
+    .{ .name = "glPushMatrix", .ptr = @ptrCast(**const c_void, &namespace._glPushMatrix) },
+    .{ .name = "glPushName", .ptr = @ptrCast(**const c_void, &namespace._glPushName) },
+    .{ .name = "glRasterPos2d", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos2d) },
+    .{ .name = "glRasterPos2dv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos2dv) },
+    .{ .name = "glRasterPos2f", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos2f) },
+    .{ .name = "glRasterPos2fv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos2fv) },
+    .{ .name = "glRasterPos2i", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos2i) },
+    .{ .name = "glRasterPos2iv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos2iv) },
+    .{ .name = "glRasterPos2s", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos2s) },
+    .{ .name = "glRasterPos2sv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos2sv) },
+    .{ .name = "glRasterPos3d", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos3d) },
+    .{ .name = "glRasterPos3dv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos3dv) },
+    .{ .name = "glRasterPos3f", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos3f) },
+    .{ .name = "glRasterPos3fv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos3fv) },
+    .{ .name = "glRasterPos3i", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos3i) },
+    .{ .name = "glRasterPos3iv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos3iv) },
+    .{ .name = "glRasterPos3s", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos3s) },
+    .{ .name = "glRasterPos3sv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos3sv) },
+    .{ .name = "glRasterPos4d", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos4d) },
+    .{ .name = "glRasterPos4dv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos4dv) },
+    .{ .name = "glRasterPos4f", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos4f) },
+    .{ .name = "glRasterPos4fv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos4fv) },
+    .{ .name = "glRasterPos4i", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos4i) },
+    .{ .name = "glRasterPos4iv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos4iv) },
+    .{ .name = "glRasterPos4s", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos4s) },
+    .{ .name = "glRasterPos4sv", .ptr = @ptrCast(**const c_void, &namespace._glRasterPos4sv) },
+    .{ .name = "glReadBuffer", .ptr = @ptrCast(**const c_void, &namespace._glReadBuffer) },
+    .{ .name = "glReadPixels", .ptr = @ptrCast(**const c_void, &namespace._glReadPixels) },
+    .{ .name = "glRectd", .ptr = @ptrCast(**const c_void, &namespace._glRectd) },
+    .{ .name = "glRectdv", .ptr = @ptrCast(**const c_void, &namespace._glRectdv) },
+    .{ .name = "glRectf", .ptr = @ptrCast(**const c_void, &namespace._glRectf) },
+    .{ .name = "glRectfv", .ptr = @ptrCast(**const c_void, &namespace._glRectfv) },
+    .{ .name = "glRecti", .ptr = @ptrCast(**const c_void, &namespace._glRecti) },
+    .{ .name = "glRectiv", .ptr = @ptrCast(**const c_void, &namespace._glRectiv) },
+    .{ .name = "glRects", .ptr = @ptrCast(**const c_void, &namespace._glRects) },
+    .{ .name = "glRectsv", .ptr = @ptrCast(**const c_void, &namespace._glRectsv) },
+    .{ .name = "glRenderMode", .ptr = @ptrCast(**const c_void, &namespace._glRenderMode) },
+    .{ .name = "glRenderbufferStorage", .ptr = @ptrCast(**const c_void, &namespace._glRenderbufferStorage) },
+    .{ .name = "glRenderbufferStorageMultisample", .ptr = @ptrCast(**const c_void, &namespace._glRenderbufferStorageMultisample) },
+    .{ .name = "glRotated", .ptr = @ptrCast(**const c_void, &namespace._glRotated) },
+    .{ .name = "glRotatef", .ptr = @ptrCast(**const c_void, &namespace._glRotatef) },
+    .{ .name = "glSampleCoverage", .ptr = @ptrCast(**const c_void, &namespace._glSampleCoverage) },
+    .{ .name = "glScaled", .ptr = @ptrCast(**const c_void, &namespace._glScaled) },
+    .{ .name = "glScalef", .ptr = @ptrCast(**const c_void, &namespace._glScalef) },
+    .{ .name = "glScissor", .ptr = @ptrCast(**const c_void, &namespace._glScissor) },
+    .{ .name = "glSecondaryColor3b", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3b) },
+    .{ .name = "glSecondaryColor3bv", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3bv) },
+    .{ .name = "glSecondaryColor3d", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3d) },
+    .{ .name = "glSecondaryColor3dv", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3dv) },
+    .{ .name = "glSecondaryColor3f", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3f) },
+    .{ .name = "glSecondaryColor3fv", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3fv) },
+    .{ .name = "glSecondaryColor3i", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3i) },
+    .{ .name = "glSecondaryColor3iv", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3iv) },
+    .{ .name = "glSecondaryColor3s", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3s) },
+    .{ .name = "glSecondaryColor3sv", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3sv) },
+    .{ .name = "glSecondaryColor3ub", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3ub) },
+    .{ .name = "glSecondaryColor3ubv", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3ubv) },
+    .{ .name = "glSecondaryColor3ui", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3ui) },
+    .{ .name = "glSecondaryColor3uiv", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3uiv) },
+    .{ .name = "glSecondaryColor3us", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3us) },
+    .{ .name = "glSecondaryColor3usv", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColor3usv) },
+    .{ .name = "glSecondaryColorPointer", .ptr = @ptrCast(**const c_void, &namespace._glSecondaryColorPointer) },
+    .{ .name = "glSelectBuffer", .ptr = @ptrCast(**const c_void, &namespace._glSelectBuffer) },
+    .{ .name = "glShadeModel", .ptr = @ptrCast(**const c_void, &namespace._glShadeModel) },
+    .{ .name = "glShaderSource", .ptr = @ptrCast(**const c_void, &namespace._glShaderSource) },
+    .{ .name = "glStencilFunc", .ptr = @ptrCast(**const c_void, &namespace._glStencilFunc) },
+    .{ .name = "glStencilFuncSeparate", .ptr = @ptrCast(**const c_void, &namespace._glStencilFuncSeparate) },
+    .{ .name = "glStencilMask", .ptr = @ptrCast(**const c_void, &namespace._glStencilMask) },
+    .{ .name = "glStencilMaskSeparate", .ptr = @ptrCast(**const c_void, &namespace._glStencilMaskSeparate) },
+    .{ .name = "glStencilOp", .ptr = @ptrCast(**const c_void, &namespace._glStencilOp) },
+    .{ .name = "glStencilOpSeparate", .ptr = @ptrCast(**const c_void, &namespace._glStencilOpSeparate) },
+    .{ .name = "glTexCoord1d", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord1d) },
+    .{ .name = "glTexCoord1dv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord1dv) },
+    .{ .name = "glTexCoord1f", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord1f) },
+    .{ .name = "glTexCoord1fv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord1fv) },
+    .{ .name = "glTexCoord1i", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord1i) },
+    .{ .name = "glTexCoord1iv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord1iv) },
+    .{ .name = "glTexCoord1s", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord1s) },
+    .{ .name = "glTexCoord1sv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord1sv) },
+    .{ .name = "glTexCoord2d", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord2d) },
+    .{ .name = "glTexCoord2dv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord2dv) },
+    .{ .name = "glTexCoord2f", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord2f) },
+    .{ .name = "glTexCoord2fv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord2fv) },
+    .{ .name = "glTexCoord2i", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord2i) },
+    .{ .name = "glTexCoord2iv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord2iv) },
+    .{ .name = "glTexCoord2s", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord2s) },
+    .{ .name = "glTexCoord2sv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord2sv) },
+    .{ .name = "glTexCoord3d", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord3d) },
+    .{ .name = "glTexCoord3dv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord3dv) },
+    .{ .name = "glTexCoord3f", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord3f) },
+    .{ .name = "glTexCoord3fv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord3fv) },
+    .{ .name = "glTexCoord3i", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord3i) },
+    .{ .name = "glTexCoord3iv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord3iv) },
+    .{ .name = "glTexCoord3s", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord3s) },
+    .{ .name = "glTexCoord3sv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord3sv) },
+    .{ .name = "glTexCoord4d", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord4d) },
+    .{ .name = "glTexCoord4dv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord4dv) },
+    .{ .name = "glTexCoord4f", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord4f) },
+    .{ .name = "glTexCoord4fv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord4fv) },
+    .{ .name = "glTexCoord4i", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord4i) },
+    .{ .name = "glTexCoord4iv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord4iv) },
+    .{ .name = "glTexCoord4s", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord4s) },
+    .{ .name = "glTexCoord4sv", .ptr = @ptrCast(**const c_void, &namespace._glTexCoord4sv) },
+    .{ .name = "glTexCoordPointer", .ptr = @ptrCast(**const c_void, &namespace._glTexCoordPointer) },
+    .{ .name = "glTexEnvf", .ptr = @ptrCast(**const c_void, &namespace._glTexEnvf) },
+    .{ .name = "glTexEnvfv", .ptr = @ptrCast(**const c_void, &namespace._glTexEnvfv) },
+    .{ .name = "glTexEnvi", .ptr = @ptrCast(**const c_void, &namespace._glTexEnvi) },
+    .{ .name = "glTexEnviv", .ptr = @ptrCast(**const c_void, &namespace._glTexEnviv) },
+    .{ .name = "glTexGend", .ptr = @ptrCast(**const c_void, &namespace._glTexGend) },
+    .{ .name = "glTexGendv", .ptr = @ptrCast(**const c_void, &namespace._glTexGendv) },
+    .{ .name = "glTexGenf", .ptr = @ptrCast(**const c_void, &namespace._glTexGenf) },
+    .{ .name = "glTexGenfv", .ptr = @ptrCast(**const c_void, &namespace._glTexGenfv) },
+    .{ .name = "glTexGeni", .ptr = @ptrCast(**const c_void, &namespace._glTexGeni) },
+    .{ .name = "glTexGeniv", .ptr = @ptrCast(**const c_void, &namespace._glTexGeniv) },
+    .{ .name = "glTexImage1D", .ptr = @ptrCast(**const c_void, &namespace._glTexImage1D) },
+    .{ .name = "glTexImage2D", .ptr = @ptrCast(**const c_void, &namespace._glTexImage2D) },
+    .{ .name = "glTexImage3D", .ptr = @ptrCast(**const c_void, &namespace._glTexImage3D) },
+    .{ .name = "glTexParameterf", .ptr = @ptrCast(**const c_void, &namespace._glTexParameterf) },
+    .{ .name = "glTexParameterfv", .ptr = @ptrCast(**const c_void, &namespace._glTexParameterfv) },
+    .{ .name = "glTexParameteri", .ptr = @ptrCast(**const c_void, &namespace._glTexParameteri) },
+    .{ .name = "glTexParameteriv", .ptr = @ptrCast(**const c_void, &namespace._glTexParameteriv) },
+    .{ .name = "glTexSubImage1D", .ptr = @ptrCast(**const c_void, &namespace._glTexSubImage1D) },
+    .{ .name = "glTexSubImage2D", .ptr = @ptrCast(**const c_void, &namespace._glTexSubImage2D) },
+    .{ .name = "glTexSubImage3D", .ptr = @ptrCast(**const c_void, &namespace._glTexSubImage3D) },
+    .{ .name = "glTranslated", .ptr = @ptrCast(**const c_void, &namespace._glTranslated) },
+    .{ .name = "glTranslatef", .ptr = @ptrCast(**const c_void, &namespace._glTranslatef) },
+    .{ .name = "glUniform1f", .ptr = @ptrCast(**const c_void, &namespace._glUniform1f) },
+    .{ .name = "glUniform1fv", .ptr = @ptrCast(**const c_void, &namespace._glUniform1fv) },
+    .{ .name = "glUniform1i", .ptr = @ptrCast(**const c_void, &namespace._glUniform1i) },
+    .{ .name = "glUniform1iv", .ptr = @ptrCast(**const c_void, &namespace._glUniform1iv) },
+    .{ .name = "glUniform2f", .ptr = @ptrCast(**const c_void, &namespace._glUniform2f) },
+    .{ .name = "glUniform2fv", .ptr = @ptrCast(**const c_void, &namespace._glUniform2fv) },
+    .{ .name = "glUniform2i", .ptr = @ptrCast(**const c_void, &namespace._glUniform2i) },
+    .{ .name = "glUniform2iv", .ptr = @ptrCast(**const c_void, &namespace._glUniform2iv) },
+    .{ .name = "glUniform3f", .ptr = @ptrCast(**const c_void, &namespace._glUniform3f) },
+    .{ .name = "glUniform3fv", .ptr = @ptrCast(**const c_void, &namespace._glUniform3fv) },
+    .{ .name = "glUniform3i", .ptr = @ptrCast(**const c_void, &namespace._glUniform3i) },
+    .{ .name = "glUniform3iv", .ptr = @ptrCast(**const c_void, &namespace._glUniform3iv) },
+    .{ .name = "glUniform4f", .ptr = @ptrCast(**const c_void, &namespace._glUniform4f) },
+    .{ .name = "glUniform4fv", .ptr = @ptrCast(**const c_void, &namespace._glUniform4fv) },
+    .{ .name = "glUniform4i", .ptr = @ptrCast(**const c_void, &namespace._glUniform4i) },
+    .{ .name = "glUniform4iv", .ptr = @ptrCast(**const c_void, &namespace._glUniform4iv) },
+    .{ .name = "glUniformMatrix2fv", .ptr = @ptrCast(**const c_void, &namespace._glUniformMatrix2fv) },
+    .{ .name = "glUniformMatrix2x3fv", .ptr = @ptrCast(**const c_void, &namespace._glUniformMatrix2x3fv) },
+    .{ .name = "glUniformMatrix2x4fv", .ptr = @ptrCast(**const c_void, &namespace._glUniformMatrix2x4fv) },
+    .{ .name = "glUniformMatrix3fv", .ptr = @ptrCast(**const c_void, &namespace._glUniformMatrix3fv) },
+    .{ .name = "glUniformMatrix3x2fv", .ptr = @ptrCast(**const c_void, &namespace._glUniformMatrix3x2fv) },
+    .{ .name = "glUniformMatrix3x4fv", .ptr = @ptrCast(**const c_void, &namespace._glUniformMatrix3x4fv) },
+    .{ .name = "glUniformMatrix4fv", .ptr = @ptrCast(**const c_void, &namespace._glUniformMatrix4fv) },
+    .{ .name = "glUniformMatrix4x2fv", .ptr = @ptrCast(**const c_void, &namespace._glUniformMatrix4x2fv) },
+    .{ .name = "glUniformMatrix4x3fv", .ptr = @ptrCast(**const c_void, &namespace._glUniformMatrix4x3fv) },
+    .{ .name = "glUnmapBuffer", .ptr = @ptrCast(**const c_void, &namespace._glUnmapBuffer) },
+    .{ .name = "glUseProgram", .ptr = @ptrCast(**const c_void, &namespace._glUseProgram) },
+    .{ .name = "glValidateProgram", .ptr = @ptrCast(**const c_void, &namespace._glValidateProgram) },
+    .{ .name = "glVertex2d", .ptr = @ptrCast(**const c_void, &namespace._glVertex2d) },
+    .{ .name = "glVertex2dv", .ptr = @ptrCast(**const c_void, &namespace._glVertex2dv) },
+    .{ .name = "glVertex2f", .ptr = @ptrCast(**const c_void, &namespace._glVertex2f) },
+    .{ .name = "glVertex2fv", .ptr = @ptrCast(**const c_void, &namespace._glVertex2fv) },
+    .{ .name = "glVertex2i", .ptr = @ptrCast(**const c_void, &namespace._glVertex2i) },
+    .{ .name = "glVertex2iv", .ptr = @ptrCast(**const c_void, &namespace._glVertex2iv) },
+    .{ .name = "glVertex2s", .ptr = @ptrCast(**const c_void, &namespace._glVertex2s) },
+    .{ .name = "glVertex2sv", .ptr = @ptrCast(**const c_void, &namespace._glVertex2sv) },
+    .{ .name = "glVertex3d", .ptr = @ptrCast(**const c_void, &namespace._glVertex3d) },
+    .{ .name = "glVertex3dv", .ptr = @ptrCast(**const c_void, &namespace._glVertex3dv) },
+    .{ .name = "glVertex3f", .ptr = @ptrCast(**const c_void, &namespace._glVertex3f) },
+    .{ .name = "glVertex3fv", .ptr = @ptrCast(**const c_void, &namespace._glVertex3fv) },
+    .{ .name = "glVertex3i", .ptr = @ptrCast(**const c_void, &namespace._glVertex3i) },
+    .{ .name = "glVertex3iv", .ptr = @ptrCast(**const c_void, &namespace._glVertex3iv) },
+    .{ .name = "glVertex3s", .ptr = @ptrCast(**const c_void, &namespace._glVertex3s) },
+    .{ .name = "glVertex3sv", .ptr = @ptrCast(**const c_void, &namespace._glVertex3sv) },
+    .{ .name = "glVertex4d", .ptr = @ptrCast(**const c_void, &namespace._glVertex4d) },
+    .{ .name = "glVertex4dv", .ptr = @ptrCast(**const c_void, &namespace._glVertex4dv) },
+    .{ .name = "glVertex4f", .ptr = @ptrCast(**const c_void, &namespace._glVertex4f) },
+    .{ .name = "glVertex4fv", .ptr = @ptrCast(**const c_void, &namespace._glVertex4fv) },
+    .{ .name = "glVertex4i", .ptr = @ptrCast(**const c_void, &namespace._glVertex4i) },
+    .{ .name = "glVertex4iv", .ptr = @ptrCast(**const c_void, &namespace._glVertex4iv) },
+    .{ .name = "glVertex4s", .ptr = @ptrCast(**const c_void, &namespace._glVertex4s) },
+    .{ .name = "glVertex4sv", .ptr = @ptrCast(**const c_void, &namespace._glVertex4sv) },
+    .{ .name = "glVertexAttrib1d", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib1d) },
+    .{ .name = "glVertexAttrib1dv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib1dv) },
+    .{ .name = "glVertexAttrib1f", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib1f) },
+    .{ .name = "glVertexAttrib1fv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib1fv) },
+    .{ .name = "glVertexAttrib1s", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib1s) },
+    .{ .name = "glVertexAttrib1sv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib1sv) },
+    .{ .name = "glVertexAttrib2d", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib2d) },
+    .{ .name = "glVertexAttrib2dv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib2dv) },
+    .{ .name = "glVertexAttrib2f", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib2f) },
+    .{ .name = "glVertexAttrib2fv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib2fv) },
+    .{ .name = "glVertexAttrib2s", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib2s) },
+    .{ .name = "glVertexAttrib2sv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib2sv) },
+    .{ .name = "glVertexAttrib3d", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib3d) },
+    .{ .name = "glVertexAttrib3dv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib3dv) },
+    .{ .name = "glVertexAttrib3f", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib3f) },
+    .{ .name = "glVertexAttrib3fv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib3fv) },
+    .{ .name = "glVertexAttrib3s", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib3s) },
+    .{ .name = "glVertexAttrib3sv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib3sv) },
+    .{ .name = "glVertexAttrib4Nbv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4Nbv) },
+    .{ .name = "glVertexAttrib4Niv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4Niv) },
+    .{ .name = "glVertexAttrib4Nsv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4Nsv) },
+    .{ .name = "glVertexAttrib4Nub", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4Nub) },
+    .{ .name = "glVertexAttrib4Nubv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4Nubv) },
+    .{ .name = "glVertexAttrib4Nuiv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4Nuiv) },
+    .{ .name = "glVertexAttrib4Nusv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4Nusv) },
+    .{ .name = "glVertexAttrib4bv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4bv) },
+    .{ .name = "glVertexAttrib4d", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4d) },
+    .{ .name = "glVertexAttrib4dv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4dv) },
+    .{ .name = "glVertexAttrib4f", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4f) },
+    .{ .name = "glVertexAttrib4fv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4fv) },
+    .{ .name = "glVertexAttrib4iv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4iv) },
+    .{ .name = "glVertexAttrib4s", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4s) },
+    .{ .name = "glVertexAttrib4sv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4sv) },
+    .{ .name = "glVertexAttrib4ubv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4ubv) },
+    .{ .name = "glVertexAttrib4uiv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4uiv) },
+    .{ .name = "glVertexAttrib4usv", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttrib4usv) },
+    .{ .name = "glVertexAttribPointer", .ptr = @ptrCast(**const c_void, &namespace._glVertexAttribPointer) },
+    .{ .name = "glVertexPointer", .ptr = @ptrCast(**const c_void, &namespace._glVertexPointer) },
+    .{ .name = "glViewport", .ptr = @ptrCast(**const c_void, &namespace._glViewport) },
+    .{ .name = "glWindowPos2d", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos2d) },
+    .{ .name = "glWindowPos2dv", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos2dv) },
+    .{ .name = "glWindowPos2f", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos2f) },
+    .{ .name = "glWindowPos2fv", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos2fv) },
+    .{ .name = "glWindowPos2i", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos2i) },
+    .{ .name = "glWindowPos2iv", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos2iv) },
+    .{ .name = "glWindowPos2s", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos2s) },
+    .{ .name = "glWindowPos2sv", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos2sv) },
+    .{ .name = "glWindowPos3d", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos3d) },
+    .{ .name = "glWindowPos3dv", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos3dv) },
+    .{ .name = "glWindowPos3f", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos3f) },
+    .{ .name = "glWindowPos3fv", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos3fv) },
+    .{ .name = "glWindowPos3i", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos3i) },
+    .{ .name = "glWindowPos3iv", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos3iv) },
+    .{ .name = "glWindowPos3s", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos3s) },
+    .{ .name = "glWindowPos3sv", .ptr = @ptrCast(**const c_void, &namespace._glWindowPos3sv) },
 };

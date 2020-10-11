@@ -33,10 +33,31 @@ echo
 grep '^pub const GL_' "$SOURCEFILE" | sort
 echo
 perl -n -e '
-if (/^pub extern var (gl[a-zA-Z0-9_]+): \?fn \((.+)\) (.+);$/) {
-    $_ = "pub var $1: fn ($2) $3 = undefined;";
-    s/callconv\(.+?\)/callconv(cc)/;
-    print "$_\n";
+if (/^pub extern var (gl[a-zA-Z0-9_]+): \?fn \((.*)\) callconv\(.+?\) (.+);$/) {
+    print "var _$1: fn ($2) callconv(cc) $3 = undefined;\n";
+}' < "$SOURCEFILE" | sort
+echo
+perl -n -e '
+if (/^pub extern var (gl[a-zA-Z0-9_]+): \?fn \((.*)\) callconv\(.+?\) (.+);$/) {
+    my $name = $1;
+    my @args = split(/, ?/, $2);
+    my $ret = $3;
+    for my $i (0 .. $#args) {
+        $args[$i] = "arg$i: ${args[$i]}";
+    }
+    my $args = join(", ", @args);
+    print "pub inline fn $name($args) $ret { ";
+    if ($ret ne "void") {
+        print "return ";
+    }
+    print "_$name(";
+    for my $i (0 .. $#args) {
+        if ($i > 0) {
+            print ", ";
+        }
+        print "arg$i";
+    }
+    print "); }\n";
 }' < "$SOURCEFILE" | sort
 echo "};"
 echo
@@ -54,6 +75,6 @@ echo
 echo "pub const commands = [_]Command{"
 perl -n -e '
 if (/^pub extern var (gl[a-zA-Z0-9_]+): \?fn/) {
-    print ".{ .name = \"$1\", .ptr = \@ptrCast(**const c_void, &namespace.$1) },\n";
+    print ".{ .name = \"$1\", .ptr = \@ptrCast(**const c_void, &namespace._$1) },\n";
 }' < "$SOURCEFILE" | sort
 echo "};"
