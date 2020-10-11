@@ -16,9 +16,6 @@ for GL_EXTENSION in "$@"; do
 done
 echo
 echo "const builtin = @import(\"builtin\");"
-if [ ! -z "$PARANOID" ]; then
-    echo "const panic = @import(\"std\").debug.panic;"
-fi
 echo
 echo "const cc: builtin.CallingConvention ="
 echo "    if (builtin.os.tag == .windows and builtin.arch == .i386)"
@@ -29,6 +26,25 @@ echo
 grep '^pub const khronos' "$SOURCEFILE" | sed 's/^pub //' | sort
 echo
 grep '^pub const struct___GL' "$SOURCEFILE" | sed 's/^pub //' | sort
+if [ ! -z "$PARANOID" ]; then
+    echo
+    echo "fn checkError(func_name: []const u8) void {"
+    echo "    const panic = @import(\"std\").debug.panic;"
+    echo "    const err_name = switch (namespace._glGetError()) {"
+    echo "        0 => return," # GL_NO_ERROR
+    echo "        0x0500 => \"GL_INVALID_ENUM\","
+    echo "        0x0501 => \"GL_INVALID_VALUE\","
+    echo "        0x0502 => \"GL_INVALID_OPERATION\","
+    echo "        0x0503 => \"GL_STACK_OVERFLOW\","
+    echo "        0x0504 => \"GL_STACK_UNDERFLOW\","
+    echo "        0x0505 => \"GL_OUT_OF_MEMORY\","
+    echo "        0x0506 => \"GL_INVALID_FRAMEBUFFER_OPERATION\","
+    echo "        0x0507 => \"GL_CONTEXT_LOST\","
+    echo "        else => |code| panic(\"{} returned invalid error code {}\", .{func_name, code}),"
+    echo "    };"
+    echo "    panic(\"{} returned {}\", .{func_name, err_name});"
+    echo "}"
+fi
 echo
 echo "pub const namespace = struct {"
 grep '^pub const GL[^_]' "$SOURCEFILE" | sort
@@ -67,10 +83,7 @@ if (/^pub extern var (gl[a-zA-Z0-9_]+): \?fn \((.*)\) callconv\(.+?\) (.+);$/) {
     print "); ";
     if ($ENV{PARANOID}) {
         if ($name ne "glGetError") {
-            print "const err = _glGetError(); ";
-            print "if (err != 0) { ";
-            print "panic(\"$name returned error {}\", .{err}); ";
-            print "} ";
+            print "checkError(\"$name\"); ";
         }
         if ($ret ne "void") {
             print "return result; ";
