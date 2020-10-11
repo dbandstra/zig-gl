@@ -12,6 +12,12 @@ sh generate.sh 3.2 > generated/3.2.zig
 
 The generated files for the above profiles are included in this repository for convenience.
 
+If you set the `PARANOID` environment variable, the generated script will include a call to `glGetError` after every OpenGL function call, and panic if an error is present.
+
+```sh
+PARANOID generate.sh 3.2 > generated/3.2-paranoid.zig
+```
+
 ## SDL usage example
 ```zig
 usingnamespace @cImport({

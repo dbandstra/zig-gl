@@ -16,6 +16,9 @@ for GL_EXTENSION in "$@"; do
 done
 echo
 echo "const builtin = @import(\"builtin\");"
+if [ ! -z "$PARANOID" ]; then
+    echo "const panic = @import(\"std\").debug.panic;"
+fi
 echo
 echo "const cc: builtin.CallingConvention ="
 echo "    if (builtin.os.tag == .windows and builtin.arch == .i386)"
@@ -48,7 +51,11 @@ if (/^pub extern var (gl[a-zA-Z0-9_]+): \?fn \((.*)\) callconv\(.+?\) (.+);$/) {
     my $args = join(", ", @args);
     print "pub inline fn $name($args) $ret { ";
     if ($ret ne "void") {
-        print "return ";
+        if ($ENV{PARANOID}) {
+            print "const result = ";
+        } else {
+            print "return ";
+        }
     }
     print "_$name(";
     for my $i (0 .. $#args) {
@@ -57,7 +64,19 @@ if (/^pub extern var (gl[a-zA-Z0-9_]+): \?fn \((.*)\) callconv\(.+?\) (.+);$/) {
         }
         print "arg$i";
     }
-    print "); }\n";
+    print "); ";
+    if ($ENV{PARANOID}) {
+        if ($name ne "glGetError") {
+            print "const err = _glGetError(); ";
+            print "if (err != 0) { ";
+            print "panic(\"$name returned error {}\", .{err}); ";
+            print "} ";
+        }
+        if ($ret ne "void") {
+            print "return result; ";
+        }
+    }
+    print "}\n";
 }' < "$SOURCEFILE" | sort
 echo "};"
 echo
